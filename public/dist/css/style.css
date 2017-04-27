@@ -834,21 +834,9 @@
   background: url("/dist/image/human_avatar_30_w.png") no-repeat;
   background-size: cover;
 }
-
-@media screen and (max-width: 679px) {
-  #page-ranking .tj-ranking__itemDescriptionVoiceThumb {
-    width: 2.5em;
-    height: 2.5em;
-  }
-}
 #page-ranking .tj-ranking__itemDescriptionVoiceComment {
   margin-left: 6.0em;
   line-height: 1.6;
-}
-@media screen and (max-width: 679px) {
-  #page-ranking .tj-ranking__itemDescriptionVoiceComment {
-    margin-left: 3.5em;
-  }
 }
 #page-ranking .tj-ranking__itemDescriptionVoiceComment div {
   color: #666;
