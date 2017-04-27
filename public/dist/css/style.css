@@ -780,6 +780,10 @@
 #page-ranking .tj-ranking__itemTitle span {
   padding: 0 1.0rem;
 }
+#page-ranking .tj-ranking__item .description{
+  margin:0;
+  color: #666;
+}
 #page-ranking .tj-ranking__itemDescriptionCatch {
   color: #c10000;
   font-weight: bold;

@@ -34,16 +34,20 @@
             <div class="item"><a class="ui small image"><img class="tj-ranking__itemThumb" src="/dist/image/thumb_next.jpg"></a>
               <div class="content">
                 <div class="description">
-                  <p>転職サイトの代名詞とも言える古くからある大手サイト。9000件以上の求人を掲載し(*2017年3月確認時点)、特に営業職の求人掲載数は他のサイトと比較し 圧倒的に多いです。</p>
+                  <p>リクルートキャリアが運営する言わずと知れた国内最大級の転職サイト。新卒の就職活動では「リクナビ」を使っていたという方も多いのではないでしょうか。
+                    そのリクナビの転職者向けサービスが「リクナビNEXT」です。特徴は何と言っても掲載している求人数の数。常時7,000〜8,000件程度の求人が掲載されており、
+                    その数は他の転職サイトを寄せ付けません。頻繁に更新される業界やこだわり条件ごとの求人特集や、レジュメ・職務経歴書と一緒にスカウトサービスに登録すると、
+                    サイトに非公開の求人が多数オファーの形式で届くのも魅力です。また最近ではフェアなどのイベントにも力を入れており、名古屋・大阪・東京・福岡など
+                    主要都市圏で頻繁に転職フェアを開催しています。転職活動を始めるならMUSTでチェックすべきサイトです。</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="tj-ranking__itemDescription"><span class="tj-ranking__itemDescriptionCatch">ここがポイント<i class="pointing up icon"></i></span>
             <ul class="tj-ranking__itemDescriptionList">
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>他サイトと比べて比較的年収が高めの求人が多い</li>
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>第二新卒・未経験歓迎の求人が豊富</li>
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>提携エージェントから求人が紹介されるスカウト機能</li>
+              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>他サイトと比べて圧倒的No.1の求人数なので、選択肢を狭めないためにも登録はマスト！</li>
+              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>提携エージェントから求人が紹介されるスカウト機能と非公開求人</li>
+              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>頻繁に開催される転職フェアを通じて、多くの企業と出会える</li>
             </ul><span class="tj-ranking__itemDescriptionCatch">利用者の声<i class="talk outline icon"></i></span>
             <div class="ui comments tj-ranking__itemDescriptionVoice">
               <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
@@ -76,21 +80,24 @@
           </div>
         </div>
         <div class="tj-ranking__item">
-          <h2 class="tj-ranking__itemTitle"><span>第2位</span>リクナビNEXT</h2>
+          <h2 class="tj-ranking__itemTitle"><span>第2位</span>@type</h2>
           <div class="ui items">
             <div class="item"><a class="ui small image"><img class="tj-ranking__itemThumb" src="/dist/image/thumb_type.jpg"></a>
               <div class="content">
                 <div class="description">
-                  <p>転職サイトの代名詞とも言える古くからある大手サイト。9000件以上の求人を掲載し(*2017年3月確認時点)、特に営業職の求人掲載数は他のサイトと比較し 圧倒的に多いです。</p>
+                  <p>山崎育三郎さんのCMでお馴染みの、こちらも最大級の転職サイト@typeです。掲載求人数こそリクナビNEXTには及ばないものの、その分多機能なところが優れています。
+                  例えば、営業職に特化した「@type営業の転職」や女性専用の「女の転職@type」など、特定の領域については姉妹サイトとして別に運営されています。
+                  自分は特定の職種にしか興味ないという場合には、多くの中から探すよりはすでに欲しいものがまとまったものの中から探す方が効率がいいですよね。
+                  また診断に答えて性格の適性から合う求人を教えてくれるパーソナリティマッチング機能や、Facebookメッセンジャーと連携して新着求人を届けてくれる機能など
+                  他にはない機能が目白押しです。</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="tj-ranking__itemDescription"><span class="tj-ranking__itemDescriptionCatch">ここがポイント<i class="pointing up icon"></i></span>
             <ul class="tj-ranking__itemDescriptionList">
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>他サイトと比べて比較的年収が高めの求人が多い</li>
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>第二新卒・未経験歓迎の求人が豊富</li>
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>提携エージェントから求人が紹介されるスカウト機能</li>
+              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>職種やテーマに特化した姉妹サイトを利用して求人検索を簡単に</li>
+              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>様々な切り口で求人を紹介してくれる豊富なレコメンド機能</li>
             </ul><span class="tj-ranking__itemDescriptionCatch">利用者の声<i class="talk outline icon"></i></span>
             <div class="ui comments tj-ranking__itemDescriptionVoice">
               <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
@@ -123,21 +130,24 @@
           </div>
         </div>
         <div class="tj-ranking__item">
-          <h2 class="tj-ranking__itemTitle"><span>第3位</span>リクナビNEXT</h2>
+          <h2 class="tj-ranking__itemTitle"><span>第3位</span>バイトルNEXT</h2>
           <div class="ui items">
             <div class="item"><a class="ui small image"><img class="tj-ranking__itemThumb" src="/dist/image/thumb_baitoru.jpg"></a>
               <div class="content">
                 <div class="description">
-                  <p>転職サイトの代名詞とも言える古くからある大手サイト。9000件以上の求人を掲載し(*2017年3月確認時点)、特に営業職の求人掲載数は他のサイトと比較し 圧倒的に多いです。</p>
+                  <p>バイトルというとバイト探しのサイトを思い浮かべるかもしれませんが、こちらはその中でも正社員求人に特化したサイトです。
+                  コンセプトは「バイトやフリーター、未経験から正社員になる」で、その点、販売・アパレル・フード・サービス系や運輸系などの仕事が多いのが特徴です。
+                  もちろん営業や事務職などのオフィスワーク系もあります。リクナビNEXTや@typeと比べると東名阪以外の地方の地域の求人も比較的多く掲載されているのが特徴です。
+                  リクナビNEXTや@typeだと、地方"でも"募集している求人という形式ですが、バイトルNEXTの場合、地方で"しか"募集していない求人が他サイトより多く見受けられます。
+                  ただし求人検索機能が中心ですので、やりたいことが定まっていない、色々な選択肢から探したい方には少し機能不足かもしれません。</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="tj-ranking__itemDescription"><span class="tj-ranking__itemDescriptionCatch">ここがポイント<i class="pointing up icon"></i></span>
             <ul class="tj-ranking__itemDescriptionList">
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>他サイトと比べて比較的年収が高めの求人が多い</li>
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>第二新卒・未経験歓迎の求人が豊富</li>
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>提携エージェントから求人が紹介されるスカウト機能</li>
+              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>未経験から正社員を希望する人は利用マストな転職サイト</li>
+              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>東名阪以外の地方の求人や、販売・サービス系の求人の掲載数が他のサイトよりも多数</li>
             </ul><span class="tj-ranking__itemDescriptionCatch">利用者の声<i class="talk outline icon"></i></span>
             <div class="ui comments tj-ranking__itemDescriptionVoice">
               <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
@@ -170,21 +180,23 @@
           </div>
         </div>
         <div class="tj-ranking__item">
-          <h2 class="tj-ranking__itemTitle"><span>第4位</span>リクナビNEXT</h2>
+          <h2 class="tj-ranking__itemTitle"><span>第4位</span>はたらいく</h2>
           <div class="ui items">
             <div class="item"><a class="ui small image"><img class="tj-ranking__itemThumb" src="/dist/image/thumb_hatalike.jpg"></a>
               <div class="content">
                 <div class="description">
-                  <p>転職サイトの代名詞とも言える古くからある大手サイト。9000件以上の求人を掲載し(*2017年3月確認時点)、特に営業職の求人掲載数は他のサイトと比較し 圧倒的に多いです。</p>
+                  <p>はたらいくはリクルートジョブズが運営する地域密着型の求人サイトです。バイトルNEXT同様地方の求人が他の転職サイトに比べると多く掲載されています。
+                  地元でそのまま働きたい、UIターンしたんという方には必須のサイトです。未経験歓迎の求人も多く、フリーターやバイトから正社員になりたい方や、
+                  今の仕事環境を変えて異業種で働きたい方などにも非常に向いているサイトです。また会員限定で「らいく」という機能があり、企業から直接興味があることを応募前に示す、
+                  スカウトサービスに近い機能もあります。</p>
                 </div>
               </div>
             </div>
           </div>
           <div class="tj-ranking__itemDescription"><span class="tj-ranking__itemDescriptionCatch">ここがポイント<i class="pointing up icon"></i></span>
             <ul class="tj-ranking__itemDescriptionList">
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>他サイトと比べて比較的年収が高めの求人が多い</li>
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>第二新卒・未経験歓迎の求人が豊富</li>
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>提携エージェントから求人が紹介されるスカウト機能</li>
+              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>地元で働きたい、UIターンしたいといった人のための地域密着型転職サイト</li>
+              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>スカウト機能に似た独自機能「らいく」を利用して応募前に企業の温度感を知ることができる</li>              
             </ul><span class="tj-ranking__itemDescriptionCatch">利用者の声<i class="talk outline icon"></i></span>
             <div class="ui comments tj-ranking__itemDescriptionVoice">
               <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
@@ -215,7 +227,7 @@
             <button class="ui orange button tj-ranking__itemDetailButton">クチコミ・詳細を見る</button>
             <button class="ui teal button tj-ranking__itemSearchButton">リクナビNEXTの求人を見てみる</button>
           </div>
-        </div>              
+        </div>
       </div>
       <div class="l-col l-col-lg-4">
         <div class="tj-topSidebar">
