@@ -50,7 +50,10 @@
               <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>頻繁に開催される転職フェアを通じて、多くの企業と出会える</li>
             </ul><span class="tj-ranking__itemDescriptionCatch">利用者の声<i class="talk outline icon"></i></span>
             <div class="ui comments tj-ranking__itemDescriptionVoice">
-              <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
+              <div class="comment">
+                <a class="avatar tj-ranking__itemDescriptionVoiceThumb">
+                  <span class="tj-ranking__itemDescriptionVoiceAvatar avatar-30w"></span>
+                </a>
                 <div class="content tj-ranking__itemDescriptionVoiceComment"><a class="author">30代 女性 営業職</a>
                   <div class="metadata">
                     <div class="ui star rating" data-rating="4" data-max-rating="5"></div>
@@ -61,7 +64,10 @@
                   </div>
                 </div>
               </div>
-              <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
+              <div class="comment">
+                <a class="avatar tj-ranking__itemDescriptionVoiceThumb">
+                  <span class="tj-ranking__itemDescriptionVoiceAvatar avatar-20m"></span>
+                </a>
                 <div class="content tj-ranking__itemDescriptionVoiceComment"><a class="author">20代 男性 販売職</a>
                   <div class="metadata">
                     <div class="ui star rating" data-rating="5" data-max-rating="5"></div>
@@ -100,7 +106,10 @@
               <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>様々な切り口で求人を紹介してくれる豊富なレコメンド機能</li>
             </ul><span class="tj-ranking__itemDescriptionCatch">利用者の声<i class="talk outline icon"></i></span>
             <div class="ui comments tj-ranking__itemDescriptionVoice">
-              <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
+              <div class="comment">
+                <a class="avatar tj-ranking__itemDescriptionVoiceThumb">
+                  <span class="tj-ranking__itemDescriptionVoiceAvatar avatar-30w"></span>
+                </a>
                 <div class="content tj-ranking__itemDescriptionVoiceComment"><a class="author">30代 女性 営業職</a>
                   <div class="metadata">
                     <div class="ui star rating" data-rating="4" data-max-rating="5"></div>
@@ -111,7 +120,10 @@
                   </div>
                 </div>
               </div>
-              <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
+              <div class="comment">
+                <a class="avatar tj-ranking__itemDescriptionVoiceThumb">
+                  <span class="tj-ranking__itemDescriptionVoiceAvatar avatar-20m"></span>
+                </a>
                 <div class="content tj-ranking__itemDescriptionVoiceComment"><a class="author">20代 男性 販売職</a>
                   <div class="metadata">
                     <div class="ui star rating" data-rating="5" data-max-rating="5"></div>
@@ -150,7 +162,10 @@
               <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>東名阪以外の地方の求人や、販売・サービス系の求人の掲載数が他のサイトよりも多数</li>
             </ul><span class="tj-ranking__itemDescriptionCatch">利用者の声<i class="talk outline icon"></i></span>
             <div class="ui comments tj-ranking__itemDescriptionVoice">
-              <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
+              <div class="comment">
+                <a class="avatar tj-ranking__itemDescriptionVoiceThumb">
+                  <span class="tj-ranking__itemDescriptionVoiceAvatar avatar-30w"></span>
+                </a>
                 <div class="content tj-ranking__itemDescriptionVoiceComment"><a class="author">30代 女性 営業職</a>
                   <div class="metadata">
                     <div class="ui star rating" data-rating="4" data-max-rating="5"></div>
@@ -161,7 +176,10 @@
                   </div>
                 </div>
               </div>
-              <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
+              <div class="comment">
+                <a class="avatar tj-ranking__itemDescriptionVoiceThumb">
+                  <span class="tj-ranking__itemDescriptionVoiceAvatar avatar-20m"></span>
+                </a>
                 <div class="content tj-ranking__itemDescriptionVoiceComment"><a class="author">20代 男性 販売職</a>
                   <div class="metadata">
                     <div class="ui star rating" data-rating="5" data-max-rating="5"></div>
@@ -196,10 +214,13 @@
           <div class="tj-ranking__itemDescription"><span class="tj-ranking__itemDescriptionCatch">ここがポイント<i class="pointing up icon"></i></span>
             <ul class="tj-ranking__itemDescriptionList">
               <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>地元で働きたい、UIターンしたいといった人のための地域密着型転職サイト</li>
-              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>スカウト機能に似た独自機能「らいく」を利用して応募前に企業の温度感を知ることができる</li>              
+              <li><i class="checkmark icon tj-ranking__itemDescriptionListIcon"></i>スカウト機能に似た独自機能「らいく」を利用して応募前に企業の温度感を知ることができる</li>
             </ul><span class="tj-ranking__itemDescriptionCatch">利用者の声<i class="talk outline icon"></i></span>
             <div class="ui comments tj-ranking__itemDescriptionVoice">
-              <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
+              <div class="comment">
+                <a class="avatar tj-ranking__itemDescriptionVoiceThumb">
+                  <span class="tj-ranking__itemDescriptionVoiceAvatar avatar-30w"></span>
+                </a>
                 <div class="content tj-ranking__itemDescriptionVoiceComment"><a class="author">30代 女性 営業職</a>
                   <div class="metadata">
                     <div class="ui star rating" data-rating="4" data-max-rating="5"></div>
@@ -210,7 +231,10 @@
                   </div>
                 </div>
               </div>
-              <div class="comment"><a class="avatar tj-ranking__itemDescriptionVoiceThumb"><img src="/dist/image/wireframes/image.png"></a>
+              <div class="comment">
+                <a class="avatar tj-ranking__itemDescriptionVoiceThumb">
+                  <span class="tj-ranking__itemDescriptionVoiceAvatar avatar-20m"></span>
+                </a>
                 <div class="content tj-ranking__itemDescriptionVoiceComment"><a class="author">20代 男性 販売職</a>
                   <div class="metadata">
                     <div class="ui star rating" data-rating="5" data-max-rating="5"></div>

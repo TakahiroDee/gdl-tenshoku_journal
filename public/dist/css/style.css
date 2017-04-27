@@ -821,6 +821,20 @@
   width: 4em;
   height: 4em;
 }
+#page-ranking .tj-ranking__itemDescriptionVoiceAvatar {
+  display: block;
+  width: 5.6rem;
+  height: 5.6rem;
+}
+#page-ranking .avatar-20m{
+  background: url("/dist/image/human_avatar_20_m.png") no-repeat;
+  background-size: cover;
+}
+#page-ranking .avatar-30w{
+  background: url("/dist/image/human_avatar_30_w.png") no-repeat;
+  background-size: cover;
+}
+
 @media screen and (max-width: 679px) {
   #page-ranking .tj-ranking__itemDescriptionVoiceThumb {
     width: 2.5em;
