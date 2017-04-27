@@ -257,12 +257,12 @@
         <div class="tj-topSidebar">
           <aside class="tj-otherRankingBnr">
             <h2>専門型サービスのランキングはこちら</h2>
-            <div class="tj-otherRankingBnr__item"><a href="#" style="display:block;width: 100%;max-width: 320px;height: 60px;line-height: 60px;background: #dedede;color: #BBB;margin: 0 auto 30px;text-align: center;">女性向け転職サービスランキング</a></div>
-            <div class="tj-otherRankingBnr__item"><a href="#" style="display:block;width: 100%;max-width: 320px;height: 60px;line-height: 60px;background: #dedede;color: #BBB;margin: 0 auto 30px;text-align: center;">IT/Web系転職サービスランキング</a></div>
+            <div class="tj-otherRankingBnr__item"><a class="tj-womanRankingBnr" href="#">女性向け転職サービスランキング</a></div>
+            <div class="tj-otherRankingBnr__item"><a class="tj-itwebRankingBnr" href="#">IT/Web系転職サービスランキング</a></div>
           </aside>
           <aside class="tj-otherRankingBnr">
             <h2>転職エージェントのランキングはこちら</h2>
-            <div class="tj-otherRankingBnr__item"><a href="#" style="display:block;width: 100%;max-width: 320px;height: 60px;line-height: 60px;background: #dedede;color: #BBB;margin: 0 auto 30px;text-align: center;">転職エージェント総合ランキング</a></div>
+            <div class="tj-otherRankingBnr__item"><a class="tj-agentRankingBnr" href="#">転職エージェント総合ランキング</a></div>
           </aside>
           <aside class="tj-knowhow">
             <h2>転職を考えたら</h2>
