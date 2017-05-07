@@ -1,0 +1,44 @@
+extends ./../../layout/_layout.pug
+
+block vars
+  - var meta_keyword            = "転職,求人";
+  - var meta_description        = "転職ジャーナルランキング総合サイトページ";
+  - var title                   = "転職ジャーナル";
+  - var semantic_stylesheet_uri = "/dist/semantic/semantic.css";
+  - var main_stylesheet_uri     = "/dist/css/style.css";
+  - var semantic_script_uri     = "/dist/semantic/semantic.js";
+  - var main_script_uri         = "/dist/js/app.js";
+  - var pageid                  = "p-search";
+  
+block contents
+  .l-wrapper#p-jobinfo
+    header.l-header      
+      include ./../../layout/_header 
+    .l-inner
+      .ui.breadcrumb      
+        .c-breadcrumb.u-lg-ms1rem
+          a.section(href="#") HOME
+          i.right.angle.icon.divider
+          a.section(href="#") 求人をさがす
+          i.right.angle.icon.divider
+          a.section(href="#") XXXの求人一覧
+          i.right.angle.icon.divider
+          span.section 株式会社リクルートライフスタイルの転職/求人
+    .l-main      
+      .l-inner.l-row.l-col       
+        main.l-col-lg-12
+          .c-header
+            h1.c-header__title
+              small 株式会社リクルートライフスタイルの転職/求人情報
+              |《未経験大歓迎》地域限定営業職【ポテンシャル採用！説明会参加で必ず面接◎土日休み◎年休127日】
+            span.c-header__meta
+              small 提供元：リクルートエージェント
+              img(src="/dist/image/cmpny_logo.png")
+          .l-main_lf_1
+            include _article
+          .l-main_lf_2
+            include _asto
+          .l-main_lf_3
+            include _otherjob            
+    footer.l-footer
+      include ./../../layout/_footer

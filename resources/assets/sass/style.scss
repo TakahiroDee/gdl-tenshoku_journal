@@ -1,0 +1,25 @@
+//*********module*********
+@import "modules/config";
+@import "modules/grid";
+@import "modules/header";
+@import "modules/footer";
+@import "modules/component";
+
+//*********page*********
+@import "pages/top";
+@import "pages/site";
+@import "pages/itweb";
+@import "pages/agent";
+@import "pages/search";
+@import "pages/detail";
+@import "pages/jobinfo";
+
+//*********aside*********
+@import "aside/top";
+@import "aside/site";
+@import "aside/itweb";
+@import "aside/agent";
+@import "aside/detail";
+
+//*********utility*********
+@import "utility/utility";

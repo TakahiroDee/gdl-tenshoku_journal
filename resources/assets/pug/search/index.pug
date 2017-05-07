@@ -1,0 +1,42 @@
+extends ./../layout/_layout.pug
+
+block vars
+  - var meta_keyword            = "転職,求人";
+  - var meta_description        = "転職ジャーナルランキング総合サイトページ";
+  - var title                   = "転職ジャーナル";
+  - var semantic_stylesheet_uri = "/dist/semantic/semantic.css";
+  - var main_stylesheet_uri     = "/dist/css/style.css";
+  - var semantic_script_uri     = "/dist/semantic/semantic.js";
+  - var main_script_uri         = "/dist/js/app.js";
+  - var pageid                  = "p-search";
+  
+block contents
+  .l-wrapper#p-search
+    header.l-header      
+      include ./../layout/_header 
+    .l-inner
+      .ui.breadcrumb      
+        .c-breadcrumb.u-lg-ms1rem
+          a.section(href="#") HOME
+          i.right.angle.icon.divider
+          a.section(href="#") 求人をさがす
+          i.right.angle.icon.divider
+          .section 全国の全職種の求人一覧
+    .l-main
+      .l-inner.l-row.l-searchPanel    
+        include _panel
+      .l-inner.l-row.l-col       
+        main.l-col-lg-8
+          h1 全国・全職種の求人一覧
+          .l-main_lf_1
+            include _result
+          .l-main_lf_2
+            include _cassette
+          .l-main_lf_3
+            include _result
+        .l-col-lg-4      
+          .l-aside
+            aside.l-aside_rg_1              
+              include _sidepanel
+    footer.l-footer
+      include ./../layout/_footer

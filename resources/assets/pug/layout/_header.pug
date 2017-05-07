@@ -1,0 +1,20 @@
+.l-header__upper
+  .l-inner
+    h1.c-logo
+      a.c-logo__link(href="/")
+        img(src="/dist/image/journal_logo.png")
+.l-header__lower
+  .l-inner
+    nav.b-gnav
+      ul.b-gnav__list
+        li.b-gnav__item.u-dn
+          a.b-gnav__link(href="/" class=pageid === "p-top" ? "is-current" : "") HOME
+        li.b-gnav__item
+          if pageid !== "p-top" && pageid !== "p-search"
+            a.b-gnav__link.is-current(href="/ranking/agent/") 転職サイト・Agent
+          else
+            a.b-gnav__link(href="/ranking/agent/") 転職サイト・Agent
+        li.b-gnav__item
+          a.b-gnav__link(href="/search/" class=pageid === "p-search" ? "is-current" : "") 求人をさがす
+        li.b-gnav__item
+          a.b-gnav__link(href="#") 転職を考えたら

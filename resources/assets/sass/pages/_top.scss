@@ -1,0 +1,368 @@
+//*********************************************
+// * Layout
+//*********************************************
+#p-top{
+  //****************************
+  // common layout
+  //****************************
+  @media #{$more_than_large}{
+    .l-main{
+      margin-bottom: 5.0rem;
+    }
+  }
+  @media #{$less_than_large}{
+    .l-main{
+      margin:0 1.0rem;
+    }
+  }
+  .l-section_title{
+    color: #D7BF9A;
+    font-size: 1.6rem;
+    font-weight: normal;
+    margin-bottom: 3.0rem;
+  }
+  @media #{$less_than_medium}{
+    .l-section_title{
+      font-size: 1.4rem;
+    }
+  }
+  .l-main_lf_1,.l-main_lf_2,.l-main_lf_3,.l-main_lf_4{
+    margin: 3.0rem 0 5.0rem;
+  }
+
+  @media #{$more_than_large}{
+    .l-col-lg-8{
+      margin-right: 1.0rem;
+    }
+    .l-col-lg-4{
+      margin-left: 1.0rem;
+    }
+  }
+  //****************************
+  // l-main_lf_2
+  //****************************
+  .l-main_lf_2 .c-feature__item{
+    margin-bottom: 4.5rem;
+  }
+
+  //****************************
+  // l-main_lf_4
+  //****************************
+  .l-search_by{
+    margin-bottom: 3.0rem;
+  }
+  .l-search_by h3{
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #999;
+  }
+  @media #{$more_than_small}{
+    .c-search__list > .l-row{
+      margin-left: -1.3rem;
+      margin-bottom: 2.0rem;
+    }
+  }
+  @media #{$less_than_small}{
+    .l-row.l-md-row.is-sp{
+      margin-bottom: 0;
+      overflow: hidden;
+    }
+  }
+}
+
+
+//*********************************************
+// * Module
+//*********************************************
+
+//****************************
+// pickup
+//****************************
+#p-top{
+  .c-pickup__item{
+    display: block;
+    width: 100%;
+    height: 30.0rem;
+    position: relative;
+  }
+  @media #{$more_than_small}{
+    .c-pickup__item{
+      height: 30.0rem;
+    }
+  }
+  @media #{$less_than_small}{
+    .c-pickup__item{
+      height: 20.0rem;
+    }
+  }
+  .c-pickup__site{
+    background: url('/dist/image/73807901.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .c-pickup__agent{
+    background: url('/dist/image/99302690@sq.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .c-pickup__title,.c-pickup__title:hover{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    padding: 1.0rem;
+    line-height: 1.6;
+    color: #FFF;
+    background: rgba(0,0,0,0.2);
+    box-sizing: border-box;
+  }.c-pickup__title:hover{
+    background: rgba(0,0,0,0.3);
+  }
+}
+
+
+//****************************
+// feature
+//****************************
+#p-top{
+  .c-feature__item:hover{
+    opacity: 0.8;
+  }
+  .c-feature__link{
+    color: $base_link_color;
+  }
+  .c-feature__lead{
+    font-size: 1.4rem;
+    font-weight: normal;
+  }
+  .c-feature__excerpt{
+    color: #999;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+}
+
+//****************************
+// ranking
+//****************************
+#p-top{
+  .c-ranking__item:hover{
+    opacity: 0.8;
+  }
+  @media #{$less_than_large}{
+    .c-ranking__item{
+      margin-bottom: 3.0rem;
+    }
+  }
+  .c-ranking__thumb{
+    width: 100%;
+    height: 13.0rem;
+    line-height: 13.0rem;
+  }
+  .c-ranking__site{
+    background: url('/dist/image/93801880.jpg');
+    background-size: cover;
+  }
+  @media #{$less_than_large}{
+    .c-ranking__site{
+      background-position-y: 30%;
+    }
+  }
+  .c-ranking__agent{
+    background: url('/dist/image/99302690.jpg');
+    background-size: cover;
+  }
+  .c-ranking__itweb{
+    background: url('/dist/image/100716472.jpg');
+    background-size: cover;
+  }
+  .c-ranking__haken{
+    background: url('/dist/image/102617459.jpg');
+    background-size: cover;
+  }
+  @media #{$less_than_large}{
+    .c-ranking__haken{
+      background-position-y: 20%;
+    }
+  }
+  .c-ranking__link{
+    display: block;
+    color: $base_text_color;
+  }
+  @media #{$more_than_large}{
+    .c-ranking__link{
+      padding-left: 1.0rem;
+    }
+  }
+  @media #{$less_than_large}{
+    .c-ranking__link{
+      padding: 0.5rem;
+    }
+  }
+  .c-ranking__lead{
+    font-size: 1.4rem;
+    font-weight: normal;
+  }
+  .c-ranking__excerpt{
+    font-size: 1.2rem;
+    color: #999;
+    line-height: 1.6;
+  }
+}
+
+
+//****************************
+// search
+//****************************
+#p-top{
+  .c-search__item{
+    height: 7.0rem;
+    text-align: center;
+  }
+  .c-search__item:hover{
+    opacity: 0.8;
+  }
+  @media #{$more_than_small}{
+    .c-search__item{
+      margin-left: 1.3rem;
+    }
+  }
+  @media #{$less_than_small}{
+    .c-search__item{
+      float: left;
+      width: 50%;
+      margin-bottom: 1.0rem;
+    }
+  }
+  .c-search__link{
+    color: #FFF;
+    display: block;
+    height: 100%;
+    background: #DEDEDE;
+    box-sizing: border-box;
+  }
+  .c-search__meta{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+  .c-search__itweb{
+    background: url('/dist/image/107797389.jpg');
+    background-size: cover;
+  }
+  .c-search__creative{
+    background: url('/dist/image/77940519.jpg');
+    background-size: cover;
+  }
+  .c-search__bkoffice{
+    background: url('/dist/image/114337165.jpg');
+    background-size: cover;
+  }
+  .c-search__sales{
+    background: url('/dist/image/53278734.jpg');
+    background-size: cover;
+  }
+  .c-search__medical{
+    background: url('/dist/image/98753963.jpg');
+    background-size: cover;
+  }
+  .c-search__food{
+    background: url('/dist/image/93086529.jpg');
+    background-size: cover;
+  }
+  .c-search__logi{
+    background: url('/dist/image/105663084.jpg');
+    background-size: cover;
+  }
+  .c-search__care{
+    background: url('/dist/image/104466559.jpg');
+    background-size: cover;
+  }
+  .c-search__marke{
+    background: url('/dist/image/97033329.jpg');
+    background-size: cover;
+  }
+  .c-search__edu{
+    background: url('/dist/image/82156814.jpg');
+    background-size: cover;
+  }
+  .c-search__finance{
+    background: url('/dist/image/96309663.jpg');
+    background-size: cover;
+  }
+  .c-search__estate{
+    background: url('/dist/image/92939777.jpg');
+    background-size: cover;
+  }
+  .c-search__service{
+    background: url('/dist/image/97846215.jpg');
+    background-size: cover;
+  }
+  .c-search__prod{
+    background: url('/dist/image/93077553.jpg');
+    background-size: cover;
+  }
+  .c-search__prof{
+    background: url('/dist/image/118957053.jpg');
+    background-size: cover;
+  }
+  .c-search__other{
+    background: rgba(0,0,0,0.7);
+  }
+  .c-search__hokkaido{
+    background: url('/dist/image/map-hokkaido.jpg') #EEE no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #666;
+  }
+  .c-search__tohoku{
+    background: url('/dist/image/map-tohoku.jpg') #EEE no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #666;
+  }
+  .c-search__kanto{
+    background: url('/dist/image/map-kanto.jpg') #EEE no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #666;
+  }
+  .c-search__tokai{
+    background: url('/dist/image/map-tokai.jpg') #EEE no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #666;
+  }
+  .c-search__hokushin{
+    background: url('/dist/image/map-hokushin.jpg') #EEE no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #666;
+  }
+  .c-search__kansai{
+    background: url('/dist/image/map-kansai.jpg') #EEE no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #666;
+  }
+  .c-search__chushikoku{
+    background: url('/dist/image/map-chushikoku.jpg') #EEE no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #666;
+  }
+  .c-search__kyushu{
+    background: url('/dist/image/map-kyushu.jpg') #EEE no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: #666;
+  }
+  @media #{$less_than_small}{
+    .c-search__list .c-search__item:nth-of-type(2n) .c-search__link{
+      margin-left: 0.5rem;
+    }
+    .c-search__list .c-search__item:first-child .c-search__link,
+    .c-search__list .c-search__item:nth-of-type(2n+1) .c-search__link{
+      margin-right: 0.5rem;
+    }
+  }
+}

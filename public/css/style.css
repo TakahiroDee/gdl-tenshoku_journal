@@ -672,7 +672,6 @@ footer {
   line-height: 1.6;
   color: #FFF;
   background: rgba(0, 0, 0, 0.2);
-  box-sizing: border-box;
 }
 
 #p-top .c-pickup__title:hover {

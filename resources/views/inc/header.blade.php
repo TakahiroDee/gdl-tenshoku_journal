@@ -1,15 +1,20 @@
 <header class="l-header">
-  <div class="l-inner">
-    <h1 class="tj-logo"><a class="tj-logo__link" href="{{ action('TopController@index') }}">転職ジャーナル<span class="tj-logo__caption">Tenshoku Journal</span></a></h1>
-  </div>
-  <nav class="tj-gnav">
+  <div class="l-header__upper">
     <div class="l-inner">
-      <ul class="tj-gnav__menu">
-        <li class="tj-gnav__item um-dn"><a class="tj-gnav__link" href="{{ action('TopController@index') }}">HOME</a></li>
-        <li class="tj-gnav__item"><a class="tj-gnav__link" href="{{ action('RankingController@index') }}">転職サイト・Agent</a></li>
-        <li class="tj-gnav__item"><a class="tj-gnav__link" href="{{ action('SearchController@index') }}">求人をさがす</a></li>
-        <li class="tj-gnav__item"><a class="tj-gnav__link" href="{{ url('knowhow')}}">転職を考えたら</a></li>
-      </ul>
+      <h1 class="c-logo"><a class="c-logo__link" href="/"><img src="/dist/image/journal_logo.png"></a></h1>
     </div>
-  </nav>
+  </div>
+  <div class="l-header__lower">
+    <div class="l-inner">
+      <nav class="b-gnav">
+        <ul class="b-gnav__list">
+          <li class="b-gnav__item u-dn"><a class="b-gnav__link" href="/">HOME</a></li>
+          <li class="b-gnav__item"><a class="b-gnav__link" href="/ranking/agent/">転職サイト・Agent</a>
+          </li>
+          <li class="b-gnav__item"><a class="b-gnav__link" href="/search/">求人をさがす</a></li>
+          <li class="b-gnav__item"><a class="b-gnav__link" href="/knowhow">転職を考えたら</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>

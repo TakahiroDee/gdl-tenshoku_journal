@@ -1,0 +1,98 @@
+//*********************************************
+// * Layout
+//*********************************************
+
+//- logo
+footer{
+  background: #333;
+  color: #FFF;
+}
+@media #{$more_than_small}{
+  footer{
+    padding: 3.5rem 0;
+  }
+}
+@media #{$less_than_small}{
+  footer{
+    padding: 1.5rem 0;
+  }
+}
+@media #{$less_than_large}{
+  footer{
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+  }
+}
+
+@media #{$more_than_small}{
+  .l-footer-logo{
+    margin-bottom: 3.5rem;
+  }
+}
+@media #{$less_than_small}{
+  .l-footer-logo{
+    margin-bottom: 1.5rem;
+  }
+}
+
+//**********************************
+// module
+//**********************************
+.c-footer{
+  font-size: 1.1rem;
+  width: 100%;
+}
+@media #{$more_than_large}{
+  .c-footer{
+    display:flex;
+  }
+}
+@media #{$more_than_large}{
+  .c-footer__item{
+    padding: 0 1.5rem;
+  }
+}
+@media #{$less_than_large}{
+  .c-footer__item{
+    margin-bottom: 2.0rem;
+  }
+}
+.c-footer__itemHeader{
+  font-size: 1.4rem;
+}
+@media #{$more_than_large}{
+  .c-footer li[data-id="footer-searchby-job"]{
+    padding-right: 1.5rem;
+  }
+}
+@media #{$more_than_large}{
+  .c-footer li[data-id="footer-searchby-area"]{
+    padding-left: 1.5rem;
+  }
+}
+@media #{$less_than_large}{
+  .c-footer li[data-id="footer-searchby-job"]{
+    padding-right: 0.5rem;
+  }
+  .c-footer li[data-id="footer-searchby-area"]{
+    padding-left: 0.5rem;
+  }
+  .c-footer li[data-id="footer-searchby-job"],
+  .c-footer li[data-id="footer-searchby-area"]
+  {
+    width: 50%;
+  }
+}
+@media #{$more_than_large}{
+  .c-footer p[data-id="footer-knowhow"]{
+    height: 20%;
+  }
+}
+.c-footer a{
+  display: block;
+  line-height: 2;
+  color: #949697;
+  &:hover{
+    color: #FFF;
+  }
+}

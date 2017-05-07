@@ -1,0 +1,26 @@
+.c-searchPanel
+  table.ui.compact.celled.definition.table
+    tbody
+      tr
+        td 職種
+        td
+          button.ui.button 選択する
+          ul.c-searchPanel__selectedlist
+            li 選択してください
+      tr
+        td 勤務地
+        td
+          button.ui.button 選択する
+          ul.c-searchPanel__selectedlist
+            li 選択してください
+      tr
+        td キーワード
+        td
+          .ui.icon.input
+            input(type="text" placeholder="キーワードを入力してください")
+            i.search.icon
+    tfoot.full-width
+      tr
+        th(colspan="12")
+          .ui.small.button.grey 条件をクリア
+          .ui.small.button.olive この条件で検索する

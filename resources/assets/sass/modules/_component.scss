@@ -1,0 +1,250 @@
+//****************************
+// logo
+//****************************
+.c-logo{
+  font-weight: normal;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0.5rem 0;
+  display: inline-block;
+}
+.c-logo__link,.c-logo__link:hover{
+  display: inherit;
+  color: #FFF;
+  font-size: 1.6rem;
+}
+@media #{$more_than_small}{
+  .c-logo__link img{
+    height: 3.0rem;
+    width: auto;
+  }
+}
+@media #{$less_than_small}{
+  .c-logo__link img{
+    height: 2.6rem;
+    width: auto;
+  }
+}
+
+
+//****************************
+// voice
+//****************************
+#p-agent,#p-site,#p-itweb,#p-haken,#p-detail{
+  .c-voices{
+    font-size: 1.4rem;
+  }
+  .c-voices .ui.raised.segment{
+    font-size: 100%;
+    margin:2.5rem 0;
+  }  
+  .c-voice__author{
+    display: flex;
+    align-items: center;
+  }
+  .c-voice__avatar{
+    width: 4em;
+    height: 4em;
+    float: none;
+  }
+  .c-voice__avatar20m{
+    background: url('/dist/image/human_avatar_20_m.png') no-repeat;
+    background-size: contain;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .c-voice__avatar30m{
+    background: url('/dist/image/human_avatar_30_m.png') no-repeat;
+    background-size: contain;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .c-voice__avatar40m{
+    background: url('/dist/image/human_avatar_40_m.png') no-repeat;
+    background-size: contain;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .c-voice__avatar20w{
+    background: url('/dist/image/human_avatar_20_w.png') no-repeat;
+    background-size: contain;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .c-voice__avatar30w{
+    background: url('/dist/image/human_avatar_30_w.png') no-repeat;
+    background-size: contain;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .c-voice__avatar40w{
+    background: url('/dist/image/human_avatar_40_w.png') no-repeat;
+    background-size: contain;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .c-voice__meta{
+    padding: 0 1.5rem;
+  }
+  .c-voice__comment{
+    margin: 1.5rem 0 0;
+  }
+  .c-voice__comment .text{
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: $base_text_color;
+  }
+}
+
+
+//****************************
+// double button
+//****************************
+#p-agent,#p-site,#p-itweb,#p-haken,#p-detail,#p-jobinfo{
+  .c-double__buttons{
+    margin: 5.0em 0 3.0em;
+  }
+  @media #{$more_than_large}{
+    .c-double__buttons{
+      display: flex;
+    }
+    .c-double__buttons .c-button{
+      width: 50%;
+      margin: 0 2.0rem;
+    }
+  }
+  .c-button{
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: normal;
+    padding-top: 2.0rem;
+    padding-bottom: 2.0rem;
+    margin-bottom: 2.0rem;
+    box-sizing: border-box;
+  }
+}
+
+//****************************
+// single button
+//****************************
+#p-agent,#p-site,#p-itweb,#p-haken,#p-detail,#p-jobinfo{
+  .c-singlebutton{
+    width: 100%;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    font-weight: normal;
+    padding-top: 2.0rem;
+    padding-bottom: 2.0rem;
+    box-sizing: border-box;
+  }
+}
+
+//****************************
+// hero
+//****************************
+.c-hero{
+  width: 100%;
+  height: 35.0rem;
+  color: #FFF;
+  position: relative;
+  display: block;
+}
+@media #{$less_than_small}{
+  .c-hero{
+    height: 26.0rem;
+  }
+}
+
+
+//****************************
+// breadcrumb
+//****************************
+#p-site,#p-itweb,#p-agent{
+  .c-breadcrumb{
+    padding: 1.0rem 0;
+    font-size: 1.2rem;
+  }
+  .c-breadcrumb a,.c-breadcrumb span{
+    line-height: 1.6;
+  }
+  .c-breadcrumb a{
+    color: #FFF;
+    text-decoration: underline;
+  }
+  .c-breadcrumb i{
+    color: #FFF;
+  }
+}
+
+#p-search,#p-detail,#p-jobinfo{
+  .c-breadcrumb{
+    padding: 1.0rem 0;
+    font-size: 1.2rem;
+  }
+  .c-breadcrumb a,.c-breadcrumb span{
+    line-height: 1.6;
+  }
+  .c-breadcrumb a{
+    color: #{$base_theme_color};
+    text-decoration: underline;
+  }
+  .c-breadcrumb i{
+    color: #{$base_theme_color};
+  }
+  .c-breadcrumb span{
+    color: #666;
+  }
+}
+
+
+//****************************
+// searchCassette
+//****************************
+#p-search,#p-jobinfo{
+  .c-searchCassette{
+    margin-bottom: 3.0rem;
+  }
+  .c-searchCassette h2{
+    color: #666;
+  }
+  .c-searchCassette__lead .c-searchCassette__link{
+    font-size: 1.2rem;
+  }
+  .c-searchCassette table{
+    font-size: 1.2rem;
+  }
+  @media #{$more_than_medium}{
+    .c-searchCassette table th{
+      background: #F8F8F8;
+      padding-left: 1em;
+    }
+  }
+  .c-searchCassette table tr:nth-of-type(2) th{
+    border-top: 1px solid rgba(34, 36, 38, 0.1);
+    border-bottom: 1px solid rgba(34, 36, 38, 0.1);
+  }
+  .c-searchCassette__buttons{
+    display: flex;
+    margin: 3.0rem auto 1.0rem;
+  }
+  .c-searchCassette__button{
+    width: 50%;
+    margin: 0 0.5rem;
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+  .c-searchCassette__button .c-searchCassette__link{
+    color: #FFF;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 1.5rem;
+  }
+}

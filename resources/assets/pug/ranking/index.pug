@@ -1,0 +1,37 @@
+extends ./../layout/_layout.pug
+
+block vars
+  - var meta_keyword            = "転職,求人";
+  - var meta_description        = "転職ジャーナルランキング総合サイトページ";
+  - var title                   = "転職ジャーナル";
+  - var semantic_stylesheet_uri = "/dist/semantic/semantic.css";
+  - var main_stylesheet_uri     = "/dist/css/style.css";
+  - var semantic_script_uri     = "/dist/semantic/semantic.js";
+  - var main_script_uri         = "/dist/js/app.js";
+  - var pageid                  = "p-ranking";
+
+block contents
+  .l-wrapper#p-ranking
+    header.l-header      
+      include ./../layout/_header
+    .l-main
+      .l-inner.l-row
+        main.l-col-lg-8
+          .l-main_lf_1
+            //- include _pickup
+          .l-main_lf_2
+            //- include _feature
+          .l-main_lf_3
+            //- include _ranking
+          .l-main_lf_4
+            //- include _search
+        .l-col-lg-4      
+          .l-aside
+            aside.ui.card.c-newarrival.l-aside_rg_1              
+              //- include _newarrival
+            aside.l-aside_rg_2
+              //- include _knowhow
+            aside.l-aside_rg_3
+              //- include _about
+    footer.l-footer
+      include ./../layout/_footer

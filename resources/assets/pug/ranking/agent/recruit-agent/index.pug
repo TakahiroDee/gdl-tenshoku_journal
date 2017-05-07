@@ -1,0 +1,69 @@
+extends ./../../../layout/_layout.pug
+
+block vars
+  - var meta_keyword            = "転職,求人";
+  - var meta_description        = "転職ジャーナルランキング総合サイトページ";
+  - var title                   = "転職ジャーナル";
+  - var semantic_stylesheet_uri = "/dist/semantic/semantic.css";
+  - var main_stylesheet_uri     = "/dist/css/style.css";
+  - var semantic_script_uri     = "/dist/semantic/semantic.js";
+  - var main_script_uri         = "/dist/js/app.js";
+  - var pageid                  = "p-agent";
+
+block contents
+  .l-wrapper#p-detail
+    header.l-header      
+      include ./../../../layout/_header
+    .l-main
+      .l-inner
+        .ui.breadcrumb
+          .l-inner
+            .c-breadcrumb
+              a.section(href="#") HOME
+              i.right.angle.icon.divider
+              a.section(href="#") 転職サイト・Agent
+              i.right.angle.icon.divider
+              a.section(href="#") 転職サイト総合ランキング
+              i.right.angle.icon.divider
+              span リクルートエージェントの評判・口コミ
+      .l-inner.l-row
+        main.l-col-lg-8
+          .l-main_lf_1
+            article.c-detail
+              h1
+                span 第１位
+                |リクルートエージェント
+              .c-block.ui.items
+                .item
+                  .ui.small.image
+                    img(src="/dist/image/tmb_next.jpg")
+                  .content
+                    .description
+                      p.
+                        リクナビNEXTを運営しているリクルートキャリアによる言わずと知れた転職成功実績No.1の転職エージェント。
+                        その特徴は何と言っても 1977年からおよそ40年という長い歴史とその中で30万人以上の転職成功者を出してきた実績、
+                        また圧倒的な求人数の３点です。 求人数はサイト上で公開しているもので約3万件、サイト上に非公開のもので約14万件と
+                        17万件もの求人を取り扱っています<small>（＊）</small>。 転職サイトと異なり、転職エージェントの場合、
+                        自分の希望は伝えることはできますが前提は自分で求人を検索するのではなく、 あくまでキャリアアドバイザーが
+                        提案してくる求人に応募するかどうかなので、求人数が圧倒的に多いということはそれだけ選択肢の幅が広がります。 
+                        リクルートエージェントは転職エージェントの中でも登録マストなエージェントの一つです。
+              .ui.ordered.list
+                a.item(href="#bs-1") リクルートエージェントのメリットと口コミ
+                a.item(href="#bs-2") リクルートエージェントのデメリットと口コミ
+                a.item(href="#bs-3") 掲載している求人について
+                a.item(href="#bs-4") 総論・どういう人におすすめか
+              section                
+                .c-block
+                  include _block__section1
+                  include _block__section2
+                  include _block__section3
+                  include _block__section4
+                  include _block__section5                  
+        .l-col-lg-4      
+          .l-aside
+            aside.l-aside_rg_1
+              include _otherrank
+            aside.l-aside_rg_2
+              include _knowhow              
+    footer.l-footer
+      include ./../../../layout/_footer                  

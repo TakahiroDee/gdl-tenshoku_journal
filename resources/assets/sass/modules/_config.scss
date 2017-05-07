@@ -1,0 +1,17 @@
+// base color
+$base_link_color  : #666;
+$base_theme_color : #00ACC1;
+$base_text_color  : #666;
+
+// media query
+
+$more_than_large  : "screen and (min-width:960px)";
+$less_than_large  : "screen and (max-width:959px)";
+$more_than_medium : "screen and (min-width:768px)";
+$less_than_medium : "screen and (max-width:767px)";
+$more_than_small  : "screen and (min-width:680px)";
+$less_than_small  : "screen and (max-width:679px)";
+
+$from_medium_to_large : "screen and (min-width: 768px) and (max-width: 959px)";
+$from_small_to_medium : "screen and (min-width: 680px) and (max-width: 767px)";
+$from_small_to_large  : "screen and (min-width: 680px) and (max-width: 959px)";

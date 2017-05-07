@@ -1,0 +1,6 @@
+.u-p05em{ padding-top: 0.5em;}
+.u-p1em{ padding-top: 1em;}
+.u-p2em{ padding-top: 2em;}
+@media #{$less_than_large}{
+  .u-lg-ms1rem{ margin-left: 1.0rem; margin-right: 1.0rem;}
+}

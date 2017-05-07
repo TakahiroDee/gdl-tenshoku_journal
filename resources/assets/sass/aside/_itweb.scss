@@ -1,0 +1,57 @@
+//*********************************************
+// * Module
+//*********************************************
+
+//****************************
+// othersite
+//****************************
+#p-itweb{
+  .c-othersite__item{
+    max-width: 32.0rem;
+    margin: 3.0rem auto;
+    text-align: center;
+  }
+  .c-othersite__link{
+    color: #FFF;
+    display: block;
+    height: 6.0rem;
+    line-height: 6.0rem;
+    margin: 0 auto;
+  }
+  .c-othersite__woman{
+    background: url('/dist/image/as_88453696.jpg') no-repeat;
+    background-size: cover;
+    background-position-y: 30%;
+  }
+  .c-othersite__itweb{
+    background: url('/dist/image/as_100716472.jpg') no-repeat;
+    background-size: cover;
+  }
+  .c-othersite__agent{
+    background: url('/dist/image/as_99302690.jpg') no-repeat;
+    background-size: cover;
+  }
+  .c-othersite__woman:hover,.c-othersite__itweb:hover,.c-othersite__agent:hover{
+    opacity: 0.8;
+  }
+}
+
+//****************************
+// knowhow
+//****************************
+#p-itweb{
+  .c-knowhow__item{
+    margin-bottom: 2.5rem;
+  }
+  .c-knowhow__item:hover{
+    opacity: 0.8;
+  }
+  .c-knowhow__link{
+    display: flex;
+  }
+  .c-knowhow__lead{
+    padding-left: 1.0rem;
+    font-size: 1.2rem;
+    color: $base_text_color;
+  }
+}

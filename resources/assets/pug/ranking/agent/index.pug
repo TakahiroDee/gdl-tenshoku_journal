@@ -1,0 +1,42 @@
+extends ./../../layout/_layout.pug
+
+block vars
+  - var meta_keyword            = "転職,求人";
+  - var meta_description        = "転職ジャーナルランキング総合サイトページ";
+  - var title                   = "転職ジャーナル";
+  - var semantic_stylesheet_uri = "/dist/semantic/semantic.css";
+  - var main_stylesheet_uri     = "/dist/css/style.css";
+  - var semantic_script_uri     = "/dist/semantic/semantic.js";
+  - var main_script_uri         = "/dist/js/app.js";
+  - var pageid                  = "p-agent";
+
+block contents
+  .l-wrapper#p-agent
+    header.l-header      
+      include ./../../layout/_header
+    .l-hero
+      .c-hero.c-hero__site
+        .l-inner
+          .ui.breadcrumb            
+            .c-breadcrumb
+              a.section(href="#") HOME
+              i.right.angle.icon.divider
+              a.section(href="#") 転職サイト・Agent
+              i.right.angle.icon.divider
+              .section 転職サイト総合ランキング
+          h1.c-hero__title 結局どのサイトがいいの？みんなの口コミから選ぶ転職サイト総合ランキング              
+    .l-main
+      .l-inner.l-row
+        main.l-col-lg-8
+          .l-main_lf_1
+            include _headline
+          .l-main_lf_2
+            include _ranking
+        .l-col-lg-4      
+          .l-aside
+            aside.l-aside_rg_1              
+              include _otherrank
+            aside.l-aside_rg_2
+              include _knowhow              
+    footer.l-footer
+      include ./../../layout/_footer                  

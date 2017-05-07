@@ -1,0 +1,105 @@
+//*********************************************
+// * Layout
+//*********************************************
+
+.l-aside{
+  margin: 0 auto;
+  width: 100%;
+}
+.l-aside h2{
+  font-size: 1.4rem;
+  font-weight: normal;
+  border-bottom: 1px solid #DDD;
+  margin-bottom: 2.8rem;
+}
+@media #{$more_than_large}{
+  .l-aside{
+    width: 30.0rem;
+  }
+}
+.l-aside_rg_1,#p-top .l-aside_rg_1{
+  margin: 3.0rem 0 5.0rem;
+  width: 100%;
+}
+#p-search .l-aside_rg_1{
+  margin: 6.0rem 0 5.0rem;
+  width: 100%;
+}
+@media #{$more_than_large}{
+  #p-top .l-aside_rg_1{
+    height: 30.0rem;
+  }
+}
+.l-aside_rg_2{
+  margin: 3.0rem 0 5.0rem;
+}
+.l-aside_rg_3{
+  margin: 3.0rem 0 5.0rem;
+}
+
+
+//*********************************************
+// * Module
+//*********************************************
+
+//****************************
+// newarrival
+//****************************
+#p-top{
+  .c-newarrival__title{
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: $base_text_color;
+  }
+  .c-newarrival__list:hover{
+    opacity: 0.8;
+  }
+  .c-newarrival__item{
+    color: $base_text_color;
+    display: inline;
+    font-weight: normal;
+    font-size: 1.2rem;
+    line-height: 2;
+  }
+  .extra.content{
+    font-size: 1.2rem;
+  }
+  .c-newarrival__count{
+    font-size: 1.6rem;
+    line-height: 1.6;
+    font-weight: bold;
+  }
+}
+
+
+//****************************
+// knowhow
+//****************************
+#p-top{
+  .c-knowhow__item{
+    margin-bottom: 2.5rem;
+  }
+  .c-knowhow__item:hover{
+    opacity: 0.8;
+  }
+  .c-knowhow__link{
+    display: flex;
+  }
+  .c-knowhow__lead{
+    padding-left: 1.0rem;
+    font-size: 1.2rem;
+    color: $base_text_color;
+  }
+}
+
+
+//****************************
+// about
+//****************************
+#p-top{
+  .c-about__content{
+    font-size: 1.1rem;
+    color: #999;
+    line-height: 1.6;
+  }
+}
