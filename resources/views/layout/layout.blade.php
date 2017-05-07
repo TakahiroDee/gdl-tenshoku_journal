@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta keywrod="@yield('meta-keyword')">
+    <meta keyword="@yield('meta-keyword')">
     <meta description="@yield('meta-description')">
     <title>転職ジャーナル @yield('title')</title>
     <link rel="stylesheet" href="/dist/semantic/semantic.css">
