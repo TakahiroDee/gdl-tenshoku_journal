@@ -59,7 +59,24 @@
   }
 }
 
-.fixed .b-gnav__link{
+.b-gnav__link.is-current{
+  text-decoration: underline;
+}
+
+
+
+//**********************************
+// state
+//**********************************
+.is-fixed{
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+.is-fixed.b-gnav{
+  background: rgba(252,252,252,0.8);
+}
+.is-fixed .b-gnav__link{
   color: #00ACC1;
   display: block;
   opacity: 0.8;
@@ -69,8 +86,4 @@
     display: block;
     text-decoration: underline;
   }
-}
-
-.b-gnav__link.is-current{
-  text-decoration: underline;
 }

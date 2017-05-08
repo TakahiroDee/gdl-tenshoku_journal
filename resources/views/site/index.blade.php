@@ -37,19 +37,15 @@
         </div>
       </div>
       <div class="l-main_lf_2">
+
+        @foreach($rankings as $ranking)
         <div class="c-ranking">
-          <h2 class="c-ranking__title"><span>第１位</span>リクナビNEXT</h2>
+          <h2 class="c-ranking__title"><span>第{{ $ranking->rank }}位</span>{{ $ranking->service_name }}</h2>
           <div class="ui items c-ranking__summary">
-            <div class="item"><div class="ui small image"><img class="c-ranking__thumb" src="/dist/image/tmb_next.jpg"></div>
+            <div class="item"><div class="ui small image"><img class="c-ranking__thumb" src="/dist/image/{{ $ranking->thumbnail_path }}"></div>
               <div class="content">
                 <div class="description">
-                  <p>
-                    リクルートキャリアが運営する言わずと知れた国内最大級の転職サイト。新卒の就職活動では「リクナビ」を使っていたという方も多いのではないでしょうか。
-                    そのリクナビの転職者向けサービスが「リクナビNEXT」です。特徴は何と言っても掲載している求人数の数。常時7,000〜8,000件程度の求人が掲載されており、
-                    その数は他の転職サイトを寄せ付けません。頻繁に更新される業界やこだわり条件ごとの求人特集や、レジュメ・職務経歴書と一緒にスカウトサービスに登録すると、
-                    サイトに非公開の求人が多数オファーの形式で届くのも魅力です。また最近ではフェアなどのイベントにも力を入れており、名古屋・大阪・東京・福岡など
-                    主要都市圏で頻繁に転職フェアを開催しています。転職活動を始めるならMUSTでチェックすべきサイトです。
-                  </p>
+                  <p>{{ $ranking->summary }}</p>
                 </div>
               </div>
             </div>
@@ -57,9 +53,19 @@
           <div class="c-ranking__description">
             <div class="c-ranking__section"><span class="c-ranking__catch">ここがポイント<i class="pointing up icon"></i></span>
               <ul class="c-ranking__points">
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>他サイトと比べて圧倒的No.1の求人数なので、選択肢を狭めないためにも登録はマスト！</li>
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>提携エージェントから求人が紹介されるスカウト機能と非公開求人</li>
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>頻繁に開催される転職フェアを通じて、多くの企業と出会える</li>
+
+                @if(isset($ranking->positive_point1))
+                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>{{ $ranking->positive_point1 }}</li>
+                @endif
+
+                @if(isset($ranking->positive_point2))
+                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>{{ $ranking->positive_point2 }}</li>
+                @endif
+
+                @if(isset($ranking->positive_point3))
+                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>{{ $ranking->positive_point3 }}</li>
+                @endif
+
               </ul>
             </div>
             <div class="c-ranking__section"><span class="c-ranking__catch">利用者の声<i class="talk outline icon"></i></span>
@@ -72,7 +78,7 @@
                           <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                         </div>
                       </div>
-                    </div>
+                    </div>                                      
                     <div class="content c-voice__comment">
                       <div class="text">
                         転職しようと思い初めに登録したサービスがリクナビNEXTでした。
@@ -108,215 +114,8 @@
             </div>
           </div>
         </div>
-        <div class="c-ranking">
-          <h2 class="c-ranking__title"><span>第２位</span>@type</h2>
-          <div class="ui items c-ranking__summary">
-            <div class="item"><div class="ui small image"><img class="c-ranking__thumb" src="/dist/image/tmb_type.jpg"></div>
-              <div class="content">
-                <div class="description">
-                  <p>
-                    山崎育三郎さんのCMでお馴染みの、こちらも最大級の転職サイト@typeです。掲載求人数こそリクナビNEXTには及ばないものの、その分多機能なところが優れています。
-                    例えば、営業職に特化した「@type営業の転職」や女性専用の「女の転職@type」など、特定の領域については姉妹サイトとして別に運営されています。
-                    自分は特定の職種にしか興味ないという場合には、多くの中から探すよりはすでに欲しいものがまとまったものの中から探す方が効率がいいですよね。
-                    また診断に答えて性格の適性から合う求人を教えてくれるパーソナリティマッチング機能や、Facebookメッセンジャーと連携して新着求人を届けてくれる機能など
-                    他にはない機能が目白押しです。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="c-ranking__description">
-            <div class="c-ranking__section"><span class="c-ranking__catch">ここがポイント<i class="pointing up icon"></i></span>
-              <ul class="c-ranking__points">
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>職種やテーマに特化した姉妹サイトを利用して求人検索を簡単に</li>
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>様々な切り口で求人を紹介してくれる豊富なレコメンド機能</li>
-              </ul>
-            </div>
-            <div class="c-ranking__section"><span class="c-ranking__catch">利用者の声<i class="talk outline icon"></i></span>
-              <div class="ui comments c-voices">
-                <div class="ui raised segment">
-                  <div class="comment c-voice">
-                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></div>
-                      <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
-                        <div class="metadata">
-                          <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="content c-voice__comment">
-                      <div class="text">
-                        転職しようと思い初めに登録したサービスがリクナビNEXTでした。
-                        前職では総務部におり、人事を兼務で中途採用の広告を出した経験もあり、
-                        その中でもいい印象だったのがリクナビNEXTです...
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ui raised segment">
-                  <div class="comment c-voice">
-                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></div>
-                      <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
-                        <div class="metadata">
-                          <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="content c-voice__comment">
-                      <div class="text">
-                        転職しようと思い初めに登録したサービスがリクナビNEXTでした。
-                        前職では総務部におり、人事を兼務で中途採用の広告を出した経験もあり、
-                        その中でもいい印象だったのがリクナビNEXTです...
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="c-double__buttons">
-              <button class="ui orange button c-button">クチコミ・詳細を見る</button>
-              <button class="ui teal button c-button">リクナビNEXTの求人を見てみる  </button>
-            </div>
-          </div>
-        </div>
-        <div class="c-ranking">
-          <h2 class="c-ranking__title"><span>第３位</span>バイトルNEXT</h2>
-          <div class="ui items c-ranking__summary">
-            <div class="item"><div class="ui small image"><img class="c-ranking__thumb" src="/dist/image/tmb_baitoru.jpg"></div>
-              <div class="content">
-                <div class="description">
-                  <p>
-                    バイトルというとバイト探しのサイトを思い浮かべるかもしれませんが、こちらはその中でも正社員求人に特化したサイトです。
-                    コンセプトは「バイトやフリーター、未経験から正社員になる」で、その点、販売・アパレル・フード・サービス系や運輸系などの仕事が多いのが特徴です。
-                    もちろん営業や事務職などのオフィスワーク系もあります。リクナビNEXTや@typeと比べると東名阪以外の地方の地域の求人も比較的多く掲載されているのが特徴です。
-                    リクナビNEXTや@typeだと、地方"でも"募集している求人という形式ですが、バイトルNEXTの場合、地方で"しか"募集していない求人が他サイトより多く見受けられます。
-                    ただし求人検索機能が中心ですので、やりたいことが定まっていない、色々な選択肢から探したい方には少し機能不足かもしれません。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="c-ranking__description">
-            <div class="c-ranking__section"><span class="c-ranking__catch">ここがポイント<i class="pointing up icon"></i></span>
-              <ul class="c-ranking__points">
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>未経験から正社員を希望する人は利用マストな転職サイト</li>
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>東名阪以外の地方の求人や、販売・サービス系の求人の掲載数が他のサイトよりも多数</li>
-              </ul>
-            </div>
-            <div class="c-ranking__section"><span class="c-ranking__catch">利用者の声<i class="talk outline icon"></i></span>
-              <div class="ui comments c-voices">
-                <div class="ui raised segment">
-                  <div class="comment c-voice">
-                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></div>
-                      <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
-                        <div class="metadata">
-                          <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="content c-voice__comment">
-                      <div class="text">
-                        転職しようと思い初めに登録したサービスがリクナビNEXTでした。
-                        前職では総務部におり、人事を兼務で中途採用の広告を出した経験もあり、
-                        その中でもいい印象だったのがリクナビNEXTです...
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ui raised segment">
-                  <div class="comment c-voice">
-                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></div>
-                      <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
-                        <div class="metadata">
-                          <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="content c-voice__comment">
-                      <div class="text">
-                        転職しようと思い初めに登録したサービスがリクナビNEXTでした。
-                        前職では総務部におり、人事を兼務で中途採用の広告を出した経験もあり、
-                        その中でもいい印象だったのがリクナビNEXTです...
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="c-double__buttons">
-              <button class="ui orange button c-button">クチコミ・詳細を見る</button>
-              <button class="ui teal button c-button">リクナビNEXTの求人を見てみる  </button>
-            </div>
-          </div>
-        </div>
-        <div class="c-ranking">
-          <h2 class="c-ranking__title"><span>第４位</span>はたらいく</h2>
-          <div class="ui items c-ranking__summary">
-            <div class="item"><div class="ui small image"><img class="c-ranking__thumb" src="/dist/image/tmb_hatalike.jpg"></div>
-              <div class="content">
-                <div class="description">
-                  <p>
-                    はたらいくはリクルートジョブズが運営する地域密着型の求人サイトです。バイトルNEXT同様地方の求人が他の転職サイトに比べると多く掲載されています。
-                    地元でそのまま働きたい、UIターンしたんという方には必須のサイトです。未経験歓迎の求人も多く、フリーターやバイトから正社員になりたい方や、
-                    今の仕事環境を変えて異業種で働きたい方などにも非常に向いているサイトです。また会員限定で「らいく」という機能があり、企業から直接興味があることを応募前に示す、
-                    スカウトサービスに近い機能もあります。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="c-ranking__description">
-            <div class="c-ranking__section"><span class="c-ranking__catch">ここがポイント<i class="pointing up icon"></i></span>
-              <ul class="c-ranking__points">
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>地元で働きたい、UIターンしたいといった人のための地域密着型転職サイト</li>
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>スカウト機能に似た独自機能「らいく」を利用して応募前に企業の温度感を知ることができる</li>
-              </ul>
-            </div>
-            <div class="c-ranking__section"><span class="c-ranking__catch">利用者の声<i class="talk outline icon"></i></span>
-              <div class="ui comments c-voices">
-                <div class="ui raised segment">
-                  <div class="comment c-voice">
-                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></div>
-                      <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
-                        <div class="metadata">
-                          <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="content c-voice__comment">
-                      <div class="text">
-                        転職しようと思い初めに登録したサービスがリクナビNEXTでした。
-                        前職では総務部におり、人事を兼務で中途採用の広告を出した経験もあり、
-                        その中でもいい印象だったのがリクナビNEXTです...
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ui raised segment">
-                  <div class="comment c-voice">
-                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></div>
-                      <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
-                        <div class="metadata">
-                          <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="content c-voice__comment">
-                      <div class="text">
-                        転職しようと思い初めに登録したサービスがリクナビNEXTでした。
-                        前職では総務部におり、人事を兼務で中途採用の広告を出した経験もあり、
-                        その中でもいい印象だったのがリクナビNEXTです...
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="c-double__buttons">
-              <button class="ui orange button c-button">クチコミ・詳細を見る</button>
-              <button class="ui teal button c-button">リクナビNEXTの求人を見てみる  </button>
-            </div>
-          </div>
-        </div>
+        @endforeach
+
       </div>
     </main>
     <div class="l-col-lg-4">

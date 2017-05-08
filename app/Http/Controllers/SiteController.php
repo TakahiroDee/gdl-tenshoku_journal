@@ -4,11 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
+use App\Ranking;
 
 class SiteController extends Controller
 {
     public function index()
     {
+        $rankings = Ranking::where('service_type','site')
+                    ->orderBy('rank','asc')
+                    ->get();
+
         $pages = DB::table('posts as t1')
                           ->join('postmeta as t2', 't1.ID', '=', 't2.post_id')
                           ->select('ID','post_title','post_name','guid','meta_value as headline')
@@ -28,6 +33,6 @@ class SiteController extends Controller
                           ->get();
 
 
-        return view('site.index',compact('pages','posts'));
+        return view('site.index',compact('pages','posts','rankings'));
     }
 }

@@ -1,25 +1,31 @@
 $(function(){
-  var gnav   = $('.tj-gnav');
-  var headerH = 79;
-  var $stuck = $('.tj-searchStuck__content');
+  var gnav    = document.querySelector('.b-gnav');
+  var headerH = document.querySelector('.l-header').clientHeight;
+
+  var fixed_nav_bar = () => {
+    var scrollTop = window.scrollY;
+
+    if(scrollTop > headerH){
+      gnav.classList.add('is-fixed');
+      $(gnav).animate({"top" : "0"},'slow');
+    }else{
+      gnav.classList.remove('is-fixed');
+    }
+  }
+
+  document.addEventListener('scroll',fixed_nav_bar,false);
+});
+
+
+
+
+
+$(function(){
+  let $stuck = $('.tj-searchStuck__content');
 
   if($stuck.length > 0){
     var stuckOffset = $stuck.offset().top;
   }
-
-
-
-  // fixed navbar
-  $(window).on('scroll',function(){
-    var st = $(this).scrollTop();
-
-    if(st > headerH){
-      gnav.addClass('fixed');
-      gnav.animate({top : '0px'},'slow');
-    }else{
-      gnav.removeClass('fixed');
-    }
-  });
 
   $(window).on('scroll resize',function(){
     // sicky menu
