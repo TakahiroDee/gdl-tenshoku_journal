@@ -131,8 +131,8 @@
                     </div>
                   </div>
                   <div class="c-double__buttons">
-                    <button class="ui orange button c-button">クチコミ・詳細を見る</button>
-                    <button class="ui teal button c-button">リクナビNEXTの求人を見てみる  </button>
+                    <button class="ui orange button c-button"><a href="#">クチコミ・詳細を見る</a></button>
+                    <button class="ui teal button c-button"><a href="#">リクナビNEXTの求人を見てみる  </a></button>
                   </div>
                 </div>
               </div>
@@ -204,8 +204,8 @@
                     </div>
                   </div>
                   <div class="c-double__buttons">
-                    <button class="ui orange button c-button">クチコミ・詳細を見る</button>
-                    <button class="ui teal button c-button">リクナビNEXTの求人を見てみる  </button>
+                    <button class="ui orange button c-button"><a href="#">クチコミ・詳細を見る</a></button>
+                    <button class="ui teal button c-button"><a href="#">リクナビNEXTの求人を見てみる  </a></button>
                   </div>
                 </div>
               </div>
@@ -277,8 +277,8 @@
                     </div>
                   </div>
                   <div class="c-double__buttons">
-                    <button class="ui orange button c-button">クチコミ・詳細を見る</button>
-                    <button class="ui teal button c-button">リクナビNEXTの求人を見てみる  </button>
+                    <button class="ui orange button c-button"><a href="#">クチコミ・詳細を見る</a></button>
+                    <button class="ui teal button c-button"><a href="#">リクナビNEXTの求人を見てみる  </a></button>
                   </div>
                 </div>
               </div>
@@ -350,8 +350,8 @@
                     </div>
                   </div>
                   <div class="c-double__buttons">
-                    <button class="ui orange button c-button">クチコミ・詳細を見る</button>
-                    <button class="ui teal button c-button">リクナビNEXTの求人を見てみる  </button>
+                    <button class="ui orange button c-button"><a href="#">クチコミ・詳細を見る</a></button>
+                    <button class="ui teal button c-button"><a href="#">リクナビNEXTの求人を見てみる  </a></button>
                   </div>
                 </div>
               </div>

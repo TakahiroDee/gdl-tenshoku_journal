@@ -1,5 +1,5 @@
 $(function(){
-  var gnav    = document.querySelector('.b-gnav');
+  var gnav    = document.querySelector('.l-header__lower');
   var headerH = document.querySelector('.l-header').clientHeight;
 
   var fixed_nav_bar = () => {

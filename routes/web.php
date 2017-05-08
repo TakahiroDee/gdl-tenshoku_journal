@@ -14,6 +14,7 @@
 Route::get('/', 'TopController@index');
 Route::get('/ranking', 'RankingController@index');
 Route::get('/ranking/site', 'SiteController@index');
+Route::get('/ranking/site/{id}', 'SiteController@show');
 Route::get('/ranking/itweb', 'ItwebController@index');
 Route::get('/ranking/agent', 'AgentController@index');
 Route::get('/ranking/haken', 'HakenController@index');

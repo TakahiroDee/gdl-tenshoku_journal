@@ -204,7 +204,7 @@
   z-index: 2;
 }
 
-.is-fixed.b-gnav {
+.is-fixed.l-header__lower {
   background: rgba(252, 252, 252, 0.8);
 }
 
@@ -461,6 +461,13 @@ footer {
   padding-bottom: 2.0rem;
   margin-bottom: 2.0rem;
   box-sizing: border-box;
+}
+
+#p-agent .c-button a, #p-site .c-button a, #p-itweb .c-button a, #p-haken .c-button a, #p-detail .c-button a, #p-jobinfo .c-button a {
+  color: #FFF;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 #p-agent .c-singlebutton, #p-site .c-singlebutton, #p-itweb .c-singlebutton, #p-haken .c-singlebutton, #p-detail .c-singlebutton, #p-jobinfo .c-singlebutton {

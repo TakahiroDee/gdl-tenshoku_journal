@@ -37,7 +37,7 @@
   .c-voices .ui.raised.segment{
     font-size: 100%;
     margin:2.5rem 0;
-  }  
+  }
   .c-voice__author{
     display: flex;
     align-items: center;
@@ -127,6 +127,12 @@
     padding-bottom: 2.0rem;
     margin-bottom: 2.0rem;
     box-sizing: border-box;
+  }
+  .c-button a{
+    color: #FFF;
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 }
 

@@ -39,6 +39,20 @@
       <div class="l-main_lf_2">
 
         @foreach($rankings as $ranking)
+
+        @php
+        $service = "";
+        if($ranking->service_name === "リクナビNEXT"){
+          $services = $rnnx_reps;
+        }elseif($ranking->service_name === "@type"){
+          $services = $type_reps;
+        }elseif($ranking->service_name === "バイトルNEXT"){
+          $services = $bitr_reps;
+        }elseif($ranking->service_name === "はたらいく"){
+          $services = $htlk_reps;
+        }
+        @endphp
+
         <div class="c-ranking">
           <h2 class="c-ranking__title"><span>第{{ $ranking->rank }}位</span>{{ $ranking->service_name }}</h2>
           <div class="ui items c-ranking__summary">
@@ -68,49 +82,37 @@
 
               </ul>
             </div>
+
             <div class="c-ranking__section"><span class="c-ranking__catch">利用者の声<i class="talk outline icon"></i></span>
               <div class="ui comments c-voices">
+
+                @foreach($services as $service)
                 <div class="ui raised segment">
                   <div class="comment c-voice">
                     <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></div>
-                      <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
+                      <div class="content c-voice__meta">
+                        <span class="author">
+                          {{ $service->age }} / {{ $service->gender }} / {{ $service->job }}
+                        </span>
                         <div class="metadata">
-                          <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
-                        </div>
-                      </div>
-                    </div>                                      
-                    <div class="content c-voice__comment">
-                      <div class="text">
-                        転職しようと思い初めに登録したサービスがリクナビNEXTでした。
-                        前職では総務部におり、人事を兼務で中途採用の広告を出した経験もあり、
-                        その中でもいい印象だったのがリクナビNEXTです...
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="ui raised segment">
-                  <div class="comment c-voice">
-                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></div>
-                      <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
-                        <div class="metadata">
-                          <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
+                          <div class="ui star rating disabled" data-rating="{{ $service->rating }}" data-max-rating="5"></div>
                         </div>
                       </div>
                     </div>
                     <div class="content c-voice__comment">
                       <div class="text">
-                        転職しようと思い初めに登録したサービスがリクナビNEXTでした。
-                        前職では総務部におり、人事を兼務で中途採用の広告を出した経験もあり、
-                        その中でもいい印象だったのがリクナビNEXTです...
+                        {{ mb_substr($service->comment,0,199) }}...
                       </div>
                     </div>
                   </div>
                 </div>
+                @endforeach
+
               </div>
             </div>
             <div class="c-double__buttons">
-              <button class="ui orange button c-button">クチコミ・詳細を見る</button>
-              <button class="ui teal button c-button">リクナビNEXTの求人を見てみる  </button>
+              <button class="ui orange button c-button"><a href="{{ action('SiteController@show', $ranking->service_eg_name) }}">クチコミ・詳細を見る</a></button>
+              <button class="ui teal button c-button"><a href="#">{{ $ranking->service_name }}の求人を見てみる</a></button>
             </div>
           </div>
         </div>
@@ -133,26 +135,11 @@
           <div class="c-knowhow">
             <h2>転職を考えたら</h2>
             <ul class="c-knowhow__list">
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
+
+              @foreach($posts as $post)
+              <li class="c-knowhow__item"><a class="c-knowhow__link" href="{{ $post->link }}"><img class="c-knowhow__thumb" src="{{ $post->thumb }}" width="55" height="55">
+                  <p class="c-knowhow__lead">{{ $post->title }}</p></a></li>
+              @endforeach
             </ul>
           </div>
         </aside>

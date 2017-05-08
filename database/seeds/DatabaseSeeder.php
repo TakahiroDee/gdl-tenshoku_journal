@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        // $this->call('RankingsTableSeeder');
-        $this->call('ReputationsTableSeeder');
+        $this->call('RankingsTableSeeder');
+        // $this->call('ReputationsTableSeeder');
         Model::reguard();
     }
 }
@@ -37,6 +37,7 @@ class RankingsTableSeeder extends Seeder
             'service_type' => 'site',
             'rank' => 1,
             'service_name' => 'リクナビNEXT',
+            'service_eg_name' => 'rikunabi_next',
             'thumbnail_path' => 'tmb_next.jpg',
             'summary' => 'リクルートキャリアが運営する言わずと知れた国内最大級の転職サイト。新卒の就職活動では「リクナビ」を使っていたという方も多いのではないでしょうか。そのリクナビの転職者向けサービスが「リクナビNEXT」です。特徴は何と言っても掲載している求人数の数。常時7,000〜8,000件程度の求人が掲載されており、その数は他の転職サイトを寄せ付けません。頻繁に更新される業界やこだわり条件ごとの求人特集や、レジュメ・職務経歴書と一緒にスカウトサービスに登録すると、サイトに非公開の求人が多数オファーの形式で届くのも魅力です。また最近ではフェアなどのイベントにも力を入れており、名古屋・大阪・東京・福岡など主要都市圏で頻繁に転職フェアを開催しています。転職活動を始めるならMUSTでチェックすべきサイトです。',
             'positive_point1' => '他サイトと比べて圧倒的No.1の求人数なので、選択肢を狭めないためにも登録はマスト！',
@@ -50,6 +51,7 @@ class RankingsTableSeeder extends Seeder
             'service_type' => 'site',
             'rank' => 2,
             'service_name' => '@type',
+            'service_eg_name' => 'at_type',
             'thumbnail_path' => 'tmb_type.jpg',
             'summary' => '山崎育三郎さんのCMでお馴染みの、こちらも最大級の転職サイト@typeです。掲載求人数こそリクナビNEXTには及ばないものの、その分多機能なところが優れています。例えば、営業職に特化した「@type営業の転職」や女性専用の「女の転職@type」など、特定の領域については姉妹サイトとして別に運営されています。自分は特定の職種にしか興味ないという場合には、多くの中から探すよりはすでに欲しいものがまとまったものの中から探す方が効率がいいですよね。また診断に答えて性格の適性から合う求人を教えてくれるパーソナリティマッチング機能や、Facebookメッセンジャーと連携して新着求人を届けてくれる機能など他にはない機能が目白押しです。',
             'positive_point1' => '職種やテーマに特化した姉妹サイトを利用して求人検索を簡単に',
@@ -63,6 +65,7 @@ class RankingsTableSeeder extends Seeder
             'service_type' => 'site',
             'rank' => 3,
             'service_name' => 'バイトルNEXT',
+            'service_eg_name' => 'baitoru_next',
             'thumbnail_path' => 'tmb_baitoru.jpg',
             'summary' => 'バイトルというとバイト探しのサイトを思い浮かべるかもしれませんが、こちらはその中でも正社員求人に特化したサイトです。コンセプトは「バイトやフリーター、未経験から正社員になる」で、その点、販売・アパレル・フード・サービス系や運輸系などの仕事が多いのが特徴です。もちろん営業や事務職などのオフィスワーク系もあります。リクナビNEXTや@typeと比べると東名阪以外の地方の地域の求人も比較的多く掲載されているのが特徴です。リクナビNEXTや@typeだと、地方"でも"募集している求人という形式ですが、バイトルNEXTの場合、地方で"しか"募集していない求人が他サイトより多く見受けられます。ただし求人検索機能が中心ですので、やりたいことが定まっていない、色々な選択肢から探したい方には少し機能不足かもしれません。',
             'positive_point1' => '未経験から正社員を希望する人は利用マストな転職サイト',
@@ -76,6 +79,7 @@ class RankingsTableSeeder extends Seeder
             'service_type' => 'site',
             'rank' => 4,
             'service_name' => 'はたらいく',
+            'service_eg_name' => 'hatalike',
             'thumbnail_path' => 'tmb_hatalike.jpg',
             'summary' => 'はたらいくはリクルートジョブズが運営する地域密着型の求人サイトです。バイトルNEXT同様地方の求人が他の転職サイトに比べると多く掲載されています。地元でそのまま働きたい、UIターンしたんという方には必須のサイトです。未経験歓迎の求人も多く、フリーターやバイトから正社員になりたい方や、今の仕事環境を変えて異業種で働きたい方などにも非常に向いているサイトです。また会員限定で「らいく」という機能があり、企業から直接興味があることを応募前に示す、スカウトサービスに近い機能もあります。',
             'positive_point1' => '地元で働きたい、UIターンしたいといった人のための地域密着型転職サイト',
@@ -92,6 +96,7 @@ class RankingsTableSeeder extends Seeder
             'service_type'    => $data[$i]['service_type'],
             'rank'            => $data[$i]['rank'],
             'service_name'    => $data[$i]['service_name'],
+            'service_eg_name' => $data[$i]['service_eg_name'],          
             'thumbnail_path'  => $data[$i]['thumbnail_path'],
             'summary'         => $data[$i]['summary'],
             'positive_point1' => $data[$i]['positive_point1'],

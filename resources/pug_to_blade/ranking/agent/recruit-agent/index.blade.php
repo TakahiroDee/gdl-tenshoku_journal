@@ -169,8 +169,8 @@
                       </div>
                     </div>
                     <div class="c-double__buttons">
-                      <button class="ui orange button c-button">リクルートエージェントへ登録</button>
-                      <button class="ui teal button c-button">リクルートエージェントの求人をみる  </button>
+                      <button class="ui orange button c-button"><a href="#">リクルートエージェントへ登録</a></button>
+                      <button class="ui teal button c-button"><a href="#">リクルートエージェントの求人をみる  </a></button>
                     </div>
                     <h2 class="c-block__subheader" id="bs-2">2.リクルートエージェントのデメリットと口コミ</h2>
                     <div class="c-block__section">
@@ -269,8 +269,8 @@
                       </div>
                     </div>
                     <div class="c-double__buttons">
-                      <button class="ui orange button c-button">リクルートエージェントへ登録</button>
-                      <button class="ui teal button c-button">リクルートエージェントの求人をみる  </button>
+                      <button class="ui orange button c-button"><a href="#">リクルートエージェントへ登録</a></button>
+                      <button class="ui teal button c-button"><a href="#">リクルートエージェントの求人をみる  </a></button>
                     </div>
                     <h2 class="c-block__subheader" id="bs-3">3.掲載している求人について</h2>
                     <div class="c-block__section">
@@ -344,8 +344,8 @@
                       </p>
                       <p>※『JACリクルートメント』は業界特化型エージェントではないのですが、「海外」「外資」「管理職」の転職では明らかにトップエージェントで圧倒的な実績ですので、あえて重ねて紹介をしております。</p>
                       <div class="c-double__buttons">
-                        <button class="ui orange button c-button">リクルートエージェントへ登録</button>
-                        <button class="ui teal button c-button">リクルートエージェントの求人をみる </button>
+                        <button class="ui orange button c-button"><a href="#">リクルートエージェントへ登録</a></button>
+                        <button class="ui teal button c-button"><a href="#">リクルートエージェントの求人をみる </a></button>
                       </div>
                     </div>
                     <div class="c-block__section" id="bs-5">
