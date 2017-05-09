@@ -32,7 +32,7 @@
     <main class="l-col-lg-8">
       <div class="l-main_lf_1">
         <article class="c-detail">
-          <h1><span>第{{ $ranking->rank }}位</span>{{ $ranking->service_name }}</h1>
+          <h1><span>第{{ $ranking->rank }}位</span>{{ $ranking->service_name }} の評判・口コミ</h1>
           <div class="c-block ui items">
             <div class="item">
               <div class="ui small image"><img src="/dist/image/{{ $ranking->thumbnail_path }}"></div>
@@ -66,7 +66,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -92,7 +92,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -118,7 +118,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -166,7 +166,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -192,7 +192,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -218,7 +218,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -335,7 +335,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -361,7 +361,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -387,7 +387,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -413,7 +413,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -439,7 +439,7 @@
                   <div class="ui raised segment">
                     <div class="comment c-voice">
                       <div class="c-voice__author"><a class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></a>
-                        <div class="content c-voice__meta"><a class="author">30代 女性 営業職</a>
+                        <div class="content c-voice__meta"><span class="author">30代 女性 営業職</span>
                           <div class="metadata">
                             <div class="ui star rating disabled" data-rating="4" data-max-rating="5"></div>
                           </div>
@@ -480,28 +480,25 @@
         </aside>
         <aside class="l-aside_rg_2">
           <div class="c-knowhow">
+            <h2>タイプ別転職成功ノウハウ</h2>
+            <ul class="c-knowhow__list">
+
+              @foreach($pages as $page)
+              <li class="c-knowhow__item"><a class="c-knowhow__link" href="{{ $page->guid }}"><img class="c-knowhow__thumb" src="/dist/image/feature-{{ $page->ID }}.jpg" width="55" height="55">
+                  <p class="c-knowhow__lead">{{ $page->post_title }}</p></a></li>
+              @endforeach
+
+            </ul>
+          </div>
+          <div class="c-knowhow">
             <h2>転職を考えたら</h2>
             <ul class="c-knowhow__list">
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="#"><img class="c-knowhow__thumb" src="http://dev.tenshoku-journal.com/knowhow/wp-content/uploads/2017/04/e_20170427.jpg" width="55" height="55">
-                  <p class="c-knowhow__lead">採用のお悩み解決！ スタートアップが採用でやってきた裏ワザ公開《ビジネスサイド編》</p></a></li>
+
+              @foreach($posts as $post)
+              <li class="c-knowhow__item"><a class="c-knowhow__link" href="{{ $post->link }}"><img class="c-knowhow__thumb" src="{{ $post->thumb }}" width="55" height="55">
+                  <p class="c-knowhow__lead">{{ $post->title }}</p></a></li>
+              @endforeach
+
             </ul>
           </div>
         </aside>

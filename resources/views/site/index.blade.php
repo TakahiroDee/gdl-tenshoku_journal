@@ -89,7 +89,7 @@
                 @foreach($services as $service)
                 <div class="ui raised segment">
                   <div class="comment c-voice">
-                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="c-voice__avatar30w"></span></div>
+                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="{{ $service->avatar_type }}"></span></div>
                       <div class="content c-voice__meta">
                         <span class="author">
                           {{ $service->age }} / {{ $service->gender }} / {{ $service->job }}
@@ -133,6 +133,17 @@
         </aside>
         <aside class="l-aside_rg_2">
           <div class="c-knowhow">
+            <h2>タイプ別転職成功ノウハウ</h2>
+            <ul class="c-knowhow__list">
+
+              @foreach($pages as $page)
+              <li class="c-knowhow__item"><a class="c-knowhow__link" href="{{ $page->guid }}"><img class="c-knowhow__thumb" src="/dist/image/feature-{{ $page->ID }}.jpg" width="55" height="55">
+                  <p class="c-knowhow__lead">{{ $page->post_title }}</p></a></li>
+              @endforeach
+
+            </ul>
+          </div>
+          <div class="c-knowhow">
             <h2>転職を考えたら</h2>
             <ul class="c-knowhow__list">
 
@@ -140,6 +151,7 @@
               <li class="c-knowhow__item"><a class="c-knowhow__link" href="{{ $post->link }}"><img class="c-knowhow__thumb" src="{{ $post->thumb }}" width="55" height="55">
                   <p class="c-knowhow__lead">{{ $post->title }}</p></a></li>
               @endforeach
+
             </ul>
           </div>
         </aside>

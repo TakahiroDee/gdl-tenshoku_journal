@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddServiceEgNameToRankingsTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class AddServiceEgNameToRankingsTable extends Migration
      */
     public function up()
     {
-        Schema::table('rankings', function (Blueprint $table) {
-            $table->string('service_eg_name',255);
+        Schema::create('services', function (Blueprint $table) {
+            $table->increments('id');
+
+            $table->string('service_eg_name',255)->unique();
+            $table->string('service_name',255)->unique();
+
+            $table->timestamps();
         });
     }
 
@@ -25,8 +30,6 @@ class AddServiceEgNameToRankingsTable extends Migration
      */
     public function down()
     {
-        Schema::table('rankings', function (Blueprint $table) {
-            $table->dropColumn('service_eg_name');
-        });
+        Schema::dropIfExists('services');
     }
 }

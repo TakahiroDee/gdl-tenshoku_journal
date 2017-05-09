@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        $this->call('RankingsTableSeeder');
-        // $this->call('ReputationsTableSeeder');
+        // $this->call('RankingsTableSeeder');
+        $this->call('ReputationsTableSeeder');
         Model::reguard();
     }
 }
@@ -96,7 +96,7 @@ class RankingsTableSeeder extends Seeder
             'service_type'    => $data[$i]['service_type'],
             'rank'            => $data[$i]['rank'],
             'service_name'    => $data[$i]['service_name'],
-            'service_eg_name' => $data[$i]['service_eg_name'],          
+            'service_eg_name' => $data[$i]['service_eg_name'],
             'thumbnail_path'  => $data[$i]['thumbnail_path'],
             'summary'         => $data[$i]['summary'],
             'positive_point1' => $data[$i]['positive_point1'],
@@ -132,7 +132,7 @@ class ReputationsTableSeeder extends Seeder
             '始めの面談時に持参した職務経歴書・履歴書について修正指導をしてくれた点や、こちらの希望をじっくり聞いてくれた上でキャリア指導をしてくれたので、サポート体制はしっかりしていました。また、実際に面接が決まると、その会社の面接の傾向を事前に教えてくれ、その対応方法などもアドバイスしてくれたので、一人で転職活動をするより転職エージェントを利用していてよかったと心の底から思えました。そして、最後の企業との給与条件面での調整も、エージェントが間に入って交渉してくれたので、スムーズにいきました。最初から最後まで連絡体制は万全で、いつでも連絡が取れる状態であった点も、大手ならではで素晴らしいなという好印象を持ちました。',
             'キャリア相談に乗ってもらい、適確なアドバイスや他に自分と似たような事例のことも教えてくれて助かりました。また、企業によっては面接の際にアピールした方がいい点や自分なら何を武器に面接に挑んだ方がいいか？客観的なアドバイスが役に立ちました。ただ、ついてくれたエージェントが優秀だっただけかもしれませんが、そういったエージェントをつければ、転職を有利に進められることは間違いないです。'
           ];
-        $avatar_thumbnails = ['human_avatar_20_m.png','human_avatar_20_w.png','human_avatar_30_m.png','human_avatar_30_w.png','human_avatar_40_m.png','human_avatar_40_w.png'];
+        $avatar_types      = ['c-voice__avatar20m','c-voice__avatar30m','c-voice__avatar40m','c-voice__avatar20w','c-voice__avatar30w','c-voice__avatar40w'];
         $ages              = ['20代前半','20代後半','30代前半','30代後半','40代前半','40代後半'];
         $genders           = ['男性','女性'];
         $jobs              = ['人材系営業職','販売・サービス職','専門職・コンサルタント','公務員・団体職員','広告業界','社内SE','エンジニア'];
@@ -142,7 +142,7 @@ class ReputationsTableSeeder extends Seeder
         for($i = 0; $i < count($service_names); $i++){
           for($k = 0; $k < 10; $k++){
             Reputation::create([
-              'avatar_thumbnail_path' => $avatar_thumbnails[mt_rand(0,count($avatar_thumbnails) - 1)],
+              'avatar_type'           => $avatar_types[mt_rand(0,count($avatar_types) - 1)],
               'age'                   => $ages[mt_rand(0,count($ages) - 1)],
               'gender'                => $genders[$i % count($genders)],
               'rating'                => mt_rand(0,5),

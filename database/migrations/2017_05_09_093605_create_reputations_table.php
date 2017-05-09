@@ -16,15 +16,15 @@ class CreateReputationsTable extends Migration
         Schema::create('reputations', function (Blueprint $table) {
             $table->increments('id');
 
-            $table->string('avatar_thumbnail_path',50);
-            $table->string('age',20);
-            $table->string('gender',20);
-            $table->string('job',20);
+            $table->foreign('service_id')->references('service_eg_name')->on('services')->onDelete('cascade');
+            $table->string('avatar_type',255);
+            $table->string('age',50);
+            $table->string('gender',50);
+            $table->string('job',50);
             $table->integer('rating');
             $table->text('comment');
-            $table->string('service_name',100);
-            $table->datetime('virtual_created_date');
-            
+            $table->dateTime('virtual_created_date ');
+
             $table->timestamps();
         });
     }
