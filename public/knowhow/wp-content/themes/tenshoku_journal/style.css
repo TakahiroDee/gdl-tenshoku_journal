@@ -5,396 +5,145 @@
  Author URI  : https://www.facebook.com/takahir0d
  Version     : 0.9.1
  */
-
-/*************************************************
- * 1 Grid
- ************************************************/
-@media (min-width: 960px) {
-  .l-inner {
-    margin: 0 auto;
-    max-width: 1020px;
-  }
-}
-@media (max-width: 959px) {
-  .l-inner {
-    margin: 0 5px;
-  }
-}
-@media (min-width: 960px) {
-  .l-row {
-    display: flex;
-  }
-
-  .l-col {
-    width: 100%;
-  }
-
-  .l-col-lg-1 {
-    width: 8.3333%;
-  }
-
-  .l-col-lg-2 {
-    width: 16.6666%;
-  }
-
-  .l-col-lg-3 {
-    width: 25.0000%;
-  }
-
-  .l-col-lg-4 {
-    width: 33.3333%;
-    margin: 0 10px;
-  }
-
-  .l-col-lg-5 {
-    width: 41.6666%;
-  }
-
-  .l-col-lg-6 {
-    width: 50.0000%;
-  }
-
-  .l-col-lg-7 {
-    width: 58.3333%;
-  }
-
-  .l-col-lg-8 {
-    width: 66.6666%;
-    margin: 0 10px;
-  }
-
-  .l-col-lg-9 {
-    width: 75.0000%;
-  }
-
-  .l-col-lg-10 {
-    width: 83.3333%;
-  }
-
-  .l-col-lg-11 {
-    width: 91.6666%;
-  }
-
-  .l-col-lg-12 {
-    width: 100.0000%;
-  }
-}
-@media (min-width: 680px) and (max-width: 959px) {
-  .l-row.l-md-row {
-    display: flex;
-  }
-
-  .l-col-md-1 {
-    width: 8.3333%;
-  }
-
-  .l-col-md-2 {
-    width: 16.6666%;
-  }
-
-  .l-col-md-3 {
-    width: 25.0000%;
-  }
-
-  .l-col-md-4 {
-    width: 33.3333%;
-  }
-
-  .l-col-md-5 {
-    width: 41.6666%;
-  }
-
-  .l-col-md-6 {
-    width: 50.0000%;
-  }
-
-  .l-col-md-7 {
-    width: 58.3333%;
-  }
-
-  .l-col-md-8 {
-    width: 66.6666%;
-  }
-
-  .l-col-md-9 {
-    width: 75.0000%;
-  }
-
-  .l-col-md-10 {
-    width: 83.3333%;
-  }
-
-  .l-col-md-11 {
-    width: 91.6666%;
-  }
-
-  .l-col-md-12 {
-    width: 100.0000%;
-  }
-}
-@media (max-width: 679px) {
-  .l-sm-row {
-    display: flex;
-    box-sizing: border-box;
-  }
-
-  .l-col-sm-1 {
-    width: 8.3333%;
-  }
-
-  .l-col-sm-2 {
-    width: 16.6666%;
-  }
-
-  .l-col-sm-3 {
-    width: 25.0000%;
-  }
-
-  .l-col-sm-4 {
-    width: 33.3333%;
-  }
-
-  .l-col-sm-5 {
-    width: 41.6666%;
-  }
-
-  .l-col-sm-6 {
-    width: 50.0000%;
-  }
-
-  .l-col-sm-7 {
-    width: 58.3333%;
-  }
-
-  .l-col-sm-8 {
-    width: 66.6666%;
-  }
-
-  .l-col-sm-9 {
-    width: 75.0000%;
-  }
-
-  .l-col-sm-10 {
-    width: 83.3333%;
-  }
-
-  .l-col-sm-11 {
-    width: 91.6666%;
-  }
-
-  .l-col-sm-12 {
-    width: 100.0000%;
-  }
-}
 /*************************************************
  * 3 Common Parts Layout - Header
  ************************************************/
-.l-header {
-  background: #333;
-}
 
-.tj-logo {
-  padding: 0.5rem 1.0rem;
-  font-size: 1.6rem;
-  font-weight: normal;
-}
-
-@media screen and (max-width: 679px) {
-  .tj-logo {
-    padding: 0.5rem;
+@media screen and (min-width: 960px){
+  .l-main{
+    margin-bottom: 5.0rem;
   }
 }
-.tj-logo__link {
-  color: #FFF;
-}
-
-.tj-logo__caption {
-  display: inline-block;
-  padding: 0 0.5rem;
-  font-size: 1.2rem;
-}
-
-.tj-gnav {
-  background: #00ACC1;
-}
-
-.tj-gnav.fixed {
-  background: #FCFCFC;
-  position: fixed;
-  width: 100%;
-  z-index: 1;
-  box-shadow: 0 0.1rem 0 0 #ECEEF0;
-}
-
-.tj-gnav__menu {
-  display: flex;
-}
-
-.tj-gnav__item {
-  display: block;
-  height: 4.4rem;
-  line-height: 4.4rem;
-  text-align: center;
-}
-
-@media (min-width: 680px) {
-  .tj-gnav__item {
-    width: 25%;
+@media screen and (max-width: 959px){
+  .l-main{
+    margin:0 1.0rem;
   }
 }
-@media (max-width: 679px) {
-  .tj-gnav__item.um-dn {
-    display: none;
+@media screen and (min-width: 960px){
+  .l-col-lg-8{
+    margin-right: 1.0rem;
   }
-
-  .tj-gnav__item {
-    width: 33.3333%;
-    font-size: 1.1rem;
+  .l-col-lg-4{
+    margin-left: 1.0rem;
   }
 }
-.tj-gnav__link {
-  display: block;
-  box-sizing: border-box;
-  height: inherit;
-  color: #FFF;
+#p-knowhow .l-aside_rg_1{
+  margin-top: 0;
 }
-.tj-gnav__link.is_current {
-  text-decoration:underline;
-}
-
-.tj-gnav.fixed .tj-gnav__link {
-  color: #00ACC1;
-  opacity: 0.8;
-}
-
-.tj-gnav__link:hover {
-  background: #26C6DA;
-  text-decoration: underline;
-}
-
-.tj-gnav.fixed .tj-gnav__link:hover {
-  background: #FFF;
-  color: #01bffd;
-  text-decoration: underline;
-}
-
-.l-footer {
-  background: #1E2022;
-  padding: 35px 0;
-}
-
-/*************************************************
- * 2 Layout
- ************************************************/
-.l-main {
-  margin: 0 0 5.0rem;
-}
-
-@media screen and (max-width: 959px) {
-  .l-main {
-    margin: 0 0.5rem 5.0rem;
+@media screen and (max-width: 959px){
+  #p-knowhow .l-aside_rg_2{
+    margin: 1.5rem 0;
   }
 }
+
 
 /*************************************************
  * 3 Module
  ************************************************/
-#page-knowhow .tj-articles {
+#p-knowhow .c-articles {
   margin: 2.0rem auto;
 }
-#page-knowhow .tj-articles__lead {
+#p-knowhow .c-articles__lead {
   color: #666;
   font-weight: normal;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.5rem;
 }
-#page-knowhow .tj-articles__leadmeta {
+@media screen and (max-width: 679px){
+  #p-knowhow .c-articles__lead {
+    font-size: 1.8rem;
+  }
+}
+#p-knowhow .c-articles__leadmeta {
   font-size: 0.6em;
   padding: 0 1.5rem;
 }
 @media screen and (max-width: 679px) {
-  #page-knowhow .tj-articles__leadmeta {
+  #p-knowhow .c-articles__leadmeta {
     display: block;
     padding: 0;
   }
 }
-#page-knowhow .tj-article__item {
-  margin-bottom: 3.0rem;
+#p-knowhow .c-article__item {
+  margin-bottom: 5.0rem;
 }
-#page-knowhow .tj-article__contentTitle {
+#p-knowhow .c-article__contentTitle {
   font-size: 1.4rem;
+  font-weight: normal;
   color: #666;
 }
-#page-knowhow .tj-article__contentTitle:hover {
+#p-knowhow .c-article__contentTitle:hover {
   text-decoration: underline;
 }
-#page-knowhow .tj-article__contentLink{
+#p-knowhow .c-article__contentLink{
   color: #666;
 }
-#page-knowhow .tj-article__contentDesc {
+#p-knowhow .c-article__contentDesc {
   font-size: 1.2rem;
   color: #999;
 }
-#page-knowhow .tj-article__contentTag {
+#p-knowhow .c-article__contentTag {
   margin: 0.5rem 1.0rem;
   font-size: 1.0rem;
 }
-#page-knowhow .tj-article__pagination {
+#p-knowhow .c-article__pagination {
   margin: 5.0rem auto 2.0rem;
   text-align: center;
 }
-#page-knowhow .tj-knowhow,#page-knowhowDetail .tj-knowhow {
+#p-knowhow .c-article__pagination a{
+  font-size: 1.2rem;
+}
+#p-knowhow .c-category h2,#p-knowhowDetail .c-category h2{
+  border: none;
+}
+#p-knowhow .c-knowhow,#p-knowhowDetail .c-knowhow {
   color: #666;
   margin: 0 auto 5.0rem;
 }
-#page-knowhow .tj-knowhow,#page-knowhowDetail .tj-knowhow{
+#p-knowhow .c-knowhow,#p-knowhowDetail .c-knowhow{
   width: 100%;
 }
-@media screen and (min-width: 960px) {
-  #page-knowhow .tj-knowhow,#page-knowhowDetail .tj-knowhow {
-    width: 90%;
-  }
-}
-#page-knowhow .tj-knowhow h2,#page-knowhowDetail .tj-knowhow h2 {
+#p-knowhow .c-knowhow h2,#p-knowhowDetail .c-knowhow h2 {
+  color: #666;
   font-size: 1.4rem;
-  font-weight: bold;
-  border: none;
+  font-weight: normal;
+  border-bottom: 1px solid #DDD;
   margin-bottom: 2.8rem;
 }
-#page-knowhow .tj-knowhow__item,#page-knowhowDetail .tj-knowhow__item {
+#p-knowhow .c-knowhow__item,#p-knowhowDetail .c-knowhow__item {
   margin-bottom: 1.5rem;
 }
-#page-knowhow .tj-knowhow__thumb,#page-knowhowDetail .tj-knowhow__thumb{
+#p-knowhow .c-knowhow__thumb,#p-knowhowDetail .c-knowhow__thumb{
   width: 5.5rem;
   height: 5.5rem;
   flex: 0 0 auto;
 }
-#page-knowhow .tj-knowhow__link, #page-knowhow .tj-knowhow__link:hover,
-#page-knowhowDetail .tj-knowhow__link, #page-knowhowDetail .tj-knowhow__link:hover {
+#p-knowhow .c-knowhow__link, #p-knowhow .c-knowhow__link:hover,
+#p-knowhowDetail .c-knowhow__link, #p-knowhowDetail .c-knowhow__link:hover {
   display: flex;
   color: #666;
   text-decoration: none;
 }
-#page-knowhow .tj-knowhow__link:hover,#page-knowhowDetail .tj-knowhow__link:hover {
+#p-knowhow .c-knowhow__link:hover,#p-knowhowDetail .c-knowhow__link:hover {
   opacity: 0.8;
 }
-#page-knowhow .tj-knowhow__lead,#page-knowhowDetail .tj-knowhow__lead {
-  padding-left: 1.0rem;  
+#p-knowhow .c-knowhow__lead,#p-knowhowDetail .c-knowhow__lead {
+  padding-left: 1.0rem;
 }
-#page-knowhow .tj-knowhow__lead p,#page-knowhowDetail .tj-knowhow__lead p {
+#p-knowhow .c-knowhow__lead p,#p-knowhowDetail .c-knowhow__lead p {
   font-size: 1.2rem;
   margin-bottom: 0.2em;
 }
 
-#page-knowhowDetail .tj-articleHeader {
+#p-knowhow .c-articleHeader {
   overflow: hidden;
 }
 @media screen and (max-width: 689px){
-  #page-knowhowDetail .ui.divider.u-dn{
+  #p-knowhow .ui.divider.u-dn{
     border:none;
   }
 }
 @media screen and (min-width: 680px){
-  #page-knowhowDetail .tj-articleHeader__thumb{
+  #p-knowhow .c-articleHeader__thumb{
     float: left;
     clear: both;
     vertical-align: bottom;
@@ -405,57 +154,64 @@
   }
 }
 @media screen and (max-width: 679px){
-  #page-knowhowDetail .tj-articleHeader__thumb{
+  #p-knowhow .c-articleHeader__thumb{
     width: 100%;
   }
 }
 @media screen and (min-width: 680px){
-  #page-knowhowDetail .tj-articleHeader__txtbox {
+  #p-knowhow .c-articleHeader__txtbox {
     padding-left: calc(16vw + 1em);
   }
 }
-#page-knowhowDetail .tj-articleHeader__title {
+@media screen and (max-width: 679px){
+  #p-knowhow .c-articleHeader__txtbox {
+    padding-top: 1.5em;
+  }
+}
+#p-knowhow .c-articleHeader__title {
   color: #666;
   font-size: 1.6rem;
+  font-weight: normal;
   margin-bottom: 1em;
 }
 @media screen and (max-width: 767px) {
-  #page-knowhowDetail .tj-articleHeader__title {
+  #p-knowhow .c-articleHeader__title {
     font-size: 1.4rem;
   }
 }
-#page-knowhowDetail .tj-articleHeader__lead {
+#p-knowhow .c-articleHeader__lead {
   color: #999;
   font-size: 1.2rem;
   padding-left: calc(16vw + 1em);
 }
 @media screen and (max-width: 767px) {
-  #page-knowhowDetail .tj-articleHeader__lead {
+  #p-knowhow .c-articleHeader__lead {
     float: left;
     padding: 0.5em 0 1em;
   }
 }
-#page-knowhowDetail .tj-articleMain {
+#p-knowhow .c-articleMain {
   margin-top: 3.0rem;
 }
-
-#page-knowhowDetail .tj-articleContent img {
+#p-knowhow .c-articleContent img {
   width: 100%;
   margin: 2.0rem 0;
 }
-#page-knowhowDetail .tj-articleContentH2{
-  border-left:5px solid;padding-left:1em;
+#p-knowhow .c-articleContentH2{
+  border-left:5px solid;
+  padding-left: 0.7em;
+  font-weight: normal;
   font-size: 1.4rem;
 }
-#page-knowhowDetail .tj-articleContent a{
-  color:#00B5AD;
+#p-knowhow .c-articleContent a{
+  color:#4183c4;
 }
-#page-knowhowDetail blockquote {
+#p-knowhow blockquote {
   padding: 1.0rem 2.0rem;
   margin: 4.0rem 0;
   text-indent: 1.5rem;
 }
-#page-knowhowDetail blockquote:before{
+#p-knowhow blockquote:before{
   content:"“";
   font-size:400%;
   line-height:1em;
@@ -464,7 +220,7 @@
   left:0;
   top:0;
 }
-#page-knowhowDetail blockquote span:after{
+#p-knowhow blockquote span:after{
   content:"”";
   font-size:400%;
   line-height:1em;
@@ -473,68 +229,79 @@
   right:0.5em;
   bottom:-0.5em;
 }
-#page-knowhowDetail .tj-articleContent .list .item{
+#p-knowhow .c-articleContent .list .item{
   display: flex;
 }
-#page-knowhowDetail .tj-articleContent .list .item p{
+#p-knowhow .c-articleContent .list .item p{
   margin: 0;
 }
-#page-knowhowDetail .tj-articleContentH2, #page-knowhowDetail .tj-articleContent p {
+#p-knowhow .c-articleContentH2, #p-knowhow .c-articleContent p {
   margin-bottom: 1.5em;
 }
-#page-knowhowDetail .tj-relatedArticle .content .header,
-#page-knowhowDetail .tj-relatedArticle .content .description{
+#p-knowhow .c-relatedArticle h2{
+  font-weight: normal;
+}
+#p-knowhow .c-relatedArticle .item{
+  margin-bottom: 4.0rem;
+}
+#p-knowhow .c-relatedArticle .content .header{
   color: #666;
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+#p-knowhow .c-relatedArticle .content .description{
+  color: #666;
+  font-size: 1.2rem;
 }
 @media screen and (max-width: 679px){
-  #page-knowhowDetail .l-sidebar{
+  #p-knowhow .l-aside{
     display: flex;
     flex-direction: column-reverse;
   }
 }
-#page-knowhowDetail .ui.cards{
+#p-knowhow .ui.cards{
   margin-top: 1em;
   margin-bottom: 1em;
 }
-#page-knowhowDetail .ui.cards .card{
+#p-knowhow .ui.cards .card{
   margin: 1em auto;
 }
 
-#page-knowhow .tj-knowhow__catlink{
+
+
+
+#p-knowhow .c-category__item{
+  border-top: 1px solid #EAEAEA;
+}
+#p-knowhow .c-category__item:last-child{
+  border-bottom: 1px solid #EAEAEA;
+}
+#p-knowhow .c-category__link{
   display: inline-block;
   width: 100%;
   height: 100%;
-  padding-bottom: 1em;
-  color: #666;
+  font-size: 1.2rem;
+  line-height: 3;
+  padding-left: 1.0rem;
+  padding-right: 1.0rem;
+  box-sizing: border-box;
+  color: #888;
   position: relative;
 }
-#page-knowhow .tj-knowhow__catlink .write.icon{
+#p-knowhow .c-category__link .write.icon{
   padding-right: 0.5em;
 }
-#page-knowhow .tj-knowhow__catlink .angle.right.icon{
+#p-knowhow .c-category__link .angle.right.icon{
   position: absolute;
   right: 0;
 }
-#page-knowhow .tj-knowhow__catlink:hover{
+#p-knowhow .c-category__link:hover{
   background: #FAFAFA;
-}
-.l-main .tj-breadcrumb {
-  display: block;
-  padding: 1.0rem 0;
-  font-size: 1.2rem;
-}
-@media screen and (max-width: 679px) {
-  .l-main .tj-breadcrumb {
-    display: none;
-  }
-}
-.tj-breadcrumb_first {
-  margin-left: 1.0rem;
 }
 
 
 @media screen and (min-width: 680px){
-  #page-knowhowDetail img.tj-page-55{
+  #p-knowhow img.c-page-55{
     width: 60%;
   }
 }

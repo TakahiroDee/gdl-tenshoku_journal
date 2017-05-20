@@ -11,12 +11,29 @@
 |
 */
 
+/* Top page */
 Route::get('/', 'TopController@index');
+
+/* Ranking page */
 Route::get('/ranking', 'RankingController@index');
+
 Route::get('/ranking/site', 'SiteController@index');
 Route::get('/ranking/site/{id}', 'SiteController@show');
+
 Route::get('/ranking/itweb', 'ItwebController@index');
+Route::get('/ranking/itweb/site/', 'ItwebController@getSiteIndex');
+Route::get('/ranking/itweb/agent/', 'ItwebController@getAgentIndex');
+Route::get('/ranking/itweb/{id}', 'ItwebController@show');
+
 Route::get('/ranking/agent', 'AgentController@index');
+Route::get('/ranking/agent/{id}', 'AgentController@show');
+
 Route::get('/ranking/haken', 'HakenController@index');
+Route::get('/ranking/haken/{id}', 'HakenController@show');
+
 Route::get('/ranking/woman', 'WomanController@index');
+Route::get('/ranking/woman/{id}', 'WomanController@show');
+
+/* Search page */
 Route::get('/search', 'SearchController@index');
+Route::get('/search/{id}', 'SearchController@showJob');

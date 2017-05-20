@@ -8,9 +8,11 @@
     <meta keyword="@yield('meta-keyword')">
     <meta description="@yield('meta-description')">
     <title>転職ジャーナル @yield('title')</title>
+    <link rel="shortcut icon" href="/dist/image/icon.ico">
     <link rel="stylesheet" href="/dist/semantic/semantic.css">
     <link rel="stylesheet" href="/dist/css/style.css">
     <script type="text/javascript" src="/dist/js/jquery-3.2.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/vue"></script>
     <script type="text/javascript" src="/dist/semantic/semantic.js"></script>
     <script type="text/javascript" src="/dist/js/app.js"></script>

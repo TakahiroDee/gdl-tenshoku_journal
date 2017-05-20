@@ -52,6 +52,12 @@
     padding: 1.5rem;
     overflow:hidden;
   }
+  .c-searchPanel tr td:first-child{
+    width: 20%;
+  }
+  .c-searchPanel tr td:last-child{
+    width: 80%;
+  }
   @media #{$less_than_medium}{
     .c-searchPanel td{
       background: #FFF;
@@ -67,6 +73,11 @@
   }
   .c-searchPanel__selectedlist{
     margin-left: calc(2.5em * 2 + 4.8rem + 1.0em ); // buttonのpadding * 2 + buttonのテキスト長 + 1em
+  }
+  .c-searchPanel__selectedlist li{
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
   @media #{$more_than_small}{
     .c-searchPanel .input{
@@ -102,6 +113,120 @@
     }
   }
 }
+
+//****************************
+// searchModal
+//****************************
+.ui.dimmer.modals .c-searchModal__content{
+  box-sizing:border-box;
+  height: 60vh;
+  overflow: scroll;
+}
+@media #{$more_than_small}{
+  .ui.dimmer.modals .content.c-searchModal__content .c-searchModal__tableBox{
+    display:flex;
+  }
+}
+.ui.dimmer.modals .c-searchModal__tableBox{
+  margin: 1em 0;
+}
+.ui.dimmer.modals .ui.table.c-searchModal__table{
+  font-size: 1.2rem;
+}
+@media #{$more_than_small}{
+  .ui.dimmer.modals .ui.single.table.c-searchModal__table{
+    width : calc(50% - 0.5rem);
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 1.0rem;
+  }
+}
+@media #{$less_than_medium}{
+  .ui.dimmer.modals .ui.single.table .c-searchModal__tableHead tr{
+    padding-top: 0;
+    padding-bottom : 0;
+  }
+  .ui.dimmer.modals .ui.single.table .c-searchModal__tableHead tr th{
+    padding-top: 1em !important;
+    padding-bottom : 1em !important;
+  }
+}
+.ui.dimmer.modals .ui.single.table .c-searchModal__tableHead tr th{
+  position: relative;
+  cursor: pointer;
+}
+.ui.dimmer.modals .ui.single.table .c-searchModal__tableHead tr th:after{
+  content: "";
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 20%;
+  right: 10px;
+  display: inline-block;
+  border-top: 2px solid #DDD;
+  border-right: 2px solid #DDD;
+}
+@media #{$less_than_medium}{
+  .ui.dimmer.modals .ui.single.table .c-searchModal__tableHead tr th:after{
+    top: 30%;
+  }
+}
+
+.ui.dimmer.modals .ui.single.table .c-searchModal__tableHead tr th[data-toggle="show"]:after{
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.ui.dimmer.modals .ui.single.table .c-searchModal__tableHead tr th[data-toggle="hidden"]:after{
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+@media #{$less_than_small}{
+  .ui.dimmer.modals .ui.single.table .c-searchModal__tableBody{
+    display: none;
+  }
+}
+.ui.dimmer.modals .ui.striped.table.c-searchModal__table tr td:first-child{
+  width : 15%;
+}
+.ui.dimmer.modals .ui.striped.table.c-searchModal__table tr td:last-child{
+  width : 85%;
+}
+.ui.dimmer.modals .ui.striped.table.c-searchModal__table tr{
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+.ui.dimmer.modals .ui.striped.table.c-searchModal__table li{
+  display: inline-block;
+  padding: 1.5em 1.0em;
+  cursor: pointer;
+}
+@media #{$more_than_small}{
+  .ui.dimmer.modals .ui.table.c-searchModal__table:nth-of-type(even){
+    margin-left: 0.5rem;
+  }
+  .ui.dimmer.modals .ui.table.c-searchModal__table:nth-of-type(odd){
+    margin-right: 0.5rem;
+  }
+}
+
+// override
+.ui.checkbox label{
+  font-size: 1.2rem;
+  padding-left: 2em;
+}
+.ui.checkbox label,input{
+  cursor: pointer;
+}
+.ui.dimmer.modals .ui.button{
+  font-size: 1.2rem;
+}
+
+
 
 //****************************
 // searchResult

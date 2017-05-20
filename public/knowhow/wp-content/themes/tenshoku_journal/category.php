@@ -1,11 +1,11 @@
 <?php get_header();?>
-<div class="l-main" id="page-knowhow">
+<div class="l-main" id="p-knowhow">
   <div class="l-inner l-row">
     <?php get_breadcrumb(); ?>
   </div>
-  <div class="l-inner l-row l-col tj-articles">
+  <div class="l-inner l-row l-col c-articles">
     <div class="l-col-lg-8">
-      <h1 class="tj-articles__lead"><?php bloginfo('name'); ?><span class="tj-articles__leadmeta"><?php bloginfo('description'); ?></span></h1>
+      <h1 class="c-articles__lead"><?php bloginfo('name'); ?><span class="c-articles__leadmeta"><?php bloginfo('description'); ?></span></h1>
       <div class="ui items">
         <?php
           if( have_posts() ):

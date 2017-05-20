@@ -12,8 +12,10 @@
         echo get_bloginfo('description') . " - 転職ジャーナル";
       endif;
     ?></title>
+    <link rel="shortcut icon" href="/dist/image/icon.ico">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/dist/semantic/semantic.css">
     <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+    <link rel="stylesheet" href="/dist/css/style.css">
     <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/dist/js/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/dist/semantic/semantic.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/dist/js/app.js"></script>
@@ -22,17 +24,22 @@
   <body>
     <div class="wrapper">
       <header class="l-header">
-        <div class="l-inner">
-          <h1 class="tj-logo"><a class="tj-logo__link" href="/">転職ジャーナル<span class="tj-logo__caption">Tenshoku Journal</span></a></h1>
-        </div>
-        <nav class="tj-gnav">
+        <div class="l-header__upper">
           <div class="l-inner">
-            <ul class="tj-gnav__menu">
-              <li class="tj-gnav__item um-dn"><a class="tj-gnav__link" href="/">HOME</a></li>
-              <li class="tj-gnav__item"><a class="tj-gnav__link" href="/ranking">転職サイト・Agent</a></li>
-              <li class="tj-gnav__item"><a class="tj-gnav__link" href="/search">求人をさがす</a></li>
-              <li class="tj-gnav__item"><a class="tj-gnav__link is_current" href="<?php echo home_url(); ?>">転職を考えたら</a></li>
-            </ul>
+            <h1 class="c-logo"><a class="c-logo__link" href="/"><img src="/dist/image/journal_logo.png"></a></h1>
           </div>
-        </nav>
+        </div>
+        <div class="l-header__lower">
+          <div class="l-inner">
+            <nav class="b-gnav">
+              <ul class="b-gnav__list">
+                <li class="b-gnav__item u-dn"><a class="b-gnav__link" href="/">HOME</a></li>
+                <li class="b-gnav__item"><a class="b-gnav__link" href="/ranking/agent/">転職サイト・Agent</a>
+                </li>
+                <li class="b-gnav__item"><a class="b-gnav__link" href="/search/">求人をさがす</a></li>
+                <li class="b-gnav__item"><a class="b-gnav__link" href="/knowhow">転職を考えたら</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </header>

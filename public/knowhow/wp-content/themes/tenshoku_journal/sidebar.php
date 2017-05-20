@@ -1,4 +1,5 @@
-<div class="l-col-lg-4 l-sidebar">
+<div class="l-col-lg-4">
+  <div class="l-aside">
   <?php
     // category list
     get_category_list();
@@ -9,4 +10,5 @@
 
     get_template_part('template-parts/sidebar/ranking');
   ?>
+  </div>
 </div>

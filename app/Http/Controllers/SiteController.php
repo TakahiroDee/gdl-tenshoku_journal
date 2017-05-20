@@ -7,88 +7,44 @@ use DB;
 use App\Ranking;
 use App\Reputation;
 
-class SiteController extends Controller
-{  
-    public function index()
+class SiteController extends BaseController
+{
+    protected $service_type = "";
+
+
+    public function __construct()
     {
-        $rankings = Ranking::where('service_type','site')
-                    ->where('del_flag','<>','true')
-                    ->orderBy('rank','asc')
-                    ->get();
-
-        $rnnx_reps = Reputation::where('service_name','リクナビNEXT')
-                    ->where('rating','>=',3)
-                    ->orderBy('virtual_created_date','desc')
-                    ->take(2)
-                    ->get();
-
-        $type_reps = Reputation::where('service_name','@type')
-                    ->where('rating','>=',3)
-                    ->orderBy('virtual_created_date','desc')
-                    ->take(2)
-                    ->get();
-
-        $bitr_reps = Reputation::where('service_name','バイトルNEXT')
-                    ->where('rating','>=',3)
-                    ->orderBy('virtual_created_date','desc')
-                    ->take(2)
-                    ->get();
-
-        $htlk_reps = Reputation::where('service_name','はたらいく')
-                    ->where('rating','>=',3)
-                    ->orderBy('virtual_created_date','desc')
-                    ->take(2)
-                    ->get();
-
-        $pages = DB::table('posts as t1')
-                          ->join('postmeta as t2', 't1.ID', '=', 't2.post_id')
-                          ->select('ID','post_title','post_name','guid','meta_value as headline')
-                          ->distinct()
-                          ->where('post_type','=','page')
-                          ->where('post_status','=','publish')
-                          ->where('meta_key','=','headline')
-                          ->get();
-
-        $posts = DB::table('posts as t3')
-                          ->leftJoin('posts as t4','t3.ID', '=', 't4.post_parent')
-                          ->select('t3.post_title as title', 't3.guid as link', 't4.guid as thumb')
-                          ->where('t3.post_type','=','post')
-                          ->where('t4.guid','REGEXP','wp-content/uploads/[0-9]{4}/[0-9]{2}/e_')
-                          ->orderBy('t3.post_modified','DESC')
-                          ->take(6)
-                          ->get();
-
-        return view('site.index',compact('pages','posts','rankings','rnnx_reps','type_reps','bitr_reps','htlk_reps','posts'));
+        $this->service_type = "site";
     }
 
-    public function show($id)
+
+    public function index()
     {
-        $ranking = Ranking::findOrFail($id);
+        $rankings = Ranking::where('service_type',$this->service_type)->orderBy('rank','asc')->get();
 
-        // $reps = Reputation::where('service_eg_name',$id)
-        //             ->orderBy('rating','desc')
-        //             ->orderBy('virtual_created_date','desc')
-        //             ->get();
-        // reputationテーブルにはservice_eg_nameがないので、relationさせる？
+        $reputations = $this->getRelatedReputation();
 
-        $pages = DB::table('posts as t1')
-                          ->join('postmeta as t2', 't1.ID', '=', 't2.post_id')
-                          ->select('ID','post_title','post_name','guid','meta_value as headline')
-                          ->distinct()
-                          ->where('post_type','=','page')
-                          ->where('post_status','=','publish')
-                          ->where('meta_key','=','headline')
-                          ->get();
+        $pages = $this->getPages();
+        $posts = $this->getPosts();
 
-        $posts = DB::table('posts as t3')
-                          ->leftJoin('posts as t4','t3.ID', '=', 't4.post_parent')
-                          ->select('t3.post_title as title', 't3.guid as link', 't4.guid as thumb')
-                          ->where('t3.post_type','=','post')
-                          ->where('t4.guid','REGEXP','wp-content/uploads/[0-9]{4}/[0-9]{2}/e_')
-                          ->orderBy('t3.post_modified','DESC')
-                          ->take(6)
-                          ->get();
+        return view('site.index',compact('pages','posts','rankings','reputations'));
+    }
 
-        return view('site.show',compact('ranking','pages','posts'));
+
+
+    public function show($service_id)
+    {
+        $id          = Ranking::where('service_id',$service_id)->get()->toArray()[0]['id'];
+
+        $contents    = Ranking::find($id);
+
+        $good_reps   = Ranking::find($id)->reputations()->orderBy('rating','desc')->orderBy('virtual_created_date','desc')->take(3)->get();
+        $bad_reps    = Ranking::find($id)->reputations()->orderBy('rating','asc')->orderBy('virtual_created_date','desc')->take(3)->get();
+        $recent_reps = Ranking::find($id)->reputations()->orderBy('rating','desc')->orderBy('virtual_created_date','desc')->take(10)->get();
+
+        $pages = $this->getPages();
+        $posts = $this->getPosts();
+
+        return view('site.show',compact('contents','good_reps','bad_reps','recent_reps','pages','posts'));
     }
 }

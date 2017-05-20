@@ -1,7 +1,7 @@
 // base color
-$base_link_color  : #666;
+$base_link_color  : #555;
 $base_theme_color : #00ACC1;
-$base_text_color  : #666;
+$base_text_color  : #555;
 
 // media query
 
@@ -15,3 +15,6 @@ $less_than_small  : "screen and (max-width:679px)";
 $from_medium_to_large : "screen and (min-width: 768px) and (max-width: 959px)";
 $from_small_to_medium : "screen and (min-width: 680px) and (max-width: 767px)";
 $from_small_to_large  : "screen and (min-width: 680px) and (max-width: 959px)";
+
+
+a{ cursor: pointer; }

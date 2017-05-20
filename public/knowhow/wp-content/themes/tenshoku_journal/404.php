@@ -3,7 +3,7 @@
   <div class="l-inner l-row">
     <?php get_breadcrumb(); ?>
   </div>
-  <div class="l-inner l-row l-col tj-articles">
+  <div class="l-inner l-row l-col c-articles">
     <div class="l-col-lg-8">
       <h1 class="header ui gray"> お探しのページは存在しません </h1>
       <p class="ui gray">あなたがアクセスしようとしたページは見つかりませんでした。お探しのページは移動もしくは削除された可能性があります。</p>

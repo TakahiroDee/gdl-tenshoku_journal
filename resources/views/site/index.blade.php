@@ -40,23 +40,13 @@
 
         @foreach($rankings as $ranking)
 
-        @php
-        $service = "";
-        if($ranking->service_name === "リクナビNEXT"){
-          $services = $rnnx_reps;
-        }elseif($ranking->service_name === "@type"){
-          $services = $type_reps;
-        }elseif($ranking->service_name === "バイトルNEXT"){
-          $services = $bitr_reps;
-        }elseif($ranking->service_name === "はたらいく"){
-          $services = $htlk_reps;
-        }
-        @endphp
-
         <div class="c-ranking">
-          <h2 class="c-ranking__title"><span>第{{ $ranking->rank }}位</span>{{ $ranking->service_name }}</h2>
+          <h2 class="c-ranking__title"><span>第{{ $ranking->rank }}位</span>{{ $ranking->service_jp_name }}</h2>
           <div class="ui items c-ranking__summary">
-            <div class="item"><div class="ui small image"><img class="c-ranking__thumb" src="/dist/image/{{ $ranking->thumbnail_path }}"></div>
+            <div class="item">
+              <a href="{{ action('SiteController@show', $ranking->service_id) }}" class="ui small image">
+                <img class="c-ranking__thumb" src="/dist/image/{{ $ranking->thumbnail_path }}">
+              </a>
               <div class="content">
                 <div class="description">
                   <p>{{ $ranking->summary }}</p>
@@ -68,16 +58,16 @@
             <div class="c-ranking__section"><span class="c-ranking__catch">ここがポイント<i class="pointing up icon"></i></span>
               <ul class="c-ranking__points">
 
-                @if(isset($ranking->positive_point1))
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>{{ $ranking->positive_point1 }}</li>
+                @if(isset($ranking->positive_point_1))
+                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>{{ $ranking->positive_point_1 }}</li>
                 @endif
 
-                @if(isset($ranking->positive_point2))
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>{{ $ranking->positive_point2 }}</li>
+                @if(isset($ranking->positive_point_2))
+                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>{{ $ranking->positive_point_2 }}</li>
                 @endif
 
-                @if(isset($ranking->positive_point3))
-                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>{{ $ranking->positive_point3 }}</li>
+                @if(isset($ranking->positive_point_3))
+                <li class="c-ranking__point"><i class="checkmark icon c-ranking__pointIcon"></i>{{ $ranking->positive_point_3 }}</li>
                 @endif
 
               </ul>
@@ -86,22 +76,22 @@
             <div class="c-ranking__section"><span class="c-ranking__catch">利用者の声<i class="talk outline icon"></i></span>
               <div class="ui comments c-voices">
 
-                @foreach($services as $service)
+                @foreach($reputations[$loop->index] as $reputation)
                 <div class="ui raised segment">
                   <div class="comment c-voice">
-                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="{{ $service->avatar_type }}"></span></div>
+                    <div class="c-voice__author"><div class="avatar c-voice__avatar"><span class="{{ $reputation->avatar_type }}"></span></div>
                       <div class="content c-voice__meta">
                         <span class="author">
-                          {{ $service->age }} / {{ $service->gender }} / {{ $service->job }}
+                          {{ $reputation->age }} / {{ $reputation->gender }} / {{ $reputation->job }}
                         </span>
                         <div class="metadata">
-                          <div class="ui star rating disabled" data-rating="{{ $service->rating }}" data-max-rating="5"></div>
+                          <div class="ui star rating disabled" data-rating="{{ $reputation->rating }}" data-max-rating="5"></div>
                         </div>
                       </div>
                     </div>
                     <div class="content c-voice__comment">
                       <div class="text">
-                        {{ mb_substr($service->comment,0,199) }}...
+                        {{ mb_substr($reputation->comment,0,199) }}...
                       </div>
                     </div>
                   </div>
@@ -111,8 +101,8 @@
               </div>
             </div>
             <div class="c-double__buttons">
-              <button class="ui orange button c-button"><a href="{{ action('SiteController@show', $ranking->service_eg_name) }}">クチコミ・詳細を見る</a></button>
-              <button class="ui teal button c-button"><a href="#">{{ $ranking->service_name }}の求人を見てみる</a></button>
+              <button class="ui orange button c-button"><a href="{{ action('SiteController@show', $ranking->service_id) }}">クチコミ・詳細を見る</a></button>
+              <button class="ui teal button c-button"><a href="#">{{ $ranking->service_jp_name }}の求人を見てみる</a></button>
             </div>
           </div>
         </div>

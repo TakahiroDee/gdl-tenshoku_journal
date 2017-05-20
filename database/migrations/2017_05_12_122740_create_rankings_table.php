@@ -15,9 +15,9 @@ class CreateRankingsTable extends Migration
     {
         Schema::create('rankings', function (Blueprint $table) {
             $table->increments('id');
-
+            $table->string('service_id',255)->unique();
             $table->string('service_type',255);
-            $table->foreign('service_id')->references('service_eg_name')->on('services')->onDelete('cascade');
+            $table->string('service_jp_name',255);
             $table->integer('rank');
             $table->string('thumbnail_path',255);
             $table->text('summary');
@@ -37,7 +37,6 @@ class CreateRankingsTable extends Migration
             $table->text('embeded_3')->nullable();
             $table->text('embeded_4')->nullable();
             $table->text('embeded_5')->nullable();
-
             $table->timestamps();
         });
     }

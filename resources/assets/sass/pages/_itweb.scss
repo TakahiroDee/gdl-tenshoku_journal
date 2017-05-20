@@ -33,10 +33,21 @@
 // hero
 //****************************
 #p-itweb{
-  .c-hero__itweb{
-    background: url("/dist/image/hero_of_itweb.jpg") no-repeat;
-    background-size: cover;
+  @media #{$more_than_small}{
+    .c-hero__itweb{
+      background: url("/dist/image/hero_of_itweb.jpg") no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
   }
+  @media #{$less_than_small}{
+    .c-hero__itweb{
+      background: url("/dist/image/hero_of_itweb_sp.jpg") no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+
   .c-hero__title{
     position: absolute;
     font-size: 1.8rem;

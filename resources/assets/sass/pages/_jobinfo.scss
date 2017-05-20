@@ -75,6 +75,9 @@
       line-height: 3.0rem;
     }
   }
+  .c-detail .ui.top.attached.tabular.menu .item a{
+    box-sizing: border-box;
+  }
   .c-detail .ui.bottom.attached.segment{
     padding:0;
   }

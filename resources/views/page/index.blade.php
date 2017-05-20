@@ -4,15 +4,11 @@
 @endsection
 
 {{-- meta keyword for this page --}}
-@section('meta-keyword')
-転職、求人、転職サイト、転職エージェント、口コミ、評判
-@endsection
+@section('meta-keyword','転職、求人、転職サイト、転職エージェント、口コミ、評判')
 
 {{-- meta description for this page --}}
-@section('meta-description')
-転職ジャーナルは、転職を検討し始めたすべての人向けのライフスタイルマガジンです。自分にあった転職サイト・転職エージェントの選び方や、
-各転職サービスが掲載している求人を比較して、自分にあったサービスを見つけることができます。
-@endsection
+@section('meta-description','転職ジャーナルは、転職を検討し始めたすべての人向けのライフスタイルマガジンです。自分にあった転職サイト・転職エージェントの選び方や、
+各転職サービスが掲載している求人を比較して、自分にあったサービスを見つけることができます。')
 
 {{-- l-wrapper's id --}}
 @section('page-id','p-top')
