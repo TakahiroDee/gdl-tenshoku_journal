@@ -33,13 +33,17 @@
 
           @foreach($pages as $page)
           <article class="item c-feature__item">
-            <div class="image c-feature__thumb"><img src="/dist/image/feature-{{ $page->ID }}.jpg"></div><a class="c-feature__link content" href="{{ $page->guid }}">
+            <div class="image c-feature__thumb">
+              <img src="/dist/image/feature-{{ $page->ID }}.jpg">
+            </div>
+            <a class="c-feature__link content" href="{{ $page->guid }}">
               <header class="c-feature__head">
                 <h1 class="c-feature__lead">{{ $page->post_title }}</h1>
               </header>
               <section class="description c-feature__excerpt">
                 {{ $page->headline }}
-              </section></a>
+              </section>
+            </a>
           </article>
           @endforeach
 
