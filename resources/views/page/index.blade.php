@@ -79,49 +79,49 @@
           <h2 class="l-section_title">掲載している求人から転職サービスをさがす</h2>
           <div class="l-search_by l-search_by_work">
             <h3>領域・職種からさがす</h3>
-            <ul class="c-search__list">
+            <div class="c-search__list">
               <div class="l-row l-md-row is-sp">
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__itweb" href="#"><span class="c-search__meta u-p2em">IT / Web</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__creative" href="#"><span class="c-search__meta u-p2em">クリエイティブ</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__bkoffice" href="#"><span class="c-search__meta u-p05em">バックオフィス<br><small>一般/専門事務・総務・財務・経理・法務・人事など</small></span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__sales" href="#"><span class="c-search__meta u-p2em">営業</span></a></li>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__itweb" href="#"><span class="c-search__meta u-p2em">IT / Web</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__creative" href="#"><span class="c-search__meta u-p2em">クリエイティブ</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__bkoffice" href="#"><span class="c-search__meta u-p05em">バックオフィス<br><small>一般/専門事務・総務・財務・経理・法務・人事など</small></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__sales" href="#"><span class="c-search__meta u-p2em">営業</span></a></div>
               </div>
               <div class="l-row l-md-row is-sp">
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__medical" href="#"><span class="c-search__meta u-p2em">医療</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__food" href="#"><span class="c-search__meta u-p2em">飲食</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__logi" href="#"><span class="c-search__meta u-p1em">運輸・物流<br>警備・設備管理</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__care" href="#"><span class="c-search__meta u-p2em">介護・福祉・保育</span></a></li>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__medical" href="#"><span class="c-search__meta u-p2em">医療</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__food" href="#"><span class="c-search__meta u-p2em">飲食</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__logi" href="#"><span class="c-search__meta u-p1em">運輸・物流<br>警備・設備管理</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__care" href="#"><span class="c-search__meta u-p2em">介護・福祉・保育</span></a></div>
               </div>
               <div class="l-row l-md-row is-sp">
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__marke" href="#"><span class="c-search__meta u-p05em">企画<br><small>経営・事業・商品企画<br>マーケティング、管理職</small></span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__edu" href="#"><span class="c-search__meta u-p2em">教育</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__finance" href="#"><span class="c-search__meta u-p2em">金融                        </span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__estate" href="#"><span class="c-search__meta u-p1em">不動産・建築<br>設計・土木</span></a></li>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__marke" href="#"><span class="c-search__meta u-p05em">企画<br><small>経営・事業・商品企画<br>マーケティング、管理職</small></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__edu" href="#"><span class="c-search__meta u-p2em">教育</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__finance" href="#"><span class="c-search__meta u-p2em">金融                        </span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__estate" href="#"><span class="c-search__meta u-p1em">不動産・建築<br>設計・土木</span></a></div>
               </div>
               <div class="l-row l-md-row is-sp">
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__service" href="#"><span class="c-search__meta u-p2em">販売・サービス</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__prod" href="#"><span class="c-search__meta u-p1em">製造・生産<br>開発・研究職</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__prof" href="#"><span class="c-search__meta u-p1em">専門職<br><small>コンサルタント・士業等</small></span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__other" href="#"><span class="c-search__meta u-p2em">その他</span></a></li>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__service" href="#"><span class="c-search__meta u-p2em">販売・サービス</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__prod" href="#"><span class="c-search__meta u-p1em">製造・生産<br>開発・研究職</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__prof" href="#"><span class="c-search__meta u-p1em">専門職<br><small>コンサルタント・士業等</small></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__other" href="#"><span class="c-search__meta u-p2em">その他</span></a></div>
               </div>
-            </ul>
+            </div>
           </div>
           <div class="l-search_by l-search_by_area">
             <h3>勤務地からさがす</h3>
-            <ul class="c-search__list">
+            <div class="c-search__list">
               <div class="l-row l-md-row is-sp">
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__hokkaido" href="#"><span class="c-search__meta u-p2em">北海道</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__tohoku" href="#"><span class="c-search__meta u-p2em">東北</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kanto" href="#"><span class="c-search__meta u-p2em">関東</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__tokai" href="#"><span class="c-search__meta u-p2em">東海</span></a></li>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__hokkaido" href="#"><span class="c-search__meta u-p2em">北海道</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__tohoku" href="#"><span class="c-search__meta u-p2em">東北</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kanto" href="#"><span class="c-search__meta u-p2em">関東</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__tokai" href="#"><span class="c-search__meta u-p2em">東海</span></a></div>
               </div>
               <div class="l-row l-md-row is-sp">
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__hokushin" href="#"><span class="c-search__meta u-p2em">北信越</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kansai" href="#"><span class="c-search__meta u-p2em">関西</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__chushikoku" href="#"><span class="c-search__meta u-p2em">中国・四国</span></a></li>
-                <li class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kyushu" href="#"><span class="c-search__meta u-p2em">九州・沖縄</span></a></li>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__hokushin" href="#"><span class="c-search__meta u-p2em">北信越</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kansai" href="#"><span class="c-search__meta u-p2em">関西</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__chushikoku" href="#"><span class="c-search__meta u-p2em">中国・四国</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kyushu" href="#"><span class="c-search__meta u-p2em">九州・沖縄</span></a></div>
               </div>
-            </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -167,7 +167,7 @@
             <ul class="c-knowhow__list">
 
               @foreach($posts as $post)
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="{{ $post->link }}"><img class="c-knowhow__thumb" src="{{ $post->thumb }}" width="55" height="55">
+              <li class="c-knowhow__item"><a class="c-knowhow__link" href="{{ $post->link }}"><img class="c-knowhow__thumb" src="{{ $post->thumb }}" width="55" height="55" alt="{{ $post->title }}">
                   <p class="c-knowhow__lead">{{ $post->title }}</p></a></li>
               @endforeach
 
