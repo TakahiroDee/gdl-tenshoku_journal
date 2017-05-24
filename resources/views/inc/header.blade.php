@@ -1,7 +1,7 @@
 <header class="l-header">
   <div class="l-header__upper">
     <div class="l-inner">
-      <h1 class="c-logo"><a class="c-logo__link" href="/"><img src="/dist/image/journal_logo.png"></a></h1>
+      <h1 class="c-logo"><a class="c-logo__link" href="/"><img src="/dist/image/journal_logo.png" alt="転職ジャーナル"></a></h1>
     </div>
   </div>
   <div class="l-header__lower">

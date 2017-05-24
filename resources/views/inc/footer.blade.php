@@ -1,6 +1,6 @@
 <footer class="l-footer">
   <div class="l-inner l-footer-logo">
-    <div class="c-logo"><a class="c-logo__link" href="/"><img src="/dist/image/journal_logo.png"></a></div>
+    <div class="c-logo"><a class="c-logo__link" href="/"><img src="/dist/image/journal_logo.png" alt="転職ジャーナル"></a></div>
   </div>
   <div class="l-inner l-row">
     <div class="l-col-lg-9">

@@ -28,20 +28,22 @@
         </div>
       </div>
       <div class="l-main_lf_2">
-        <div class="ui items c-feature">
+        <div class="c-feature">
           <h2 class="l-section_title">タイプ・目的別に転職サービスをさがす</h2>
 
           @foreach($pages as $page)
-          <article class="item c-feature__item">
-            <div class="image c-feature__thumb">
-              <img src="/dist/image/feature-{{ $page->ID }}.jpg">
-            </div>
-            <a class="c-feature__link content" href="{{ $page->guid }}">
-              <header class="c-feature__head">
-                <h1 class="c-feature__lead">{{ $page->post_title }}</h1>
-              </header>
-              <section class="description c-feature__excerpt">
-                {{ $page->headline }}
+          <article class="ui items c-feature__item">
+            <a class="item c-feature__link content" href="{{ $page->guid }}">
+              <div class="image c-feature__thumb">
+                <span data-thumbnail-ID="{{ $page->ID }}"></span>
+              </div>
+              <section class="c-feature__contentBox">
+                <header class="c-feature__head">
+                  <h1 class="c-feature__lead">{{ $page->post_title }}</h1>
+                </header>
+                <p class="description c-feature__excerpt">
+                  {{ $page->headline }}
+                </p>
               </section>
             </a>
           </article>
@@ -50,29 +52,44 @@
         </div>
       </div>
       <div class="l-main_lf_3">
-        <div class="c-ranking">
-          <h2 class="l-section_title">転職サイト / 転職エージェント徹底比較ランキング</h2>
-          <div class="c-ranking__item l-row">
-            <div class="c-ranking__thumb c-ranking__site l-col"></div><a class="c-ranking__link l-col" href="{{ action('SiteController@index') }}">
+        <h2 class="l-section_title">転職サイト / 転職エージェント徹底比較ランキング</h2>
+        <div class="ui items c-ranking__item">
+          <a class="item c-ranking__link content" href="{{ action('SiteController@index') }}">
+            <div class="c-ranking__thumb c-ranking__site"></div>
+            <div class="c-ranking__contentBox">
               <h3 class="c-ranking__lead">みんなが選ぶ、転職サイトランキング</h3>
-              <p class="c-ranking__excerpt">転職サイトなんてどこも同じ。そう思っていませんか？職種や年齢によって向いている転職サイトはさまざま。 あなたのタイプに応じてピッタリの転職サイトが見つかります。</p></a>
-          </div>
-          <div class="c-ranking__item l-row">
-            <div class="c-ranking__thumb c-ranking__agent l-col"></div><a class="c-ranking__link l-col" href="{{ action('AgentController@index') }}">
-              <h3 class="c-ranking__lead">決定版！転職エージェントランキング</h3>
-              <p class="c-ranking__excerpt">転職エージェントってスキルが高い人、ヘッドハンティングされるような人がつかうものだと思っていませんか？ 実は利用者だけでいえば、若手や第二新卒の人が多くもっと身近なものなんです。まずは調べてみませんか。</p></a>
-          </div>
-          <div class="c-ranking__item l-row">
-            <div class="c-ranking__thumb c-ranking__itweb l-col"></div><a class="c-ranking__link l-col" href="{{ action('ItwebController@index') }}">
-              <h3 class="c-ranking__lead">IT系転職サイト・エージェントランキング</h3>
-              <p class="c-ranking__excerpt">Webプロデューサー・プランナー・ディレクター・Webデザイナー・UI/UXデザイナー・ Webエンジニア・アプリケーションエンジニア・SE・インフラエンジニア・Webマーケター向け転職サイト・エージェントランキングです。</p></a>
-          </div>
-          <div class="c-ranking__item l-row">
-            <div class="c-ranking__thumb c-ranking__haken l-col"></div><a class="c-ranking__link l-col" href="{{ action('HakenController@index') }}">
-              <h3 class="c-ranking__lead">派遣サイトランキング</h3>
-              <p class="c-ranking__excerpt">仕事もほどほどにやりながら、プライベートを両方充実させたいという方なら派遣で働くというのも一つの手です。 ここでは複数ある派遣サイトを目的に合わせてどのように使い分けるべきか、お伝えします。</p></a>
-          </div>
+              <p class="c-ranking__excerpt">転職サイトなんてどこも同じ。そう思っていませんか？職種や年齢によって向いている転職サイトはさまざま。 あなたのタイプに応じてピッタリの転職サイトが見つかります。</p>
+            </div>
+          </a>
         </div>
+        <div class="ui items c-ranking__item">
+          <a class="item c-ranking__link content" href="{{ action('AgentController@index') }}">
+            <div class="c-ranking__thumb c-ranking__agent"></div>
+            <div class="c-ranking__contentBox">
+              <h3 class="c-ranking__lead">決定版！転職エージェントランキング</h3>
+              <p class="c-ranking__excerpt">転職エージェントというとスキルが高い人、ヘッドハンティングされるような人が利用するものだと思っていませんか？ 実は利用者だけでいえば、若手や第二新卒の人が最も多く一般的なものなのです。まずはどんな転職エージェントがあるのか調べてみましょう。</p>
+            </div>
+          </a>
+        </div>
+        <div class="ui items c-ranking__item">
+          <a class="item c-ranking__link content" href="{{ action('ItwebController@index') }}">
+            <div class="c-ranking__thumb c-ranking__itweb"></div>
+            <div class="c-ranking__contentBox">
+              <h3 class="c-ranking__lead">IT系転職サイト・エージェントランキング</h3>
+              <p class="c-ranking__excerpt">Webプロデューサー・プランナー・ディレクター・Webデザイナー・UI/UXデザイナー・ Webエンジニア・アプリケーションエンジニア・SE・インフラエンジニア・Webマーケター向け転職サイト・エージェントランキングです。</p>
+            </div>
+          </a>
+        </div>
+        <div class="ui items c-ranking__item">
+          <a class="item c-ranking__link content" href="{{ action('HakenController@index') }}">
+            <div class="c-ranking__thumb c-ranking__haken"></div>
+            <div class="c-ranking__contentBox">
+              <h3 class="c-ranking__lead">派遣サイトランキング</h3>
+              <p class="c-ranking__excerpt">仕事もほどほどにやりながら、プライベートを両方充実させたいという方なら派遣で働くというのも一つの手です。 ここでは複数ある派遣サイトを目的に合わせてどのように使い分けるべきか、お伝えします。</p>
+            </div>
+          </a>
+        </div>
+
       </div>
       <div class="l-main_lf_4">
         <div class="c-search">

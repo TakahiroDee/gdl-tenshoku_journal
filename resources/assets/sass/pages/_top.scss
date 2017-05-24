@@ -12,7 +12,7 @@
   }
   @media #{$less_than_large}{
     .l-main{
-      margin:0 1.0rem;
+      margin:0 4vw;
     }
   }
   .l-section_title{
@@ -41,9 +41,6 @@
   //****************************
   // l-main_lf_2
   //****************************
-  .l-main_lf_2 .c-feature__item{
-    margin-bottom: 4.5rem;
-  }
 
   //****************************
   // l-main_lf_4
@@ -124,38 +121,148 @@
 // feature
 //****************************
 #p-top{
+  @media #{$more_than_medium}{
+    .c-feature__item{
+      margin-bottom: 4.5rem;
+    }
+  }
+  @media #{$less_than_medium}{
+    .c-feature__item{
+      min-height: 30.0rem;
+      max-height: 35.0rem;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #eaeaea;
+    }
+    .c-feature__item::after{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 15%;
+      background: linear-gradient(rgba(255,255,255,0) 0,rgba(255,255,255,1) 75%,rgba(255,255,255,1) 100%);
+    }
+  }
   .c-feature__item:hover{
     opacity: 0.8;
+  }
+  @media#{$more_than_medium}{
+    .c-feature__thumb{
+      height: 13.6rem;
+    }
+  }
+  @media#{$less_than_medium}{
+    .c-feature__thumb{
+      width: 100% !important; // semantic ui override
+      height: 14.0rem;
+    }
+  }
+  .c-feature__thumb > span{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  span[data-thumbnail-id="55"]{
+    background: url('/dist/image/feature-55.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  span[data-thumbnail-id="104"]{
+    background: url('/dist/image/feature-104.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  span[data-thumbnail-id="123"]{
+    background: url('/dist/image/feature-123.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  span[data-thumbnail-id="128"]{
+    background: url('/dist/image/feature-128.jpg') no-repeat;
+    background-size: cover;
+    background-position: 50% 10%;
+  }
+  @media #{$more_than_medium}{
+    .c-feature__contentBox{
+      padding-left: 1.0rem;
+    }
+  }
+  @media #{$less_than_medium}{
+    .c-feature__contentBox{
+      padding: 1.0rem;
+      box-sizing: border-box;
+    }
   }
   .c-feature__link{
     color: $base_link_color;
   }
+  @media #{$less_than_medium}{
+    .c-feature__link{
+      margin: 0;
+    }
+  }
   .c-feature__lead{
     font-size: 1.4rem;
     font-weight: normal;
+    margin-bottom: 1em;
   }
   .c-feature__excerpt{
     color: #999;
     font-size: 1.2rem;
     line-height: 1.6;
   }
+  @media #{$less_than_medium}{
+    .c-feature__excerpt{
+      line-height: 1.8;
+    }
+  }
 }
+
 
 //****************************
 // ranking
 //****************************
 #p-top{
+  @media #{$less_than_medium}{
+    .c-ranking__item{
+      min-height: 30.0rem;
+      max-height: 35.0rem;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #eaeaea;
+    }
+    .c-ranking__item::after{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 15%;
+      background: linear-gradient(rgba(255,255,255,0) 0,rgba(255,255,255,1) 75%,rgba(255,255,255,1) 100%);
+    }
+  }
+  @media #{$more_than_medium}{
+    .c-ranking__item{
+      margin: 0;
+    }
+  }
   .c-ranking__item:hover{
     opacity: 0.8;
   }
-  @media #{$less_than_large}{
-    .c-ranking__item{
-      margin-bottom: 3.0rem;
+  @media#{$more_than_medium}{
+    .c-ranking__thumb{
+      width: 50%;
+      height: 13.6rem;
+    }
+  }
+  @media#{$less_than_medium}{
+    .c-ranking__thumb{
+      width: 100% !important; // semantic ui override
+      height: 14.0rem;
     }
   }
   .c-ranking__thumb{
-    width: 100%;
-    height: 13.0rem;
     line-height: 13.0rem;
   }
   .c-ranking__site{
@@ -184,30 +291,116 @@
       background-position-y: 20%;
     }
   }
-  .c-ranking__link{
-    display: block;
-    color: $base_text_color;
-  }
-  @media #{$more_than_large}{
-    .c-ranking__link{
+  @media #{$more_than_medium}{
+    .c-ranking__contentBox{
+      width: 50%;
       padding-left: 1.0rem;
     }
   }
-  @media #{$less_than_large}{
+  @media #{$less_than_medium}{
+    .c-ranking__contentBox{
+      padding: 1.0rem;
+      box-sizing: border-box;
+    }
+  }
+  .c-ranking__link{
+    color: $base_link_color;
+  }
+  @media #{$more_than_medium}{
     .c-ranking__link{
-      padding: 0.5rem;
+      display: flex;
+    }
+  }
+  @media #{$less_than_medium}{
+    .c-ranking__link{
+      margin: 0;
     }
   }
   .c-ranking__lead{
     font-size: 1.4rem;
     font-weight: normal;
+    margin-bottom: 1em;
   }
   .c-ranking__excerpt{
-    font-size: 1.2rem;
     color: #999;
+    font-size: 1.2rem;
     line-height: 1.6;
   }
+  @media #{$less_than_medium}{
+    .c-ranking__excerpt{
+      line-height: 1.8;
+    }
+  }
 }
+
+
+// //****************************
+// // ranking
+// //****************************
+// #p-top{
+//   .c-ranking__item:hover{
+//     opacity: 0.8;
+//   }
+//   @media #{$less_than_large}{
+//     .c-ranking__item{
+//       margin-bottom: 3.0rem;
+//     }
+//   }
+//   .c-ranking__thumb{
+//     width: 100%;
+//     height: 13.0rem;
+//     line-height: 13.0rem;
+//   }
+//   .c-ranking__site{
+//     background: url('/dist/image/93801880.jpg');
+//     background-size: cover;
+//   }
+//   @media #{$less_than_large}{
+//     .c-ranking__site{
+//       background-position-y: 30%;
+//     }
+//   }
+//   .c-ranking__agent{
+//     background: url('/dist/image/99302690.jpg');
+//     background-size: cover;
+//   }
+//   .c-ranking__itweb{
+//     background: url('/dist/image/100716472.jpg');
+//     background-size: cover;
+//   }
+//   .c-ranking__haken{
+//     background: url('/dist/image/102617459.jpg');
+//     background-size: cover;
+//   }
+//   @media #{$less_than_large}{
+//     .c-ranking__haken{
+//       background-position-y: 20%;
+//     }
+//   }
+//   .c-ranking__link{
+//     display: block;
+//     color: $base_text_color;
+//   }
+//   @media #{$more_than_large}{
+//     .c-ranking__link{
+//       padding-left: 1.0rem;
+//     }
+//   }
+//   @media #{$less_than_large}{
+//     .c-ranking__link{
+//       padding: 0.5rem;
+//     }
+//   }
+//   .c-ranking__lead{
+//     font-size: 1.4rem;
+//     font-weight: normal;
+//   }
+//   .c-ranking__excerpt{
+//     font-size: 1.2rem;
+//     color: #999;
+//     line-height: 1.6;
+//   }
+// }
 
 
 //****************************
