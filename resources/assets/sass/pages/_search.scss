@@ -63,9 +63,10 @@
       background: #FFF;
     }
   }
-  .c-searchPanel button{
+  .c-searchPanel .ui.button.c-jobmodal,
+  .c-searchPanel .ui.button.c-areamodal{
     float: left;
-    clear: both;
+    clear: left;
     font-size: 1.2rem;
     font-weight: normal;
     padding-left: 2.5em;
@@ -73,11 +74,11 @@
   }
   .c-searchPanel__selectedlist{
     margin-left: calc(2.5em * 2 + 4.8rem + 1.0em ); // buttonのpadding * 2 + buttonのテキスト長 + 1em
+    overflow: hidden;
   }
-  .c-searchPanel__selectedlist li{
-    display: inline-block;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+  .c-searchPanel__selectedlist div{
+    float: left;
+    margin: 2px 5px;
   }
   @media #{$more_than_small}{
     .c-searchPanel .input{
@@ -93,7 +94,7 @@
     text-align: right;
   }
   .c-searchPanel .small.button{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: normal;
   }
   @media #{$more_than_medium}{
@@ -132,6 +133,7 @@
 }
 .ui.dimmer.modals .ui.table.c-searchModal__table{
   font-size: 1.2rem;
+  white-space: normal;
 }
 @media #{$more_than_small}{
   .ui.dimmer.modals .ui.single.table.c-searchModal__table{
@@ -154,6 +156,7 @@
 .ui.dimmer.modals .ui.single.table .c-searchModal__tableHead tr th{
   position: relative;
   cursor: pointer;
+  padding-right: 2em !important;
 }
 .ui.dimmer.modals .ui.single.table .c-searchModal__tableHead tr th:after{
   content: "";
@@ -188,6 +191,12 @@
 @media #{$less_than_small}{
   .ui.dimmer.modals .ui.single.table .c-searchModal__tableBody{
     display: none;
+  }
+}
+@media #{$less_than_small}{
+  .ui.dimmer.modals .ui.single.table th,
+  .ui.dimmer.modals .ui.single.table td{
+    font-weight: normal !important;
   }
 }
 .ui.dimmer.modals .ui.striped.table.c-searchModal__table tr td:first-child{
@@ -226,6 +235,11 @@
   font-size: 1.2rem;
 }
 
+.ui.modal .actions{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
 
 
 //****************************
@@ -256,12 +270,12 @@
     font-weight: bold;
   }
   .c-searchResult__pagination{
-    font-size: 1.0rem;
-    height: 4.5rem;
+    font-size: 1.2rem;
     text-align: center;
   }
   .c-searchResult__pagination .item{
-    box-sizing: content-box;
+    padding: 1.6em;
+    box-sizing: border-box;
   }
 }
 

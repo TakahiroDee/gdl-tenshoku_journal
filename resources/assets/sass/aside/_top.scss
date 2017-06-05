@@ -85,6 +85,12 @@
   }
   .c-knowhow__link{
     display: flex;
+    flex-wrap: nowrap;
+  }
+  .c-knowhow__thumb{
+    width: 70px;
+    flex-basis: 70px;
+    height: 55px;    
   }
   .c-knowhow__lead{
     padding-left: 1.0rem;

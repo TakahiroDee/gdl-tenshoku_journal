@@ -58,10 +58,21 @@
     margin-bottom:1.5em;
   }
 
+  .c-detail .ui.message{
+    margin-top: 50px;
+    margin-bottom: 90px;
+  }
+
   .c-detail .ui.ordered.list{
-    margin-top:5.0rem;
-    margin-bottom:5.0rem;
     color:#666;
+  }
+
+  .c-detail .ui.ordered.list a{
+    color:#4183c4;
+  }
+
+  .c-detail .ui.ordered.list a:hover{
+    text-decoration: underline;
   }
 
   .c-detail .ui.celled.list{

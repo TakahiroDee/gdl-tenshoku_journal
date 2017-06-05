@@ -3,25 +3,25 @@
 //****************************
 .c-logo{
   font-weight: normal;
-  font-size: 1.6rem;
+  font-size: 16px;
   line-height: 1;
-  padding: 0.5rem 0;
+  padding: 5px 0;
   display: inline-block;
 }
 .c-logo__link,.c-logo__link:hover{
   display: inherit;
   color: #FFF;
-  font-size: 1.6rem;
+  font-size: 16px;
 }
 @media #{$more_than_small}{
   .c-logo__link img{
-    height: 3.0rem;
+    height: 30px;
     width: auto;
   }
 }
 @media #{$less_than_small}{
   .c-logo__link img{
-    height: 2.6rem;
+    height: 26px;
     width: auto;
   }
 }
@@ -30,13 +30,13 @@
 //****************************
 // voice
 //****************************
-#p-agent,#p-site,#p-itweb,#p-haken,#p-detail,#p-woman{
+#p-ranking,#p-detail{
   .c-voices{
-    font-size: 1.4rem;
+    font-size: 14px;
   }
   .c-voices .ui.raised.segment{
     font-size: 100%;
-    margin:2.5rem 0;
+    margin:25px 0;
   }
   .c-voice__author{
     display: flex;
@@ -90,13 +90,13 @@
     height: 100%;
   }
   .c-voice__meta{
-    padding: 0 1.5rem;
+    padding: 0 15px;
   }
   .c-voice__comment{
-    margin: 1.5rem 0 0;
+    margin: 15px 0 0;
   }
   .c-voice__comment .text{
-    font-size: 1.2rem;
+    font-size: 12px;
     line-height: 1.6;
     color: $base_text_color;
   }
@@ -106,7 +106,7 @@
 //****************************
 // double button
 //****************************
-#p-agent,#p-site,#p-itweb,#p-haken,#p-detail,#p-jobinfo,#p-woman{
+#p-ranking,#p-detail,#p-jobinfo{
   .c-double__buttons{
     margin: 5.0em 0 3.0em;
   }
@@ -116,20 +116,20 @@
     }
     .c-double__buttons .c-button{
       width: 50%;
-      margin: 0 2.0rem;
+      margin: 0 20px;
     }
   }
   .c-button{
     width: 100%;
-    font-size: 1.4rem;
+    font-size: 14px;
     font-weight: normal;
     padding:0;
-    margin-bottom: 2.0rem;
+    margin-bottom: 20px;
     box-sizing: border-box;
   }
   .c-button a{
     color: #FFF;
-    padding: 2.0rem 1.5em;
+    padding: 20px 1.5em;
     box-sizing: border-box;
     display: block;
     width: 100%;
@@ -140,31 +140,46 @@
 //****************************
 // single button
 //****************************
-#p-agent,#p-site,#p-itweb,#p-haken,#p-detail,#p-jobinfo,#p-woman{
-  .c-singlebutton{
-    width: 100%;
-    font-size: 1.4rem;
-    line-height: 1.6;
-    font-weight: normal;
-    padding-top: 2.0rem;
-    padding-bottom: 2.0rem;
-    box-sizing: border-box;
+#p-ranking .c-single__button,#p-detail .c-single__button,#p-jobinfo .c-single__button{
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: normal;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+@media #{$more_than_large}{
+  #p-ranking .c-single__button,#p-detail .c-single__button{
+    width: 50%;
+    min-width: 274px;
   }
 }
+@media #{$less_than_large}{
+  #p-ranking .c-single__button,#p-detail .c-single__button{
+    width: 100%;
+  }
+}
+#p-jobinfo .c-single__button{
+  width: 100%;
+}
+
+
 
 //****************************
 // hero
 //****************************
 .c-hero{
   width: 100%;
-  height: 40.0rem;
+  height: 400px;
   color: #FFF;
   position: relative;
   display: block;
 }
 @media #{$less_than_small}{
   .c-hero{
-    height: 26.0rem;
+    height: 260px;
   }
 }
 
@@ -172,10 +187,10 @@
 //****************************
 // breadcrumb
 //****************************
-#p-site,#p-itweb,#p-agent,#p-haken,#p-woman{
+.c-hero{
   .c-breadcrumb{
-    padding: 1.0rem 0;
-    font-size: 1.2rem;
+    padding: 10px 0;
+    font-size: 12px;
   }
   .c-breadcrumb a,.c-breadcrumb span{
     line-height: 1.6;
@@ -191,8 +206,8 @@
 
 #p-search,#p-detail,#p-jobinfo,#p-knowhow,#p-knowhowDetail{
   .c-breadcrumb{
-    padding: 1.0rem 0;
-    font-size: 1.2rem;
+    padding: 10px 0;
+    font-size: 12px;
   }
   .c-breadcrumb a,.c-breadcrumb span{
     line-height: 1.6;
@@ -213,18 +228,38 @@
 //****************************
 // searchCassette
 //****************************
-#p-search,#p-jobinfo{
+#p-ranking,#p-search,#p-jobinfo{
   .c-searchCassette{
     margin-bottom: 3.0rem;
   }
+  .c-searchCassette__meta{
+    font-size: 1.2rem;
+    color: #999;
+  }
   .c-searchCassette h2{
     color: #666;
+    font-size: 1.6rem;
+  }
+  .c-searchCassette h2 a{
+    color: inherit;
+  }
+  @media #{$less_than_medium}{
+    .c-searchCassette h2{
+      font-size: 1.4rem;
+    }
   }
   .c-searchCassette__lead .c-searchCassette__link{
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    color: #666;
+  }
+  @media #{$less_than_medium}{
+    .c-searchCassette__lead .c-searchCassette__link{
+      font-size: 1.2rem;
+    }
   }
   .c-searchCassette table{
     font-size: 1.2rem;
+    line-height: 1.8;
   }
   @media #{$more_than_medium}{
     .c-searchCassette table th{
@@ -232,9 +267,10 @@
       padding-left: 1em;
     }
   }
-  .c-searchCassette table tr:nth-of-type(2) th{
+  .c-searchCassette table tr:nth-of-type(2) th,
+  .c-searchCassette table tr:nth-of-type(3) th,
+  .c-searchCassette table tr:nth-of-type(4) th{
     border-top: 1px solid rgba(34, 36, 38, 0.1);
-    border-bottom: 1px solid rgba(34, 36, 38, 0.1);
   }
   .c-searchCassette__buttons{
     display: flex;
@@ -242,47 +278,52 @@
   }
   .c-searchCassette__button{
     width: 50%;
-    margin: 0 0.5rem;
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: normal;
+  }
+  .c-searchCassette__button:first-child{
+    margin: 0 0.5em 0 0;
+  }
+  .c-searchCassette__button:last-child{
+    margin: 0 0 0 0.5em;
   }
   .c-searchCassette__button .c-searchCassette__link{
     color: #FFF;
     display: block;
     width: 100%;
     height: 100%;
-    padding: 1.5rem;
+    padding: 1.5em 0;
     box-sizing: border-box;
   }
 }
 
 
-//****************************
-// tabmenu
-//****************************
-#p-itweb{
-  .c-tabmenu{
-    text-align:center;
-    font-size: 1.2rem;
-    margin:2.0rem 0 5.0rem;
-  }
-  .c-tabmenu__item{
-     display:inline-block;
-     width:33.3333%;
-     box-sizing:border-box;
-     line-height:1.6;
-  }
-  @media #{$more_than_small}{
-    .c-tabmenu__item{
-       padding-top:1.5em;
-       padding-bottom:1.5em;
-    }
-  }
-  @media #{$less_than_small}{
-    .c-tabmenu__item{
-       padding-left:0.2em;
-       padding-right:0.2em;
-    }
-  }
-}
+// //****************************
+// // tabmenu
+// //****************************
+// #p-ranking,#p-itweb{
+//   .c-tabmenu{
+//     text-align:center;
+//     font-size: 1.2rem;
+//     margin:2.0rem 0 5.0rem;
+//   }
+//   .c-tabmenu__item{
+//      display:inline-block;
+//      width:33.3333%;
+//      box-sizing:border-box;
+//      line-height:1.6;
+//   }
+//   @media #{$more_than_small}{
+//     .c-tabmenu__item{
+//        padding-top:1.5em;
+//        padding-bottom:1.5em;
+//     }
+//   }
+//   @media #{$less_than_small}{
+//     .c-tabmenu__item{
+//        padding-left:0.2em;
+//        padding-right:0.2em;
+//     }
+//   }
+// }

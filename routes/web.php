@@ -15,25 +15,25 @@
 Route::get('/', 'TopController@index');
 
 /* Ranking page */
-Route::get('/ranking', 'RankingController@index');
+Route::get('/ranking', 'RankingController@topIndex');
 
-Route::get('/ranking/site', 'SiteController@index');
-Route::get('/ranking/site/{id}', 'SiteController@show');
-
-Route::get('/ranking/itweb', 'ItwebController@index');
-Route::get('/ranking/itweb/site/', 'ItwebController@getSiteIndex');
-Route::get('/ranking/itweb/agent/', 'ItwebController@getAgentIndex');
-Route::get('/ranking/itweb/{id}', 'ItwebController@show');
-
-Route::get('/ranking/agent', 'AgentController@index');
-Route::get('/ranking/agent/{id}', 'AgentController@show');
-
-Route::get('/ranking/haken', 'HakenController@index');
-Route::get('/ranking/haken/{id}', 'HakenController@show');
-
-Route::get('/ranking/woman', 'WomanController@index');
-Route::get('/ranking/woman/{id}', 'WomanController@show');
+Route::get('/ranking/site', 'RankingController@siteIndex');
+Route::get('/ranking/agent', 'RankingController@agentIndex');
+Route::get('/ranking/haken', 'RankingController@hakenIndex');
+Route::get('/ranking/woman', 'RankingController@womanIndex');
+Route::get('/ranking/itweb', 'RankingController@itwebIndex');
+Route::get('/ranking/{service_type}/{service_id?}', 'RankingController@show');
 
 /* Search page */
 Route::get('/search', 'SearchController@index');
-Route::get('/search/{id}', 'SearchController@showJob');
+Route::post('/search', 'SearchController@search');
+Route::get('/search/condition', 'SearchController@customIndex');
+Route::get('/search/service/{service_id}' ,'SearchController@getIndexByServiceId');
+
+Route::get('/search/job/{pathname}', 'SearchController@getIndexByJobBigCode');
+Route::get('/search/job/{pathname}/{job_code_full}' ,'SearchController@getIndexByJobFullCode');
+Route::get('/search/job/{pathname}/{job_code_full}/{rqmt_id}', 'SearchController@showByJobCode');
+
+Route::get('/search/area/{block_pathname}' ,'SearchController@getIndexByBlockCode');
+Route::get('/search/area/{block_pathname}/{area_pathname}' ,'SearchController@getIndexByAreaCode');
+Route::get('/search/area/{block_pathname}/{area_pathname}/{rqmt_id}', 'SearchController@showByAreaCode');

@@ -33,8 +33,8 @@
     margin: 0.8rem 0 1.8rem;
   }
   p{
-    font-size:1.2rem;
-    line-height:1.6;
+    font-size:1.3rem;
+    line-height:1.8;
     color:#666;
   }
   table,th,td{
@@ -84,9 +84,9 @@
   @media #{$more_than_small}{
     .ui.cards{
       margin: 0 0 2.0rem;
-      justify-content:space-between;
     }
     .ui.card{
+      min-width: 200px;
       width:23%;
       box-sizing:border-box;
       margin-left:1%;
@@ -99,6 +99,9 @@
     .ui.card:nth-child(4){
       margin-left: 1%;
       margin-right: 0;
+    }
+    .is-justify{
+      justify-content:space-between;
     }
   }
   @media #{$less_than_small}{
@@ -114,6 +117,10 @@
   }
   .ui.card *:not(a){
     color: #666;
+    font-size: 1.2rem;
+  }
+  .ui.card .meta{
+    font-weight: bold;
   }
   .ui.card .content .header{
     font-size: 1.4rem;
@@ -123,6 +130,10 @@
     font-size: 1.2rem;
     font-weight: normal;
     width: 100%;
+    box-sizing: border-box;
+    height: 4.0rem;
+    padding: 0;
+    line-height: 4.0rem;
   }
   .ui.card .summary{
     font-weight: normal;
@@ -144,8 +155,15 @@
       align-items:center;
     }
   }
+  @media #{$less_than_large}{
+    .c-header__meta{
+      display: flex;
+      align-items: center;
+    }
+  }
   .c-header__meta small{
     font-size:1.0rem;
+    margin-right: 1.5em;
     color:#999;
   }
   @media #{$more_than_small}{
@@ -153,16 +171,52 @@
       display:block;
     }
   }
-  .c-header__meta img{
-    vertical-align:middle;
+  .c-header__servicelogo{
     width: 10.0rem;
     height: 5.0rem;
+    border: 1px solid #eee;
+  }
+  .c-header__servicelogo.is-rikunabi_next{
+    background: url('/dist/image/logo_rikunabi_next.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-header__servicelogo.is-baitoru_next{
+    background: url('/dist/image/logo_baitoru_next.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-header__servicelogo.is-hatalike{
+    background: url('/dist/image/logo_hatalike.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-header__servicelogo.is-at_type{
+    background: url('/dist/image/logo_at_type.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-header__servicelogo.is-torabayu{
+    background: url('/dist/image/logo_torabayu.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-header__servicelogo.is-workport,.c-header__servicelogo.is-workport_it{
+    background: url('/dist/image/logo_workport.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-header__servicelogo.is-recruit_agent{
+    background: url('/dist/image/logo_recruit_agent.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-header__servicelogo.is-mynabi_agent{
+    background: url('/dist/image/logo_mynabi_agent.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-header__servicelogo.is-rikunabi_haken{
+    background: url('/dist/image/logo_rikunabi_haken.jpg') no-repeat;
+    background-size: contain;
   }
   .c-header__title{
     font-size: 1.6rem;
     color:#666;
   }
-  @media #{$more_than_small}{
+  @media #{$more_than_large}{
     .c-header__title{
       margin: 0 1.0rem;
     }
@@ -215,11 +269,16 @@
   .c-asto{
     border:1px solid #D4D4D5;
     box-shadow:none;
-    font-size:1.2rem;
+    font-size:1.3rem;
     color:#666;
+  }
+  .c-asto__footer{
+    position: relative;
   }
   @media #{$more_than_small}{
     .c-asto__footer{
+      font-size:1.3rem;
+      line-height: 1.8;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -233,6 +292,30 @@
   .c-asto__footer span{
     display: block;
     margin-bottom: 1.0rem;
+  }
+  @media #{$more_than_small}{
+    .c-asto__point{
+      width: 70%;
+      box-sizing: border-box;
+      padding-right: 1.5em;
+    }
+  }
+  .c-asto__point li{
+    display: flex;
+  }
+  .c-asto__point i{
+    margin-right: 0.7rem;
+  }
+
+  @media #{$less_than_small}{
+    .c-asto__detailbutton{
+      width: 100%;
+    }
+  }
+  @media #{$more_than_small}{
+    .c-asto__detailbutton{
+      width: 30%;
+    }
   }
 }
 
@@ -254,5 +337,15 @@
   .is-sp-fixed{
     position:fixed;
     bottom: 10px;
+  }
+
+  .c-detail__sticky.is-stack-sp{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .c-detail__sticky .c-single__button.is-stack-sp{
+    width: calc(100% - 2.0rem);
   }
 }

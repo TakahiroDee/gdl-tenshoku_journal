@@ -13,16 +13,16 @@
   position: fixed;
   width: 100%;
   z-index: 1;
-  box-shadow: 0 0.1rem 0 0 #ECEEF0;
+  box-shadow: 0 1px 0 0 #ECEEF0;
 }
 @media #{$less_than_small}{
   .l-header__lower{
-    font-size: 1.1rem;
+    font-size: 11px;
   }
 }
 @media #{$less_than_large}{
   .l-hero .l-inner{
-    margin:0 1.0rem;
+    margin:0 10px;
   }
 }
 
@@ -39,8 +39,8 @@
 }
 .b-gnav__item{
   width: 100%;
-  height: 4.4rem;
-  line-height: 4.4rem;
+  height: 44px;
+  line-height: 44px;
   text-align: center;
 }
 @media #{$less_than_small}{

@@ -1,869 +1,410 @@
-$(function(){
-  var gnav    = document.querySelector('.l-header__lower');
-  var headerH = document.querySelector('.l-header').clientHeight;
+document.addEventListener('DOMContentLoaded',() => {
+    const wrapperElement = document.querySelector('.l-wrapper');
+    /*
+     * Common
+     * --- Fixed Navigation Bar
+     */
+    const gnav    = document.querySelector('.l-header__lower');
+    const headerH = document.querySelector('.l-header').clientHeight;
 
-  var fixed_nav_bar = () => {
-    var scrollTop = window.scrollY;
+    const fixed_nav_bar = () => {
 
-    if(scrollTop > headerH){
-      gnav.classList.add('is-fixed');
-      $(gnav).animate({"top" : "0"},'slow');
-    }else{
-      gnav.classList.remove('is-fixed');
-    }
-  }
-
-  document.addEventListener('scroll',fixed_nav_bar,false);
-});
-
-
-$(function(){
-  let $stuck = $('.tj-searchStuck__content');
-
-  if($stuck.length > 0){
-    var stuckOffset = $stuck.offset().top;
-  }
-
-  $(window).on('scroll resize',function(){
-    // sicky menu
-    var st = $(this).scrollTop();
-
-    if(st > stuckOffset && window.innerWidth < 960){
-      $stuck.css({'position':'static','width':'100%'});
-    }else if(st > stuckOffset){
-      if(window.innerWidth >= 960){
-        $stuck.css({'position':'fixed','top': gnav.height() + 10 + 'px','width':'333px'});
-      }else{
-        $stuck.css({'position':'static','width':'100%'});
-      }
-    }else if(st < stuckOffset){
-      $stuck.css({'position':'static','width':'100%'});
-    }
-  });
-
-  // rating
-  $('.ui.rating').rating('disable');
-});
-
-
-$(function(){
-  if(navigator.userAgent.indexOf('iPhone') > -1 || navigator.userAgent.indexOf('Android') > -1){
-    $('.c-searchModal__tableHead tr th').attr('data-toggle','hidden')
-  }
-
-  $(window).on('resize',function(){
-    if(window.innerWidth <= 679){
-      $('.c-searchModal__tableHead tr th').attr('data-toggle','hidden')
-    }else{
-      $('.c-searchModal__tableHead tr th').attr('data-toggle','show')
-    }
-  });
-});
-
-
-$(function(){
-  $('.c-searchModal__tableHead').on('click',function(event){
-
-    var currentStatus = event.target.getAttribute('data-toggle');
-    if(currentStatus == "show"){
-      event.target.setAttribute('data-toggle', "hidden");
-      $(this).next().hide('slow');
-    }else{
-      event.target.setAttribute('data-toggle', "show");
-      $(this).next().show('slow');
-    }
-  });
-});
-
-
-
-/*
- * @vm_config
- */
-document.addEventListener('DOMContentLoaded',()=>{
-  /*********************************************
-   * SearchPanel Components
-   *********************************************/
-  Vue.component('search-panel',{
-    props : ['selectedJobData','selectedAreaData','keyword'],
-    template : `
-      <div class="c-searchPanel">
-        <table class="ui compact celled definition table">
-          <tbody>
-            <search-panel-job :JobCodeLists="currentJobCode" v-on:onClickJob="relayData('onClickJob')"></search-panel-job>
-            <search-panel-area :AreaCodeLists="currentAreaCode" v-on:onClickArea="relayData('onClickArea')"></search-panel-area>
-            <tr>
-              <td>キーワード</td>
-              <td>
-                <div class="ui icon input">
-                  <input type="text" placeholder="キーワードを入力してください" v-on:keyup="fillKeyword" v-model="currentKeyword"><i class="search icon"></i>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-          <tfoot class="full-width">
-            <tr>
-              <th colspan="12">
-                <div class="ui small button grey" v-on:click="allReset">条件をクリア</div>
-                <div class="ui small button olive">この条件で検索する</div>
-              </th>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    `,
-    computed : {
-      currentJobCode : function(){
-        if(_.isEmpty(this.selectedJobData)){
-          return ['選択してください'];
+        if(window.scrollY > headerH){
+            gnav.classList.add('is-fixed');
+            $(gnav).animate({"top" : "0"},'slow');
         }else{
-          return this.selectedJobData;
+            gnav.classList.remove('is-fixed');
         }
-      },
-      currentAreaCode : function(){
-        if(_.isEmpty(this.selectedAreaData)){
-          return ['選択してください'];
-        }else{
-          return this.selectedAreaData;
+
+    }
+
+    document.addEventListener('scroll',fixed_nav_bar,false);
+
+
+    /*
+     * Ranking
+     * --- Rating
+     */
+    if(wrapperElement.id === 'p-ranking'){
+        $('.ui.rating').rating('disable');
+    }
+
+
+    /*
+     * Search
+     * --- Stuck content
+     */
+
+    if(wrapperElement.id === 'p-search'){
+        const stuck = $('.c-searchSidePanel');
+        let stuckOffset = stuck.offset().top;
+
+        $(window).on('scroll resize',function(){
+            // sicky menu
+            let st = $(this).scrollTop();
+
+            if(st > stuckOffset && window.innerWidth < 960){
+                stuck.css({'position':'static','width':'100%'});
+            }else if(st > stuckOffset){
+                if(window.innerWidth >= 960){
+                    stuck.css({'position':'fixed','top': gnav.clientHeight + 10 + 'px','width':'333px'});
+                }else{
+                    stuck.css({'position':'static','width':'100%'});
+                }
+            }else if(st < stuckOffset){
+                stuck.css({'position':'static','width':'100%'});
+            }
+        });
+    }
+
+    /*
+     * Search
+     * --- modal
+     */
+
+    if(wrapperElement.id === 'p-search'){
+        document.querySelector('.ui.button.c-jobmodal').addEventListener('click',() => {
+            $('.ui.modal.job').modal('show');
+        });
+
+        document.querySelector('.ui.button.c-areamodal').addEventListener('click',() => {
+            $('.ui.modal.area').modal('show');
+        });
+
+        if(navigator.userAgent.indexOf('iPhone') > -1 || navigator.userAgent.indexOf('Android') > -1){
+            $('.c-searchModal__tableHead tr th').attr('data-toggle','hidden');
         }
-      },
-      currentKeyword : function(){
-        return this.keyword;
-      }
-    },
-    methods : {
-      relayData(value){
-        this.$emit(value);
-      },
-      allReset(){
-        this.$emit('allReset');
-      },
-      fillKeyword(event){
-        let keyword = event.target.value;
-        this.$emit('fillKeyword',keyword);
-      }
-    }
-  });
 
-  Vue.component('search-panel-job',{
-    props : ['JobCodeLists'],
-    template : `
-    <tr>
-      <td>職種</td>
-      <td>
-        <button class="ui button" v-on:click="onClickJob">選択する</button>
-        <ul class="c-searchPanel__selectedlist">
-          <li v-for="item in JobCodeLists">{{ item }}</li>
-        </ul>
-      </td>
-    </tr>
-    `,
-    methods : {
-      onClickJob : function(){
-        this.$emit('onClickJob');
-      }
-    }
-  });
-
-  Vue.component('search-panel-area',{
-    props : ['AreaCodeLists'],
-    template : `
-    <tr>
-      <td>勤務地</td>
-      <td>
-        <button class="ui button" v-on:click="onClickArea">選択する</button>
-        <ul class="c-searchPanel__selectedlist">
-          <li v-for="item in AreaCodeLists">{{ item }}</li>
-        </ul>
-      </td>
-    </tr>
-    `,
-    methods : {
-      onClickArea : function(){
-        this.$emit('onClickArea');
-      }
-    }
-  });
-
-  /*********************************************
-   * SearchModal Components
-   *********************************************/
-  Vue.component('search-job-modal',{
-    template : `
-    <div class="c-modalwrap">
-      <div class="ui modal job pc">
-        <i class="close icon"></i>
-        <div class="header c-searchModal__header">
-          希望の職種を入力
-        </div>
-        <div class="content c-searchModal__content">
-          <div class="c-searchModal__tableBox">
-            <table class="ui single line table c-searchModal__table">
-              <thead class="c-searchModal__tableHead">
-                <tr>
-                  <th data-toggle="show">営業・企画・マーケティング系</th>
-                </tr>
-              </thead>
-              <tbody class="c-searchModal__tableBody" style="font-weight:normal;">
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_1" v-on:change="selectJob"/>
-                      <label for="c_1" class="c-searchModal__tableLabel">法人営業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_2" v-on:change="selectJob"/>
-                      <label for="c_2" class="c-searchModal__tableLabel">個人営業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_3" v-on:change="selectJob"/>
-                      <label for="c_3" class="c-searchModal__tableLabel">よしもと興業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_4" v-on:change="selectJob"/>
-                      <label for="c_4" class="c-searchModal__tableLabel">人力車</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_5" v-on:change="selectJob"/>
-                      <label for="c_5" class="c-searchModal__tableLabel">渡辺プロ</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_6" v-on:change="selectJob"/>
-                      <label for="c_6" class="c-searchModal__tableLabel">たけし軍団</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_7" v-on:change="selectJob"/>
-                      <label for="c_7" class="c-searchModal__tableLabel">大竹まこと</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_8" v-on:change="selectJob"/>
-                      <label for="c_8" class="c-searchModal__tableLabel">つんく</label>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="ui single line table c-searchModal__table">
-              <thead class="c-searchModal__tableHead">
-                <tr>
-                  <th data-toggle="show">営業・企画・マーケティング系</th>
-                </tr>
-              </thead>
-              <tbody class="c-searchModal__tableBody" style="font-weight:normal;">
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_1" v-on:change="selectJob"/>
-                      <label for="c_1" class="c-searchModal__tableLabel">法人営業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_2" v-on:change="selectJob"/>
-                      <label for="c_2" class="c-searchModal__tableLabel">個人営業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_3" v-on:change="selectJob"/>
-                      <label for="c_3" class="c-searchModal__tableLabel">よしもと興業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_4" v-on:change="selectJob"/>
-                      <label for="c_4" class="c-searchModal__tableLabel">人力車</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_5" v-on:change="selectJob"/>
-                      <label for="c_5" class="c-searchModal__tableLabel">渡辺プロ</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_6" v-on:change="selectJob"/>
-                      <label for="c_6" class="c-searchModal__tableLabel">たけし軍団</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_7" v-on:change="selectJob"/>
-                      <label for="c_7" class="c-searchModal__tableLabel">大竹まこと</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_8" v-on:change="selectJob"/>
-                      <label for="c_8" class="c-searchModal__tableLabel">つんく</label>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="c-searchModal__tableBox">
-            <table class="ui single line table c-searchModal__table">
-              <thead class="c-searchModal__tableHead">
-                <tr>
-                  <th data-toggle="show">営業・企画・マーケティング系</th>
-                </tr>
-              </thead>
-              <tbody class="c-searchModal__tableBody" style="font-weight:normal;">
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_1" v-on:change="selectJob"/>
-                      <label for="c_1" class="c-searchModal__tableLabel">法人営業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_2" v-on:change="selectJob"/>
-                      <label for="c_2" class="c-searchModal__tableLabel">個人営業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_3" v-on:change="selectJob"/>
-                      <label for="c_3" class="c-searchModal__tableLabel">よしもと興業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_4" v-on:change="selectJob"/>
-                      <label for="c_4" class="c-searchModal__tableLabel">人力車</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_5" v-on:change="selectJob"/>
-                      <label for="c_5" class="c-searchModal__tableLabel">渡辺プロ</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_6" v-on:change="selectJob"/>
-                      <label for="c_6" class="c-searchModal__tableLabel">たけし軍団</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_7" v-on:change="selectJob"/>
-                      <label for="c_7" class="c-searchModal__tableLabel">大竹まこと</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_8" v-on:change="selectJob"/>
-                      <label for="c_8" class="c-searchModal__tableLabel">つんく</label>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <table class="ui single line table c-searchModal__table">
-              <thead class="c-searchModal__tableHead">
-                <tr>
-                  <th data-toggle="show">営業・企画・マーケティング系</th>
-                </tr>
-              </thead>
-              <tbody class="c-searchModal__tableBody" style="font-weight:normal;">
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_1" v-on:change="selectJob"/>
-                      <label for="c_1" class="c-searchModal__tableLabel">法人営業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_2" v-on:change="selectJob"/>
-                      <label for="c_2" class="c-searchModal__tableLabel">個人営業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_3" v-on:change="selectJob"/>
-                      <label for="c_3" class="c-searchModal__tableLabel">よしもと興業</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_4" v-on:change="selectJob"/>
-                      <label for="c_4" class="c-searchModal__tableLabel">人力車</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_5" v-on:change="selectJob"/>
-                      <label for="c_5" class="c-searchModal__tableLabel">渡辺プロ</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_6" v-on:change="selectJob"/>
-                      <label for="c_6" class="c-searchModal__tableLabel">たけし軍団</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_7" v-on:change="selectJob"/>
-                      <label for="c_7" class="c-searchModal__tableLabel">大竹まこと</label>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <div class="ui checkbox">
-                      <input type="checkbox" id="c_8" v-on:change="selectJob"/>
-                      <label for="c_8" class="c-searchModal__tableLabel">つんく</label>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="actions">
-          <div class="ui black deny button" v-on:click="clearJob">条件をクリア</div>
-          <div class="ui positive right labeled icon button">この条件で登録<i class="checkmark icon"></i></div>
-        </div>
-      </div>
-    </div>
-    `,
-    methods : {
-      selectJob(event){
-        let el = event.target.nextElementSibling.innerHTML;
-        this.$emit('selectJob',el);
-      },
-      clearJob(){
-        $('.ui.single.table input').prop('checked',false);
-        this.$emit('clearJob');
-      }
-    }
-  });
-
-
-  /*********************************************
-   * SearchModal Components
-   *********************************************/
-  Vue.component('search-area-modal',{
-    template : `
-    <div class="c-modalwrap">
-      <div class="ui modal area pc">
-        <i class="close icon"></i>
-        <div class="header c-searchModal__header">
-          希望の勤務地を入力
-        </div>
-        <div class="content c-searchModal__content">
-          <div class="c-searchModal__tableBox">
-            <table class="ui celled striped table c-searchModal__table">
-              <tbody class="c-searchModal__tableBody" style="font-weight:normal;">
-                <tr>
-                  <td class="collapsing">北海道</td>
-                  <td>
-                    <ul>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_1" v-on:change="selectArea"/>
-                        <label for="a_1" class="c-searchModal__tableLabel">北海道</label>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="collapsing">東北</td>
-                  <td>
-                    <ul>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_2" v-on:change="selectArea"/>
-                        <label for="a_2" class="c-searchModal__tableLabel">青森県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_3" v-on:change="selectArea"/>
-                        <label for="a_3" class="c-searchModal__tableLabel">岩手県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_4" v-on:change="selectArea"/>
-                        <label for="a_4" class="c-searchModal__tableLabel">秋田県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_5" v-on:change="selectArea"/>
-                        <label for="a_5" class="c-searchModal__tableLabel">宮城県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_6" v-on:change="selectArea"/>
-                        <label for="a_6" class="c-searchModal__tableLabel">山形県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_7" v-on:change="selectArea"/>
-                        <label for="a_7" class="c-searchModal__tableLabel">福島県</label>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="collapsing">関東</td>
-                  <td>
-                    <ul>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_8" v-on:change="selectArea" />
-                        <label for="a_8" class="c-searchModal__tableLabel">群馬県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_9" v-on:change="selectArea"/>
-                        <label for="a_9" class="c-searchModal__tableLabel">栃木県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_10" v-on:change="selectArea"/>
-                        <label for="a_10" class="c-searchModal__tableLabel">茨城県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_11" v-on:change="selectArea"/>
-                        <label for="a_11" class="c-searchModal__tableLabel">埼玉県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_12" v-on:change="selectArea"/>
-                        <label for="a_12" class="c-searchModal__tableLabel">東京都</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_13" v-on:change="selectArea"/>
-                        <label for="a_13" class="c-searchModal__tableLabel">神奈川県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_14" v-on:change="selectArea"/>
-                        <label for="a_14" class="c-searchModal__tableLabel">千葉県</label>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="collapsing">東海</td>
-                  <td>
-                    <ul>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_15" v-on:change="selectArea"/>
-                        <label for="a_15" class="c-searchModal__tableLabel">静岡県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_16" v-on:change="selectArea"/>
-                        <label for="a_16" class="c-searchModal__tableLabel">愛知県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_17" v-on:change="selectArea"/>
-                        <label for="a_17" class="c-searchModal__tableLabel">岐阜県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_18" v-on:change="selectArea"/>
-                        <label for="a_18" class="c-searchModal__tableLabel">三重県</label>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="collapsing">北信越</td>
-                  <td>
-                    <ul>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_19" v-on:change="selectArea"/>
-                        <label for="a_19" class="c-searchModal__tableLabel">山梨県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_20" v-on:change="selectArea"/>
-                        <label for="a_20" class="c-searchModal__tableLabel">長野県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_21" v-on:change="selectArea"/>
-                        <label for="a_21" class="c-searchModal__tableLabel">新潟県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_22" v-on:change="selectArea"/>
-                        <label for="a_22" class="c-searchModal__tableLabel">富山県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_23" v-on:change="selectArea"/>
-                        <label for="a_23" class="c-searchModal__tableLabel">石川県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_24" v-on:change="selectArea"/>
-                        <label for="a_24" class="c-searchModal__tableLabel">福井県</label>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="collapsing">関西</td>
-                  <td>
-                    <ul>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_25" v-on:change="selectArea"/>
-                        <label for="a_25" class="c-searchModal__tableLabel">大阪府</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_26" v-on:change="selectArea"/>
-                        <label for="a_26" class="c-searchModal__tableLabel">京都府</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_27" v-on:change="selectArea"/>
-                        <label for="a_27" class="c-searchModal__tableLabel">兵庫県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_28" v-on:change="selectArea"/>
-                        <label for="a_28" class="c-searchModal__tableLabel">滋賀県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_29" v-on:change="selectArea"/>
-                        <label for="a_29" class="c-searchModal__tableLabel">奈良県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_30" v-on:change="selectArea"/>
-                        <label for="a_30" class="c-searchModal__tableLabel">和歌山県</label>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="collapsing">中国・四国</td>
-                  <td>
-                    <ul>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_31" v-on:change="selectArea"/>
-                        <label for="a_31" class="c-searchModal__tableLabel">岡山県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_32" v-on:change="selectArea"/>
-                        <label for="a_32" class="c-searchModal__tableLabel">鳥取県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_33" v-on:change="selectArea"/>
-                        <label for="a_33" class="c-searchModal__tableLabel">島根県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_34" v-on:change="selectArea"/>
-                        <label for="a_34" class="c-searchModal__tableLabel">広島県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_35" v-on:change="selectArea"/>
-                        <label for="a_35" class="c-searchModal__tableLabel">山口県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_36" v-on:change="selectArea"/>
-                        <label for="a_36" class="c-searchModal__tableLabel">香川県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_37" v-on:change="selectArea"/>
-                        <label for="a_37" class="c-searchModal__tableLabel">高知県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_38" v-on:change="selectArea"/>
-                        <label for="a_38" class="c-searchModal__tableLabel">徳島県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_39" v-on:change="selectArea"/>
-                        <label for="a_39" class="c-searchModal__tableLabel">愛媛県</label>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="collapsing">九州・沖縄</td>
-                  <td>
-                    <ul>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_40" v-on:change="selectArea"/>
-                        <label for="a_40" class="c-searchModal__tableLabel">福岡県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_41" v-on:change="selectArea"/>
-                        <label for="a_41" class="c-searchModal__tableLabel">大分県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_42" v-on:change="selectArea"/>
-                        <label for="a_42" class="c-searchModal__tableLabel">佐賀県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_43" v-on:change="selectArea"/>
-                        <label for="a_43" class="c-searchModal__tableLabel">長崎県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_44" v-on:change="selectArea"/>
-                        <label for="a_44" class="c-searchModal__tableLabel">宮崎県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_45" v-on:change="selectArea"/>
-                        <label for="a_45" class="c-searchModal__tableLabel">熊本県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_46" v-on:change="selectArea"/>
-                        <label for="a_46" class="c-searchModal__tableLabel">鹿児島県</label>
-                      </li>
-                      <li class="ui checkbox">
-                        <input type="checkbox" id="a_47" v-on:change="selectArea"/>
-                        <label for="a_47" class="c-searchModal__tableLabel">沖縄県</label>
-                      </li>
-                    </ul>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="actions">
-          <div class="ui black deny button" v-on:click="clearArea">条件をクリア</div>
-          <div class="ui positive right labeled icon button">この条件で登録<i class="checkmark icon"></i></div>
-        </div>
-      </div>
-    </div>
-    `,
-    methods : {
-      selectArea(event){
-        let el = event.target.nextElementSibling.innerHTML;
-        this.$emit('selectArea',el);
-      },
-      clearArea(){
-        $('.ui.striped.table input').prop('checked',false);
-        this.$emit('clearArea');
-      }
-    }
-  });
-
-  /*********************************************
-   * SearchVueWrap
-   *********************************************/
-  Vue.component('search-vue-wrap',{
-    template : `
-      <div style="width:100%;">
-        <search-panel @onClickJob="showJobModal" @onClickArea="showAreaModal" @allReset="clearAllCheckList" @fillKeyword="storeKeyword" :selectedJobData="selectedJobArray" :selectedAreaData="selectedAreaArray" :keyword="keyword"></search-panel>
-        <search-job-modal @selectJob="storeJobCheckList" @clearJob="clearJobCheckList"></search-job-modal>
-        <search-area-modal @selectArea="storeAreaCheckList" @clearArea="clearAreaCheckList"></search-area-modal>
-      </div>
-    `,
-    data() {
-      return {
-        selectedJobArray : [],
-        selectedAreaArray : [],
-        keyword : [],
-      }
-    },
-    methods : {
-      showJobModal(){
-        $('.ui.modal.job.pc').modal('show');
-      },
-      showAreaModal(){
-        $('.ui.modal.area.pc').modal('show');
-      },
-      storeJobCheckList(value){
-        let pos = this.selectedJobArray.indexOf(value);
-        if(pos > -1){
-          this.selectedJobArray.splice(pos,1);
-        }else{
-          this.selectedJobArray.push(value);
+        window.onresize = function(){
+            if(window.innerWidth <= 679){
+                $('.c-searchModal__tableHead tr th').attr('data-toggle','hidden')
+            }else{
+                $('.c-searchModal__tableHead tr th').attr('data-toggle','show')
+            }
         }
-      },
-      storeAreaCheckList(value){
-        let pos = this.selectedAreaArray.indexOf(value);
-        if(pos > -1){
-          this.selectedAreaArray.splice(pos,1);
-        }else{
-          this.selectedAreaArray.push(value);
-        }
-      },
-      storeKeyword(value){
-        this.keyword = [];
-        this.keyword.push(value);
-      },
-      clearJobCheckList(){
-        this.selectedJobArray = [];
-      },
-      clearAreaCheckList(){
-        this.selectedAreaArray = [];
-      },
-      clearAllCheckList(){
-        this.selectedJobArray = [];
-        this.selectedAreaArray = [];
-        this.keyword = [];
 
-        let inputAll = document.querySelectorAll('.ui.modal input');
-        for(input of inputAll){
-          if(input.checked){
-            input.checked = false;
-          }
+        $('.c-searchModal__tableHead').on('click',function(event){
+
+            let currentStatus = event.target.getAttribute('data-toggle');
+            if(currentStatus == "show"){
+                event.target.setAttribute('data-toggle', "hidden");
+                $(this).next().hide('slow');
+            }else{
+                event.target.setAttribute('data-toggle', "show");
+                $(this).next().show('slow');
+            }
+        });
+
+
+        if(location.search.indexOf('?') == 0){
+            let presetJobList  = [];
+            let presetAreaList = [];
+            let params = location.search.substr(1);
+
+            params = params.split('&');
+
+            for(var i = 0; i < params.length; i++){
+                if(params[i].indexOf('jc') > -1){
+                    presetJobList.push(params[i].replace('jc=',''));
+                }
+                if(params[i].indexOf('ac') > -1){
+                    presetAreaList.push(params[i].replace('ac=',''));
+                }
+            }
+
+            for(let i = 0; i < presetJobList.length; i++){
+                var div = document.createElement('div');
+
+                var $input     = document.createElement('input');
+                $input.type    = "checkbox";
+                $input.checked = "checked";
+                $input.id      = "ch_c_" + presetJobList[i];
+                $input.name    = "ch_c_" + presetJobList[i];
+
+                if(i >= 5){
+                    $input.style.display = "none";
+                }
+
+                div.appendChild($input);
+
+                var $label         = document.createElement('label');
+                $label.htmlFor     = "ch_c_" + presetJobList[i];
+                $variable          = '.ui.job.modal label[for="c_' + presetJobList[i] + '"]';
+                $label.textContent = document.querySelector($variable).textContent;
+
+                if(i >= 5){
+                    $label.style.display = "none";
+                }
+
+                div.appendChild($label);
+
+                document.querySelector('.ui.button.c-jobmodal + .c-searchPanel__selectedlist').appendChild(div);
+            }
+
+            if(document.querySelector('.ui.button.c-jobmodal + .c-searchPanel__selectedlist').childElementCount >= 5){
+                var excerpt = document.createElement('div');
+                excerpt.textContent = "他";
+                document.querySelector('.ui.button.c-jobmodal + .c-searchPanel__selectedlist').appendChild(excerpt);
+            }
+
+            for(let i = 0; i < presetAreaList.length; i++){
+                var div = document.createElement('div');
+
+                var $input     = document.createElement('input');
+                $input.type    = "checkbox";
+                $input.checked = "checked";
+                $input.id      = "ch_a_" + presetAreaList[i];
+                $input.name    = "ch_a_" + presetAreaList[i];
+
+                if(i >= 5){
+                    $input.style.display == "none";
+                }
+
+                div.appendChild($input);
+
+                var $label         = document.createElement('label');
+                $label.htmlFor     = "ch_a_" + presetAreaList[i];
+                $variable          = '.ui.area.modal label[for=a_' + presetAreaList[i] + ']';
+                $label.textContent = document.querySelector($variable).textContent;
+
+                if(i >= 5){
+                    $label.style.display == "none";
+                }
+
+                div.appendChild($label);
+
+                document.querySelector('.ui.button.c-areamodal + .c-searchPanel__selectedlist').appendChild(div);
+            }
+
+            if(document.querySelector('.ui.button.c-areamodal + .c-searchPanel__selectedlist').childElementCount >= 5){
+                var excerpt = document.createElement('div');
+                excerpt.textContent = "他";
+                document.querySelector('.ui.button.c-areamodal + .c-searchPanel__selectedlist').appendChild(excerpt);
+            }
         }
-      }
+
+        document.querySelector('[data-button-type="job_register"]').addEventListener('click',() => {
+            let checkedList = document.querySelectorAll('.ui.job.modal input.c-searchModal__eachinput:checked');
+            let labelList   = document.querySelectorAll('.ui.job.modal input.c-searchModal__eachinput:checked + label')
+            let targetNode  = document.querySelector('.ui.button.c-jobmodal + .c-searchPanel__selectedlist');
+
+            while(targetNode.childElementCount > 0){
+                targetNode.removeChild(targetNode.firstElementChild);
+            }
+            for(let i = 0; i < checkedList.length; i++){
+                var div = document.createElement('div');
+
+                var $input = checkedList[i].cloneNode(true);
+                $input.id = "ch_" + $input.id;
+                $input.name = "ch_" + $input.name;
+
+                if(i >= 5){
+                    $input.style.display = "none";
+                }
+
+                div.appendChild($input)
+
+                var $label = labelList[i].cloneNode(true);
+                $label.htmlFor = "ch_" + $label.htmlFor;
+
+                if(i >= 5){
+                    $label.style.display = "none";
+                }
+
+                div.appendChild($label);
+
+                targetNode.appendChild(div);
+            }
+
+            if(targetNode.childElementCount >= 5){
+                var excerpt = document.createElement('div');
+                excerpt.textContent = "他";
+                targetNode.appendChild(excerpt);
+            }
+
+        });
+
+        for(var elem of document.querySelectorAll('.c-searchModal__allcheck')){
+            elem.addEventListener('click',(event) => {
+                checkBigcatAll(event.target.id);
+            });
+        }
+
+
+        function checkBigcatAll(id){
+            let inputList = document.querySelectorAll('.ui.job.modal input');
+            let targetList = [];
+
+            for(var input of inputList){
+                if(input.id.match(id)){
+                    targetList.push(input);
+                }
+            }
+
+            for(var input of targetList){
+                if(input.className == "c-searchModal__eachinput"){
+                    input.checked = !input.checked;
+                }
+            }
+        }
+
+        document.querySelector('[data-button-type="job_clear"]').addEventListener('click',() => {
+            let onModalList = document.querySelectorAll('.ui.job.modal input:checked');
+            let onDomList = document.querySelectorAll('.ui.button.c-jobmodal + .c-searchPanel__selectedlist input:checked');
+            for(let i = 0; i < onModalList.length; i++){
+                onModalList[i].checked = false;
+            }
+            for(let i = 0; i < onDomList.length; i++){
+                onDomList[i].checked   = false;
+            }
+            $('.ui.job.modal').modal('hide');
+        });
+
+        document.querySelector('[data-button-type="area_register"]').addEventListener('click',() => {
+            let checkedList = document.querySelectorAll('.ui.area.modal input:checked');
+            let labelList   = document.querySelectorAll('.ui.area.modal input:checked + label')
+            let targetNode  = document.querySelector('.ui.button.c-areamodal + .c-searchPanel__selectedlist');
+
+            while(targetNode.childElementCount > 0){
+                targetNode.removeChild(targetNode.firstElementChild);
+            }
+            for(let i = 0; i < checkedList.length; i++){
+                var div = document.createElement('div');
+
+                var $input = checkedList[i].cloneNode(true);
+                $input.id = "ch_" + $input.id;
+                $input.name = "ch_" + $input.name;
+
+                if(i >= 5){
+                    $input.style.display = "none";
+                }
+
+                div.appendChild($input)
+
+                var $label = labelList[i].cloneNode(true);
+                $label.htmlFor = "ch_" + $label.htmlFor;
+
+                if(i >= 5){
+                    $label.style.display = "none";
+                }
+
+                div.appendChild($label)
+
+                targetNode.appendChild(div);
+            }
+
+            if(targetNode.childElementCount >= 5){
+                var excerpt = document.createElement('div');
+                excerpt.textContent = "他";
+                targetNode.appendChild(excerpt);
+            }
+
+        });
+
+        document.querySelector('[data-button-type="area_clear"]').addEventListener('click',() => {
+            let onModalList = document.querySelectorAll('.ui.area.modal input:checked');
+            let onDomList = document.querySelectorAll('.ui.button.c-areamodal + .c-searchPanel__selectedlist input:checked');
+            for(let i = 0; i < onModalList.length; i++){
+                onModalList[i].checked = false;
+            }
+            for(let i = 0; i < onDomList.length; i++){
+                onDomList[i].checked   = false;
+            }
+            $('.ui.area.modal').modal('hide');
+        });
+
+        document.querySelector('[data-button-type="all_clear"]').addEventListener('click',() => {
+            let checkedList = document.querySelectorAll('.c-searchPanel__selectedlist input:checked');
+            for(let i = 0; i < checkedList.length; i++){
+                checkedList[i].checked = false;
+            }
+        });
+
+        document.querySelector('[data-button-type="submit"]').addEventListener('click',() => {
+            let formuri     = document.forms['search'].action + '?';
+            let job_code_f  = false;
+            let area_code_f = false;
+            let selectJobList = document.querySelectorAll('.ui.button.c-jobmodal + .c-searchPanel__selectedlist input:checked');
+            let selectAreaList = document.querySelectorAll('.ui.button.c-areamodal + .c-searchPanel__selectedlist input:checked');
+
+
+            if(selectJobList.length > 0){
+                for(var i = 0; i < selectJobList.length; i++){
+                    formuri += 'jc=' + selectJobList[i].name.replace(/ch_c_/,'');
+                    if(i !== selectJobList.length - 1){
+                        formuri += '&';
+                    }
+                }
+                job_code_f = true;
+            }
+
+
+            if(selectAreaList.length > 0){
+                if(job_code_f){
+                    formuri += '&';
+                }
+                let selectAreaList = document.querySelectorAll('.ui.button.c-areamodal + .c-searchPanel__selectedlist input:checked');
+                for(var i = 0; i < selectAreaList.length; i++){
+                    formuri += 'ac=' + selectAreaList[i].name.replace(/ch_a_/,'');
+                    if(i !== selectAreaList.length - 1){
+                        formuri += '&';
+                    }
+                }
+                area_code_f = true;
+            }
+
+            document.forms['search'].action = formuri;
+            document.forms['search'].submit();
+        });
     }
-  });
 
-  // vue instance
-  let root = new Vue({
-    el : '.l-searchPanel'
-  });
+    /*
+     * Jobdetail
+     * --- stuck button
+     */
+
+    if(wrapperElement.id === 'p-jobinfo'){
+        const el          = document.querySelector('.c-detail__content');
+        const stuckParent = document.querySelector('.c-detail__sticky');
+        const stuckTarget = document.querySelector('.c-detail__sticky .c-single__button');
+
+        $(window).on('scroll',function(){
+            let endPointSp   = $(el).offset().top + $(el).height();
+            let startPointPc = $(el).offset().top;
+            let endPointPc   = ($(el).offset().top + el.clientHeight) - (stuckTarget.clientHeight + gnav.clientHeight + 20);
+            let st           = window.scrollY;
+            let sb           = window.scrollY + window.innerHeight;
+
+            if(window.innerWidth <= 679){
+                if(sb < endPointSp){
+                    stuckParent.classList.add('is-stack-sp');
+                    stuckTarget.classList.add('is-stack-sp');
+                }else{
+                    stuckParent.classList.remove('is-stack-sp');
+                    stuckTarget.classList.remove('is-stack-sp');
+                }
+            }else if(window.innerWidth >= 680){
+                if(st > startPointPc && st < endPointPc){
+                    stuckParent.style.position = 'relative';
+                    stuckTarget.style.position = 'fixed';
+                    stuckTarget.style.top      = (gnav.clientHeight + 10) + 'px';
+                    stuckTarget.style.width    = stuckParent.clientWidth - parseInt(window.getComputedStyle(stuckParent).paddingLeft) * 2 + 'px';
+                }else{
+                    stuckTarget.style.position = 'static';
+                }
+            }
+        });
+
+        $(window).on('resize', function(){
+            if(window.innerWidth >= 680 && stuckTarget.classList.contains('is-stack-sp')){
+                stuckParent.classList.remove('is-stack-sp');
+                stuckTarget.classList.remove('is-stack-sp');
+            }
+            if(window.innerWidth <= 679){
+                stuckParent.classList.add('is-stack-sp');
+                stuckTarget.classList.add('is-stack-sp');
+            }
+        });
+    }
+
 },false);

@@ -19,10 +19,10 @@
     <main class="l-col-lg-8">
       <div class="l-main_lf_1">
         <div class="c-pickup l-row l-md-row">
-          <a class="c-pickup__item c-pickup__site l-col-lg-6 l-col-md-6" href="{{ action('SiteController@index') }}">
+          <a class="c-pickup__item c-pickup__site l-col-lg-6 l-col-md-6" href="{{ action('RankingController@siteIndex') }}">
             <p class="c-pickup__title">結局どのサイトがいいの？みんなのクチコミから選ぶ、転職サイト総合ランキング</p>
           </a>
-          <a class="c-pickup__item c-pickup__agent l-col-lg-6 l-col-md-6" href="{{ action('AgentController@index') }}">
+          <a class="c-pickup__item c-pickup__agent l-col-lg-6 l-col-md-6" href="{{ action('RankingController@agentIndex') }}">
             <p class="c-pickup__title">結局どのサイトがいいの？みんなのクチコミから選ぶ、転職サイト総合ランキング</p>
           </a>
         </div>
@@ -54,7 +54,7 @@
       <div class="l-main_lf_3">
         <h2 class="l-section_title">転職サイト / 転職エージェント徹底比較ランキング</h2>
         <div class="ui items c-ranking__item">
-          <a class="item c-ranking__link content" href="{{ action('SiteController@index') }}">
+          <a class="item c-ranking__link content" href="{{ action('RankingController@siteIndex') }}">
             <div class="c-ranking__thumb c-ranking__site"></div>
             <div class="c-ranking__contentBox">
               <h3 class="c-ranking__lead">みんなが選ぶ、転職サイトランキング</h3>
@@ -63,7 +63,7 @@
           </a>
         </div>
         <div class="ui items c-ranking__item">
-          <a class="item c-ranking__link content" href="{{ action('AgentController@index') }}">
+          <a class="item c-ranking__link content" href="{{ action('RankingController@agentIndex') }}">
             <div class="c-ranking__thumb c-ranking__agent"></div>
             <div class="c-ranking__contentBox">
               <h3 class="c-ranking__lead">決定版！転職エージェントランキング</h3>
@@ -72,7 +72,7 @@
           </a>
         </div>
         <div class="ui items c-ranking__item">
-          <a class="item c-ranking__link content" href="{{ action('ItwebController@index') }}">
+          <a class="item c-ranking__link content" href="{{ action('RankingController@itwebIndex') }}">
             <div class="c-ranking__thumb c-ranking__itweb"></div>
             <div class="c-ranking__contentBox">
               <h3 class="c-ranking__lead">IT系転職サイト・エージェントランキング</h3>
@@ -81,7 +81,7 @@
           </a>
         </div>
         <div class="ui items c-ranking__item">
-          <a class="item c-ranking__link content" href="{{ action('HakenController@index') }}">
+          <a class="item c-ranking__link content" href="{{ action('RankingController@hakenIndex') }}">
             <div class="c-ranking__thumb c-ranking__haken"></div>
             <div class="c-ranking__contentBox">
               <h3 class="c-ranking__lead">派遣サイトランキング</h3>
@@ -98,28 +98,28 @@
             <h3>領域・職種からさがす</h3>
             <div class="c-search__list">
               <div class="l-row l-md-row is-sp">
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__itweb" href="#"><span class="c-search__meta u-p2em">IT / Web</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__creative" href="#"><span class="c-search__meta u-p2em">クリエイティブ</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__bkoffice" href="#"><span class="c-search__meta u-p05em">バックオフィス<br><small>一般/専門事務・総務・財務・経理・法務・人事など</small></span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__sales" href="#"><span class="c-search__meta u-p2em">営業</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__itweb" href="/search/job/itweb"><span class="c-search__meta u-p2em">IT / Web</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__creative" href="/search/job/creative"><span class="c-search__meta u-p2em">クリエイティブ</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__bkoffice" href="/search/job/backoffice"><span class="c-search__meta u-p05em">バックオフィス<br><small>一般/専門事務・総務・財務・経理・法務・人事など</small></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__sales" href="/search/job/sales"><span class="c-search__meta u-p2em">営業</span></a></div>
               </div>
               <div class="l-row l-md-row is-sp">
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__medical" href="#"><span class="c-search__meta u-p2em">医療</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__food" href="#"><span class="c-search__meta u-p2em">飲食</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__logi" href="#"><span class="c-search__meta u-p1em">運輸・物流<br>警備・設備管理</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__care" href="#"><span class="c-search__meta u-p2em">介護・福祉・保育</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__medical" href="/search/job/medical"><span class="c-search__meta u-p2em">医療</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__food" href="/search/job/food"><span class="c-search__meta u-p2em">飲食</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__logi" href="/search/job/logi_security"><span class="c-search__meta u-p1em">運輸・物流<br>警備・設備管理</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__care" href="/search/job/welfare"><span class="c-search__meta u-p2em">介護・福祉・保育</span></a></div>
               </div>
               <div class="l-row l-md-row is-sp">
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__marke" href="#"><span class="c-search__meta u-p05em">企画<br><small>経営・事業・商品企画<br>マーケティング、管理職</small></span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__edu" href="#"><span class="c-search__meta u-p2em">教育</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__finance" href="#"><span class="c-search__meta u-p2em">金融                        </span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__estate" href="#"><span class="c-search__meta u-p1em">不動産・建築<br>設計・土木</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__marke" href="/search/job/marketing"><span class="c-search__meta u-p05em">企画<br><small>経営・事業・商品企画<br>マーケティング、管理職</small></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__edu" href="/search/job/education"><span class="c-search__meta u-p2em">教育</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__finance" href="/search/job/finance"><span class="c-search__meta u-p2em">金融                        </span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__estate" href="/search/job/realestate"><span class="c-search__meta u-p1em">不動産・建築<br>設計・土木</span></a></div>
               </div>
               <div class="l-row l-md-row is-sp">
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__service" href="#"><span class="c-search__meta u-p2em">販売・サービス</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__prod" href="#"><span class="c-search__meta u-p1em">製造・生産<br>開発・研究職</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__prof" href="#"><span class="c-search__meta u-p1em">専門職<br><small>コンサルタント・士業等</small></span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__other" href="#"><span class="c-search__meta u-p2em">その他</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__service" href="/search/job/service"><span class="c-search__meta u-p2em">販売・サービス</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__prod" href="/search/job/manufacturering"><span class="c-search__meta u-p1em">製造・生産<br>開発・研究職</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__prof" href="/search/job/profession"><span class="c-search__meta u-p1em">専門職<br><small>コンサルタント・士業等</small></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__other" href="/search/job/other"><span class="c-search__meta u-p2em">その他</span></a></div>
               </div>
             </div>
           </div>
@@ -127,16 +127,16 @@
             <h3>勤務地からさがす</h3>
             <div class="c-search__list">
               <div class="l-row l-md-row is-sp">
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__hokkaido" href="#"><span class="c-search__meta u-p2em">北海道</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__tohoku" href="#"><span class="c-search__meta u-p2em">東北</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kanto" href="#"><span class="c-search__meta u-p2em">関東</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__tokai" href="#"><span class="c-search__meta u-p2em">東海</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__hokkaido" href="/search/area/hokkaido"><span class="c-search__meta u-p2em">北海道</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__tohoku" href="/search/area/tohoku"><span class="c-search__meta u-p2em">東北</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kanto" href="/search/area/kanto"><span class="c-search__meta u-p2em">関東</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__tokai" href="/search/area/tokai"><span class="c-search__meta u-p2em">東海</span></a></div>
               </div>
               <div class="l-row l-md-row is-sp">
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__hokushin" href="#"><span class="c-search__meta u-p2em">北信越</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kansai" href="#"><span class="c-search__meta u-p2em">関西</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__chushikoku" href="#"><span class="c-search__meta u-p2em">中国・四国</span></a></div>
-                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kyushu" href="#"><span class="c-search__meta u-p2em">九州・沖縄</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__hokushin" href="/search/area/hokushinetsu"><span class="c-search__meta u-p2em">北信越</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kansai" href="/search/area/kansai"><span class="c-search__meta u-p2em">関西</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__chushikoku" href="/search/area/chugokuShikoku"><span class="c-search__meta u-p2em">中国・四国</span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__kyushu" href="/search/area/kyushu"><span class="c-search__meta u-p2em">九州・沖縄</span></a></div>
               </div>
             </div>
           </div>
@@ -184,8 +184,12 @@
             <ul class="c-knowhow__list">
 
               @foreach($posts as $post)
-              <li class="c-knowhow__item"><a class="c-knowhow__link" href="{{ $post->link }}"><img class="c-knowhow__thumb" src="{{ $post->thumb }}" width="55" height="55" alt="{{ $post->title }}">
-                  <p class="c-knowhow__lead">{{ $post->title }}</p></a></li>
+              <li class="c-knowhow__item">
+                <a class="c-knowhow__link" href="{{ $post->link }}">
+                  <img class="c-knowhow__thumb" src="{{ $post->thumb }}" width="70" height="55" alt="{{ $post->title }}">
+                  <p class="c-knowhow__lead">{{ $post->title }}</p>
+                </a>
+              </li>
               @endforeach
 
             </ul>
@@ -199,19 +203,19 @@
               すでに検討し始めて どのサービスを利用しようか悩んでいる人、実際に求人を検索しはじめている人、
               どのような人でもお役に立てる情報を届けることを目的としています。 転職を意識し始めたばかりの
               方はぜひ、転職ノウハウをお読みになり自分と似たような環境の人がどのように悩みを解決しているのかを、
-               参考になさってください。すでに検討して、どのサービスを利用しようか悩んでいる方については、
-               各転職サイト・転職エージェントのランキングや クチコミから自分にあった転職サービスはどれなのかを
-               調べてみることから始めましょう。大手だから、有名だからという理由で片っ端から登録しても、
-               そこに本当に自分にあった求人が掲載されておらず、希望するものに出会えない場合があります。
-               転職サイトであれば複数登録すればすむ話ですが、 転職エージェントですとエージェントへの希望や
-               条件の伝え方を間違うと、かえってこんなはずではなかったというような結果になってしまう場合が
-               あります。 このサイトでは、各転職サイト・転職エージェントが掲載している求人の一部を転載して
-               いますので、このサイト上で実際に求人を検索していただき、 自分の希望に近い求人が多いサイトかを
-               確かめた上で、比較・吟味し登録いただくこともできます。 最後に、すでに実際に求人を検索し
-               はじめている方については、ぜひ本サイトで複数のサイトの求人を横断で検索して、希望に近い求人を
-               さがしてみてください。 各求人には、各サイトへのリンクも合わせて記載しておりますので、気になる求人には、
-               そのまま直接リンクして応募していただくことも可能です。 どんな理由であれ、転職を考えるすべての人が、
-               求める情報に出会え希望の求人が見つかることができるようになることを目指して、このサイトは運営されています.
+              参考になさってください。すでに検討して、どのサービスを利用しようか悩んでいる方については、
+              各転職サイト・転職エージェントのランキングや クチコミから自分にあった転職サービスはどれなのかを
+              調べてみることから始めましょう。大手だから、有名だからという理由で片っ端から登録しても、
+              そこに本当に自分にあった求人が掲載されておらず、希望するものに出会えない場合があります。
+              転職サイトであれば複数登録すればすむ話ですが、 転職エージェントですとエージェントへの希望や
+              条件の伝え方を間違うと、かえってこんなはずではなかったというような結果になってしまう場合が
+              あります。 このサイトでは、各転職サイト・転職エージェントが掲載している求人の一部を転載して
+              いますので、このサイト上で実際に求人を検索していただき、 自分の希望に近い求人が多いサイトかを
+              確かめた上で、比較・吟味し登録いただくこともできます。 最後に、すでに実際に求人を検索し
+              はじめている方については、ぜひ本サイトで複数のサイトの求人を横断で検索して、希望に近い求人を
+              さがしてみてください。 各求人には、各サイトへのリンクも合わせて記載しておりますので、気になる求人には、
+              そのまま直接リンクして応募していただくことも可能です。 どんな理由であれ、転職を考えるすべての人が、
+              求める情報に出会え希望の求人が見つかることができるようになることを目指して、このサイトは運営されています.
             </p>
           </div>
         </aside>

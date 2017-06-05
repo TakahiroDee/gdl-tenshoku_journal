@@ -8,6 +8,9 @@ use Faker\Factory as Faker;
 use Carbon\Carbon;
 use App\Ranking;
 use App\Reputation;
+use App\Jobcode;
+use App\Areacode;
+use App\Service;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,12 +22,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        $this->call('SiteRankingsTableSeeder');
-        $this->call('AgentRankingsTableSeeder');
-        $this->call('ItwebRankingsTableSeeder');
-        $this->call('HakenRankingsTableSeeder');
-        $this->call('WomanRankingsTableSeeder');
+        // $this->call('SiteRankingsTableSeeder');
+        // $this->call('AgentRankingsTableSeeder');
+        // $this->call('ItwebRankingsTableSeeder');
+        // $this->call('HakenRankingsTableSeeder');
+        // $this->call('WomanRankingsTableSeeder');
         $this->call('ReputationsTableSeeder');
+        // $this->call('JobcodesTableSeeder');
+        // $this->call('AreacodesTableSeeder');
+        // $this->call('ServicesTableSeeder');
         Model::reguard();
     }
 }
@@ -119,47 +125,54 @@ class AgentRankingsTableSeeder extends Seeder
 
         $data = [
           [
-            'service_id' => 'recruit_agent',
+            'service_id'      => 'recruit_agent',
             'service_jp_name' => 'リクルートエージェント',
-            'rank' => 1,
-            'thumbnail_path' => 'tmb_rag.jpg',
+            'rank'            => 1,
+            'thumbnail_path'  => 'tmb_rag.jpg',
           ],
           [
-            'service_id' => 'doda',
+            'service_id'      => 'doda',
             'service_jp_name' => 'DODA',
-            'rank' => 2,
-            'thumbnail_path' => 'tmb_doda.jpg',
+            'rank'            => 2,
+            'thumbnail_path'  => 'tmb_doda.jpg',
           ],
           [
-            'service_id' => 'workport',
+            'service_id'      => 'workport',
             'service_jp_name' => 'ワークポート',
-            'rank' => 3,
-            'thumbnail_path' => 'tmb_workport.jpg',
+            'rank'            => 3,
+            'thumbnail_path'  => 'tmb_workport.jpg',
           ],
           [
-            'service_id' => 'aidem_smart_agent',
-            'service_jp_name' => 'Aidem Smart Agent',
-            'rank' => 4,
-            'thumbnail_path' => 'tmb_aidem.jpg',
-          ],
-          [
-            'service_id' => 'jac_recruitment',
-            'service_jp_name' => 'JACリクルートメント',
-            'rank' => 5,
-            'thumbnail_path' => 'tmb_jac.jpg',
-          ],
-          [
-            'service_id' => 'type_agent',
+            'service_id'      => 'type_agent',
             'service_jp_name' => 'Type転職エージェント',
-            'rank' => 6,
-            'thumbnail_path' => 'tmb_typeagent.jpg',
+            'rank'            => 4,
+            'thumbnail_path'  => 'tmb_typeagent.jpg',
           ],
           [
-            'service_id' => 'pasona_career',
-            'service_jp_name' => 'パソナキャリア',
-            'rank' => 7,
-            'thumbnail_path' => 'tmb_pasonacareer.jpg',
+            'service_id'      => 'mynabi_agent',
+            'service_jp_name' => 'マイナビエージェント',
+            'rank'            => 5,
+            'thumbnail_path'  => 'tmb_mynabiagent.jpg',
           ],
+          [
+            'service_id'      => 'pasona_career',
+            'service_jp_name' => 'パソナキャリア',
+            'rank'            => 6,
+            'thumbnail_path'  => 'tmb_pasonacareer.jpg',
+          ],
+          [
+            'service_id'      => 'jac_recruitment',
+            'service_jp_name' => 'JACリクルートメント',
+            'rank'            => 7,
+            'thumbnail_path'  => 'tmb_jac.jpg',
+          ],
+          [
+            'service_id'      => 'aidem_smart_agent',
+            'service_jp_name' => 'Aidem Smart Agent',
+            'rank'            => 9,
+            'thumbnail_path'  => 'tmb_aidem.jpg',
+          ],
+
         ];
 
         $summary          = 'これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。';
@@ -203,47 +216,48 @@ class ItwebRankingsTableSeeder extends Seeder
 
         $data = [
             [
-                'service_id' => 'workport_it',
+                'service_id'      => 'workport_it',
                 'service_jp_name' => 'ワークポート',
-                'rank' => 1,
-                'thumbnail_path' => 'tmb_workport.jpg',
+                'rank'            => 1,
+                'thumbnail_path'  => 'tmb_workport.jpg',
             ],
             [
-                'service_id' => 'geekly',
+                'service_id'      => 'geekly',
                 'service_jp_name' => 'ギークリー',
-                'rank' => 2,
-                'thumbnail_path' => 'tmb_geekly.jpg',
+                'rank'            => 2,
+                'thumbnail_path'  => 'tmb_geekly.jpg',
             ],
             [
-                'service_id' => 'findjob',
-                'service_jp_name' => 'Find Job',
-                'rank' => 3,
-                'thumbnail_path' => 'tmb_findjob.jpg',
-            ],
-            [
-                'service_id' => 'green',
-                'service_jp_name' => 'Green',
-                'rank' => 4,
-                'thumbnail_path' => 'tmb_green.jpg',
-            ],
-            [
-                'service_id' => 'levatech',
+                'service_id'      => 'levatech_career',
                 'service_jp_name' => 'レバテックキャリア',
-                'rank' => 5,
-                'thumbnail_path' => 'tmb_levatech.jpg',
+                'rank'            => 3,
+                'thumbnail_path'  => 'tmb_levatech.jpg',
             ],
             [
-                'service_id' => 'mynabi_creater',
+                'service_id'      => 'mynabi_creator',
                 'service_jp_name' => 'マイナビクリエイター',
-                'rank' => 6,
-                'thumbnail_path' => 'tmb_mynabic.jpg',
+                'rank'            => 4,
+                'thumbnail_path'  => 'tmb_mynabic.jpg',
             ],
             [
-                'service_id' => 'switch',
-                'service_jp_name' => 'Switch',
-                'rank' => 7,
-                'thumbnail_path' => 'tmb_switch.jpg',
+                'service_id'      => 'pasona_tech',
+                'service_jp_name' => 'パソナテック',
+                'rank'            => 5,
+                'thumbnail_path'  => 'tmb_pasonatech.jpg',
             ],
+            [
+                'service_id'      => 'findjob',
+                'service_jp_name' => 'Find Job',
+                'rank'            => 6,
+                'thumbnail_path'  => 'tmb_findjob.jpg',
+            ],
+            [
+                'service_id'      => 'switch',
+                'service_jp_name' => 'Switch',
+                'rank'            => 7,
+                'thumbnail_path'  => 'tmb_switch.jpg',
+            ],
+
         ];
 
         $summary          = 'これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。これはサマリーです。';
@@ -287,40 +301,34 @@ class HakenRankingsTableSeeder extends Seeder
 
         $data = [
             [
-                'service_id' => 'haken_site_1',
-                'service_jp_name' => '派遣サイト１',
-                'rank' => 1,
-                'thumbnail_path' => 'tmb_workport.jpg',
+                'service_id'      => 'temp_staff',
+                'service_jp_name' => 'テンプスタッフ',
+                'rank'            => 1,
+                'thumbnail_path'  => 'tmb_tmpstaff.jpg',
             ],
             [
-                'service_id' => 'haken_site_2',
-                'service_jp_name' => '派遣サイト２',
-                'rank' => 2,
-                'thumbnail_path' => 'tmb_geekly.jpg',
+                'service_id'      => 'recruit_staffing',
+                'service_jp_name' => 'リクルートスタッフィング',
+                'rank'            => 2,
+                'thumbnail_path'  => 'tmb_recruitstaff.jpg',
             ],
             [
-                'service_id' => 'haken_site_3',
-                'service_jp_name' => '派遣サイト３',
-                'rank' => 3,
-                'thumbnail_path' => 'tmb_findjob.jpg',
+                'service_id'      => 'rikunabi_haken',
+                'service_jp_name' => 'リクナビ派遣',
+                'rank'            => 3,
+                'thumbnail_path'  => 'tmb_rikunabihaken.jpg',
             ],
             [
-                'service_id' => 'haken_site_4',
-                'service_jp_name' => '派遣サイト４',
-                'rank' => 4,
-                'thumbnail_path' => 'tmb_green.jpg',
+                'service_id'      => 'mynabi_staff',
+                'service_jp_name' => 'マイナビスタッフ',
+                'rank'            => 4,
+                'thumbnail_path'  => 'tmb_mynabistaff.jpg',
             ],
             [
-                'service_id' => 'haken_site_5',
-                'service_jp_name' => '派遣サイト５',
-                'rank' => 5,
-                'thumbnail_path' => 'tmb_levatech.jpg',
-            ],
-            [
-                'service_id' => 'haken_site_6',
-                'service_jp_name' => '派遣サイト６',
-                'rank' => 6,
-                'thumbnail_path' => 'tmb_mynabic.jpg',
+                'service_id'      => 'hatalactive',
+                'service_jp_name' => 'ハタラクティブハケン',
+                'rank'            => 5,
+                'thumbnail_path'  => 'tmb_hatalactive.jpg',
             ],
         ];
 
@@ -365,40 +373,22 @@ class WomanRankingsTableSeeder extends Seeder
 
         $data = [
             [
-                'service_id' => 'woman_site_1',
-                'service_jp_name' => '女性向けサイト１',
-                'rank' => 1,
-                'thumbnail_path' => 'tmb_workport.jpg',
+                'service_id'      => 'libz_career',
+                'service_jp_name' => 'LiBzCAREER',
+                'rank'            => 1,
+                'thumbnail_path'  => 'tmb_libzcareer.jpg',
             ],
             [
-                'service_id' => 'woman_site_2',
-                'service_jp_name' => '女性向けサイト２',
-                'rank' => 2,
-                'thumbnail_path' => 'tmb_geekly.jpg',
+                'service_id'      => 'woman_type',
+                'service_jp_name' => '女の転職＠type',
+                'rank'            => 2,
+                'thumbnail_path'  => 'tmb_womantype.jpg',
             ],
             [
-                'service_id' => 'woman_site_3',
-                'service_jp_name' => '女性向けサイト３',
-                'rank' => 3,
-                'thumbnail_path' => 'tmb_findjob.jpg',
-            ],
-            [
-                'service_id' => 'woman_site_4',
-                'service_jp_name' => '女性向けサイト４',
-                'rank' => 4,
-                'thumbnail_path' => 'tmb_green.jpg',
-            ],
-            [
-                'service_id' => 'woman_site_5',
-                'service_jp_name' => '女性向けサイト５',
-                'rank' => 5,
-                'thumbnail_path' => 'tmb_levatech.jpg',
-            ],
-            [
-                'service_id' => 'woman_site_6',
-                'service_jp_name' => '女性向けサイト６',
-                'rank' => 6,
-                'thumbnail_path' => 'tmb_mynabic.jpg',
+                'service_id'      => 'torabayu',
+                'service_jp_name' => 'とらばーゆ',
+                'rank'            => 3,
+                'thumbnail_path'  => 'tmb_torabayu.jpg',
             ],
         ];
 
@@ -484,4 +474,400 @@ class ReputationsTableSeeder extends Seeder
         }
 
     }
+}
+
+class JobcodesTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('jobcodes')->delete();
+
+        $data = [
+          '0101' => 'Web・UI/UX・アプリデザイナー',
+          '0102' => 'Webコンテンツ企画・編集',
+          '0103' => 'Webディレクター・プランナー',
+          '0104' => 'Webマーケティング',
+          '0105' => 'アーキテクト・コンサルタント',
+          '0106' => 'インフラエンジニア・組込/制御系',
+          '0107' => 'サーバーサイドエンジニア・アプリケーションエンジニア',
+          '0108' => 'サービスプロデューサー',
+          '0109' => 'サポート・テスト・デバッグ',
+          '0110' => 'システムエンジニア・プログラマー',
+          '0111' => 'その他',
+          '0112' => 'データ分析・データサイエンティスト',
+          '0113' => 'ネットワークエンジニア',
+          '0114' => 'プロジェクトマネージャー',
+          '0115' => 'フロントエンドエンジニア',
+          '0201' => '3D・CGデザイナー',
+          '0202' => 'DTPオペレーター',
+          '0203' => 'アートディレクター・クリエイティブディレクター',
+          '0204' => 'イラストレーター・アニメーター',
+          '0205' => 'インテリアコーディネーター・デザイナー ',
+          '0206' => 'カラーコーディネーター',
+          '0207' => 'グラフィックデザイナー',
+          '0208' => 'ゲームクリエイター・プランナー・プロデューサー',
+          '0209' => 'コピーライター',
+          '0210' => 'サウンドクリエイター',
+          '0212' => 'ファッション・アクセサリー・ジュエリー',
+          '0213' => 'フォトグラファー',
+          '0214' => 'プロダクトデザイナー・工業デザイナー（空間・ディスプレイ）',
+          '0215' => '映像・音響・イベント・芸能・テレビ・放送関連',
+          '0216' => '編集者・校閲・ライター',
+          '0301' => 'カスタマーサービス・カスタマーサポート',
+          '0303' => 'テレオペ・テレマーケティング・コールセンター',
+          '0304' => '医療事務',
+          '0305' => '一般事務',
+          '0306' => '営業事務・アシスタント',
+          '0307' => '金融系事務',
+          '0308' => '経理・財務・会計',
+          '0309' => '人事・労務・総務・法務',
+          '0310' => '専門事務',
+          '0311' => '大学・学校事務',
+          '0312' => '内部監査･内部統制',
+          '0313' => '秘書・受付',
+          '0314' => '貿易・英文・国際事務',
+          '0401' => 'MR・MS',
+          '0402' => 'コールセンター運営・管理・SV',
+          '0403' => 'コンサルタント',
+          '0404' => 'ルートセールス',
+          '0405' => '営業・企画営業',
+          '0406' => '営業・企画営業（IT系）',
+          '0407' => '営業・企画営業（マスコミ系）',
+          '0408' => '営業・企画営業（メーカー系）',
+          '0409' => '営業・企画営業（金融系）',
+          '0410' => '営業・企画営業（不動産系）',
+          '0411' => '営業マネージャー',
+          '0412' => '営業企画',
+          '0413' => '海外営業',
+          '0414' => '個人営業',
+          '0415' => '人材・キャリアカウンセラー・派遣コーディネーター',
+          '0416' => '代理店営業',
+          '0417' => '内勤営業・カウンターセールス',
+          '0501' => 'CRA/CRC',
+          '0503' => '医師',
+          '0504' => '医療スタッフ・療法士・医療関連技術者等',
+          '0505' => '看護師・保健師・助産師',
+          '0506' => '歯科衛生士・歯科技工士',
+          '0507' => '薬剤師・管理薬剤師',
+          '0602' => 'デリバリー',
+          '0603' => 'バー・ソムリエ',
+          '0604' => 'ファーストフード',
+          '0605' => 'ファミレス・カフェ・ホールスタッフ',
+          '0606' => '居酒屋',
+          '0607' => '調理・キッチンスタッフ',
+          '0608' => '店長・マネージャー',
+          '0702' => '運転手・ドライバー',
+          '0703' => '警備・守衛',
+          '0704' => '軽作業・ラインスタッフ',
+          '0705' => '在庫管理・商品管理',
+          '0706' => '清掃',
+          '0707' => '専門作業員',
+          '0708' => '配達・配送・仕分け・ピッキング',
+          '0801' => 'ソーシャルワーカー',
+          '0803' => '栄養士・管理栄養士',
+          '0804' => '介護士・ケアマネージャー',
+          '0805' => '介護福祉士・社会福祉士',
+          '0806' => '児童/生活相談員・支援員',
+          '0807' => '整体・マッサージ・鍼灸師',
+          '0808' => '保育士',
+          '0809' => '保健師',
+          '0810' => '養護教諭・幼稚園教諭・その他',
+          '0811' => '臨床心理士・カウンセラー',
+          '0901' => 'フランチャイズ・開業',
+          '0902' => 'マーケティング・CRM・リサーチ',
+          '0903' => 'マーチャンダイジング・バイヤー',
+          '0904' => '管理職・CXO',
+          '0905' => '経営企画・事業企画（国内・海外）',
+          '0906' => '広報・PR・IR',
+          '0907' => '商品開発・商品企画・サービス企画',
+          '1001' => 'インストラクター・トレーナー',
+          '1002' => 'スポーツインストラクター',
+          '1004' => '家庭教師',
+          '1005' => '学校事務・大学事務・教務・学芸員・司書',
+          '1006' => '教師・講師',
+          '1007' => '語学教師',
+          '1008' => '塾・予備校・各種スクール',
+          '1101' => 'FP・リテール営業',
+          '1102' => 'アクチュアリー・金融商品開発',
+          '1103' => 'アナリスト・エコノミスト・リサーチャー',
+          '1104' => 'システム企画',
+          '1105' => 'その他金融専門職',
+          '1106' => 'ディーラー・トレーダー・ファンドマネージャー',
+          '1107' => 'リスク・与信・債権管理',
+          '1108' => '金融系事務・バックオフィス',
+          '1109' => '代理店営業・ホールセール・パートナーセールス',
+          '1110' => '投資銀行業務・M&A',
+          '1201' => 'CAD/CAE',
+          '1202' => 'アセットマネジメント・プロパティマネジメント',
+          '1204' => 'ビルディングマネジメント',
+          '1205' => 'ファシリティマネージャー',
+          '1206' => '施工監理・CM・施工管理・現場監督',
+          '1207' => '設計・積算・測量・構造解析',
+          '1208' => '設備工事・仕上げ工事・土木工事等',
+          '1209' => '不動産鑑定・評価',
+          '1210' => '不動産事業企画・不動産開発',
+          '1211' => '保守･メンテナンス',
+          '1212' => '用地仕入・不動産仕入',
+          '1301' => 'イベントスタッフ・キャンペーンスタッフ',
+          '1302' => 'エステティシャン・セラピスト・ネイリスト',
+          '1304' => 'ホテル・旅館',
+          '1305' => '店長・マネージャー・スーパーバイザー',
+          '1306' => '販売・サービススタッフ ',
+          '1307' => '美容師・理容師・スタイリスト ',
+          '1308' => '鍼灸・鍼灸師・マッサージ師・柔道整復師 ',
+          '1401' => 'サービスエンジニア・サポートエンジニア',
+          '1402' => 'セールスエンジニア・フィールドアプリケーションエンジニア（FAE)',
+          '1404' => 'その他研究・開発職',
+          '1405' => '医療機器/医薬品研究・開発',
+          '1406' => '化学・バイオエンジニア（研究職・技術職）',
+          '1407' => '機械・機構設計・金型設計',
+          '1408' => '機械エンジニア（研究職・技術職）',
+          '1409' => '技能工（整備・工場生産・製造・工事）',
+          '1410' => '研究・特許・テクニカルマーケティング',
+          '1411' => '光学技術・光学設計',
+          '1412' => '制御設計',
+          '1413' => '生産技術・プロセス開発',
+          '1414' => '素材・半導体素材・化成品関連',
+          '1415' => '電気エンジニア（研究職・技術職）',
+          '1416' => '半導体・回路・システム設計/エンジニア',
+          '1417' => '評価・検査・実験',
+          '1418' => '品質管理・製品評価・品質保証・生産管理・製造管理',
+          '1502' => 'その他専門コンサルタント',
+          '1503' => '経営コンサルタント・戦略コンサルタント',
+          '1504' => '公認会計士・税理士・司法書士・行政書士',
+          '1505' => '財務コンサルタント・会計コンサルタント',
+          '1506' => '生産コンサルタント・物流コンサルタント',
+          '1507' => '組織コンサルタント・人事コンサルタント',
+          '1508' => '通訳・翻訳',
+          '1509' => '特許・調査・知的財産関連',
+          '1510' => '不動産事業企画・不動産開発',
+          '1601' => 'NPO・NGO職員',
+          '1604' => '公共施設・官公庁・市・区役所・税務署',
+          '1605' => '農林水産業',
+        ];
+
+        foreach($data as $key => $value){
+
+          $job_code_big_value = "";
+          $pathname = "";
+          $bigkey = substr($key, 0, 2);
+
+          switch($bigkey){
+            case '01':
+              $job_code_big_value = 'IT / Web業界';
+              $pathname           = 'itweb';
+              break;
+            case '02':
+              $job_code_big_value = 'クリエイティブ業界';
+              $pathname           = 'creative';
+              break;
+            case '03':
+              $job_code_big_value = 'バックオフィス（事務・総務・財務・経理・法務・人事など）';
+              $pathname           = 'backoffice';
+              break;
+            case '04':
+              $job_code_big_value = '営業職';
+              $pathname           = 'sales';
+              break;
+            case '05':
+              $job_code_big_value = '医療関係職';
+              $pathname           = 'medical';
+              break;
+            case '06':
+              $job_code_big_value = '飲食業界';
+              $pathname           = 'food';
+              break;
+            case '07':
+              $job_code_big_value = '運輸・物流・警備・設備管理';
+              $pathname           = 'logi_security';
+              break;
+            case '08':
+              $job_code_big_value = '介護・福祉・保育関連';
+              $pathname           = 'welfare';
+              break;
+            case '09':
+              $job_code_big_value = '企画職（経営・事業・商品企画 / マーケティング / 管理職）';
+              $pathname           = 'marketing';
+              break;
+            case '10':
+              $job_code_big_value = '教育業界';
+              $pathname           = 'education';
+              break;
+            case '11':
+              $job_code_big_value = '金融業界';
+              $pathname           = 'finance';
+              break;
+            case '12':
+              $job_code_big_value = '不動産・建築・設計・土木関連';
+              $pathname           = 'realestate';
+              break;
+            case '13':
+              $job_code_big_value = '販売・サービス職';
+              $pathname           = 'service';
+              break;
+            case '14':
+              $job_code_big_value = '製造・生産・開発・研究職';
+              $pathname           = 'manufacturering';
+              break;
+            case '15':
+              $job_code_big_value = '専門職（コンサルタント・士業等）';
+              $pathname           = 'profession';
+              break;
+            case '16':
+              $job_code_big_value = 'その他';
+              $pathname           = 'other';
+              break;
+            default:
+              $job_code_big_value = '';
+              $pathname           = '';
+              break;
+          }
+
+          Jobcode::create([
+            'job_code_full'      => $key,
+            'job_code_big'       => substr($key, 0, 2),
+            'job_code_big_value' => $job_code_big_value,
+            'job_code_mid'       => substr($key, 2, 2),
+            'job_code_mid_value' => $value,
+            'pathname'           => $pathname,
+          ]);
+        }
+    }
+}
+
+class AreacodesTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('areacodes')->delete();
+
+        $data = [
+          '1'  => ['北海道', 'hokkaido','01','hokkaido','北海道'],
+          '2'  => ['青森', 'aomori','02','tohoku','東北'],
+          '3'  => ['秋田', 'akita','02','tohoku','東北'],
+          '4'  => ['岩手','iwate','02','tohoku','東北'],
+          '5'  => ['山形', 'yamagata','02','tohoku','東北'],
+          '6'  => ['宮城', 'miyagi','02','tohoku','東北'],
+          '7'  => ['福島', 'fukushima','02','tohoku','東北'],
+          '8'  => ['茨城','ibaraki','03','kanto','関東'],
+          '9'  => ['栃木','tochigi','03','kanto','関東'],
+          '10' => ['群馬', 'gunma','03','kanto','関東'],
+          '11' => ['埼玉','saitama','03','kanto','関東'],
+          '12' => ['東京','tokyo','03','kanto','関東'],
+          '13' => ['神奈川','kanagawa','03','kanto','関東'],
+          '14' => ['千葉','chiba','03','kanto','関東'],
+          '15' => ['静岡','shizuoka','04','tokai','東海'],
+          '16' => ['愛知','aichi','04','tokai','東海'],
+          '17' => ['岐阜','gihu','04','tokai','東海'],
+          '18' => ['三重','mie','04','tokai','東海'],
+          '19' => ['山梨','yamanashi','05','hokushinetsu','北信越'],
+          '20' => ['長野','nagano','05','hokushinetsu','北信越'],
+          '21' => ['新潟','niigata','05','hokushinetsu','北信越'],
+          '22' => ['富山','toyama','05','hokushinetsu','北信越'],
+          '23' => ['石川','ishikawa','05','hokushinetsu','北信越'],
+          '24' => ['福井','fukui','05','hokushinetsu','北信越'],
+          '25' => ['大阪','osaka','06','kansai','関西'],
+          '26' => ['京都','kyoto','06','kansai','関西'],
+          '27' => ['滋賀','shiga','06','kansai','関西'],
+          '28' => ['奈良','nara','06','kansai','関西'],
+          '29' => ['和歌山','wakayama','06','kansai','関西'],
+          '30' => ['兵庫','hyogo','06','kansai','関西'],
+          '31' => ['岡山','okayama','07','chugokuShikoku','中国・四国'],
+          '32' => ['鳥取','tottori','07','chugokuShikoku','中国・四国'],
+          '33' => ['島根','shimane','07','chugokuShikoku','中国・四国'],
+          '34' => ['広島','hiroshima','07','chugokuShikoku','中国・四国'],
+          '35' => ['山口','yamaguchi','07','chugokuShikoku','中国・四国'],
+          '36' => ['香川','kagawa','07','chugokuShikoku','中国・四国'],
+          '37' => ['愛媛','ehime','07','chugokuShikoku','中国・四国'],
+          '38' => ['徳島','tokushima','07','chugokuShikoku','中国・四国'],
+          '39' => ['高知','kochi','07','chugokuShikoku','中国・四国'],
+          '40' => ['福岡','fukuoka','08','kyushu','九州・沖縄'],
+          '41' => ['大分','oita','08','kyushu','九州・沖縄'],
+          '42' => ['佐賀','saga','08','kyushu','九州・沖縄'],
+          '43' => ['長崎','nagasaki','08','kyushu','九州・沖縄'],
+          '44' => ['宮崎','miyazaki','08','kyushu','九州・沖縄'],
+          '45' => ['熊本','kumamoto','08','kyushu','九州・沖縄'],
+          '46' => ['鹿児島','kagoshima','08','kyushu','九州・沖縄'],
+          '47' => ['沖縄','okinawa','08','kyushu','九州・沖縄'],
+        ];
+
+        foreach($data as $key => $value){
+          Areacode::create([
+            'area_code'        => $key,
+            'area_code_value'  => $value[0],
+            'area_pathname'    => $value[1],
+            'block_code'       => $value[2],
+            'block_code_value' => $value[4],
+            'block_pathname'   => $value[3],
+          ]);
+        }
+    }
+}
+
+class ServicesTableSeeder extends Seeder
+{
+    public function run()
+    {
+        DB::table('services')->delete();
+
+        $data = [
+          # site
+          // VC
+          ['rikunabi_next','リクナビNEXT','site',1,1,"http://example.com"],
+          ['baitoru_next','バイトルNEXT','site',1,1,"http://example.com"],
+          ['hatalike','はたらいく','site',1,1,"http://example.com"],
+          ['at_type','@type','site',1,1,"http://example.com"],
+
+          # woman
+          // VC
+          ['torabayu','とらばーゆ','woman',1,1,"http://example.com"],
+          ['woman_type', '女の転職＠type', 'woman', 1, 0,"http://example.com"],
+          // A8
+          ['libz_career', 'LiBzCAREER', 'woman', 1, 0,"http://example.com"],
+
+          # itweb
+          // VC
+          ['geekly', 'GEEKLY', 'itweb', 1, 0,"http://example.com"],
+          ['workport_it', 'ワークポート', 'itweb', 1, 1,"http://example.com"],
+          ['pasona_tech', 'パソナテック', 'itweb', 1, 0,"http://example.com"],
+          // A8
+          ['findjob', 'Find Job!', 'itweb', 1, 0,"http://example.com"],
+          ['mynabi_creator', 'マイナビクリエイター', 'itweb', 1, 0,"http://example.com"],
+          ['switch', 'Switch', 'itweb', 1, 0,"http://example.com"],
+          ['levatech_career','レバテックキャリア', 'itweb',1,0,"http://example.com"],
+
+          # agent
+          // VC
+          ['aidem_smart_agent', 'AIDEM SMART AGENT', 'agent', 1, 0,"http://example.com"],
+          ['recruit_agent', 'リクルートエージェント', 'agent', 1, 1,"http://example.com"],
+          ['pasona_career', 'パソナキャリア', 'agent', 1, 0,"http://example.com"],
+          ['type_agent', 'type転職エージェント', 'agent', 1, 0,"http://example.com"],
+          ['workport', 'ワークポート', 'agent', 1, 1,"http://example.com"],
+          ['mynabi_agent', 'マイナビエージェント', 'agent', 1, 1,"http://example.com"],
+          ['jac_recruitment', 'JAC Recruitment', 'agent', 1, 0,"http://example.com"],
+          ['doda', 'DODA', 'agent', 1, 0,"http://example.com"],
+
+          # haken
+          // VC
+          ['recruit_staffing','リクルートスタッフィング', 'haken',1,0,"http://example.com"],
+          ['rikunabi_haken','リクナビ派遣', 'haken',1,1,"http://example.com"],
+          // A8
+          ['mynabi_staff','マイナビスタッフ', 'haken',1,0,"http://example.com"],
+          ['hatalactive','ハタラクティブ派遣', 'haken',1,0,"http://example.com"],
+          ['temp_staff','テンプスタッフ', 'haken',1,0,"http://example.com"],
+        ];
+
+        foreach($data as $d)
+        {
+            Service::create([
+              'service_id'      => $d[0],
+              'service_jp_name' => $d[1],
+              'belongs_to'      => $d[2],
+              'publishing_flag' => $d[3],
+              'crawling_flag'   => $d[4],
+              'url'             => $d[5],
+            ]);
+        }
+    }
+
 }
