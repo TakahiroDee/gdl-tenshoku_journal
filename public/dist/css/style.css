@@ -827,7 +827,7 @@ footer {
 
 @media screen and (min-width: 768px) {
   #p-top .c-feature__contentBox {
-    padding-left: 1.0rem;
+    padding-left: 1.5rem;
   }
 }
 
@@ -873,15 +873,6 @@ footer {
     overflow: hidden;
     position: relative;
     border: 1px solid #eaeaea;
-  }
-  #p-top .c-ranking__item::after {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    content: '';
-    width: 100%;
-    height: 15%;
-    background: linear-gradient(rgba(255, 255, 255, 0) 0, white 75%, white 100%);
   }
 }
 
@@ -2200,6 +2191,7 @@ footer {
 }
 
 #p-top .c-knowhow__lead {
+  width: calc(100% - 70px);
   padding-left: 1.0rem;
   font-size: 1.2rem;
   color: #555;
@@ -2271,6 +2263,7 @@ footer {
 }
 
 #p-ranking .c-knowhow__lead, #p-detail .c-knowhow__lead {
+  width: calc(100% - 70px);
   padding-left: 1.0rem;
   font-size: 1.2rem;
   color: #555;

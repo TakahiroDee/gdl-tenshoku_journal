@@ -38,8 +38,8 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 /** enable use host.prefPane **/
-define('WP_HOME','http://13.113.192.78/knowhow');
-define('WP_SITEURL','http://13.113.192.78/knowhow');
+define('WP_HOME','http://54.238.227.163/knowhow');
+define('WP_SITEURL','http://54.238.227.163/knowhow');
 
 /**#@+
  * Authentication Unique Keys and Salts.

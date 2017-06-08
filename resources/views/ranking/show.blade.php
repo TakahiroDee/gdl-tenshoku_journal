@@ -66,7 +66,7 @@
 
               @foreach($pages as $page)
               <li class="c-knowhow__item">
-                <a class="c-knowhow__link" href="{{ $page->guid }}">
+                <a class="c-knowhow__link" href="{{ make_relative_path($page->guid) }}">
                   <img class="c-knowhow__thumb" src="/dist/image/feature-{{ $page->ID }}.jpg" width="70" height="55" alt="{{ $page->post_title }}">
                   <p class="c-knowhow__lead">{{ $page->post_title }}</p>
                 </a>
@@ -81,8 +81,8 @@
 
               @foreach($posts as $post)
               <li class="c-knowhow__item">
-                <a class="c-knowhow__link" href="{{ $post->link }}">
-                  <img class="c-knowhow__thumb" src="{{ $post->thumb }}" width="70" height="55" alt="{{ $post->title }}">
+                <a class="c-knowhow__link" href="{{ make_relative_path($post->link) }}">
+                  <img class="c-knowhow__thumb" src="{{ make_relative_path($post->thumb) }}" width="70" height="55" alt="{{ $post->title }}">
                   <p class="c-knowhow__lead">{{ $post->title }}</p>
                 </a>
               </li>

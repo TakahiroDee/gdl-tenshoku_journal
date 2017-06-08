@@ -90,9 +90,10 @@
   .c-knowhow__thumb{
     width: 70px;
     flex-basis: 70px;
-    height: 55px;    
+    height: 55px;
   }
   .c-knowhow__lead{
+    width: calc(100% - 70px);
     padding-left: 1.0rem;
     font-size: 1.2rem;
     color: $base_text_color;

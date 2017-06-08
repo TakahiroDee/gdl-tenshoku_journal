@@ -10,3 +10,9 @@ function dynamicSubstring($string)
 
     return $string;
 }
+
+
+function make_relative_path($path)
+{
+    return preg_replace('/http(s)?:\/\/([\w-]+\.)+[\w-]+/','',$path);
+}

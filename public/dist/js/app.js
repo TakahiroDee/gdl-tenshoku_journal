@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded',() => {
      * Ranking
      * --- Rating
      */
-    if(wrapperElement.id === 'p-ranking'){
+    if(wrapperElement.id === 'p-ranking' || wrapperElement.id === 'p-detail'){
         $('.ui.rating').rating('disable');
     }
 
