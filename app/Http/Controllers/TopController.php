@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Recruitment;
 use DB;
 
 class TopController extends Controller
@@ -49,6 +50,23 @@ class TopController extends Controller
          */
 
 
-        return view('page.index', compact('pages','posts'));
+        $datas = array(
+                    'results' => "",
+                    'counts'  => "",
+                    'last_update' => "",
+                );
+
+        $datas['results']     = DB::table('recruitments')
+                                ->join('jobcodes','recruitments.job_code_full','=','jobcodes.job_code_full')
+                                ->where('new_flag',1)
+                                ->where('sitename','rikunabi_next')
+                                ->orderBy('last_confirmed_at','DESC')
+                                ->take(10)
+                                ->get();
+        $datas['counts']      = Recruitment::all()->count();
+        $datas['last_update'] = substr(Recruitment::select('last_confirmed_at')->orderBy('last_confirmed_at','desc')->first()->last_confirmed_at,0,10);
+
+
+        return view('page.index', compact('pages','posts','datas'));
     }
 }

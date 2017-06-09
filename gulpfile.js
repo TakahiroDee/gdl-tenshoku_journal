@@ -1,4 +1,6 @@
 const elixir = require('laravel-elixir');
+const imagemin = require('gulp-imagemin');
+const sprite = require('gulp.spritesmith');
 
 require('laravel-elixir-vue-2');
 require('laravel-elixir-pug');
@@ -32,4 +34,10 @@ elixir((mix) => {
     //   // If blade is true, output to resources/views, otherwise public/html
     //   dest: 'resources/pug_to_blade/',
     // });
+});
+
+
+gulp.task('imagemin', () => {
+    gulp.src('./public/dist/image/*')
+        .pipe(imagemin());
 });

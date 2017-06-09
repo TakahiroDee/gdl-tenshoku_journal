@@ -191,6 +191,9 @@
 #p-knowhow .c-articleMain {
   margin-top: 30px;
 }
+#p-knowhow .c-articleContent{
+  color: #666;
+}
 #p-knowhow .c-articleContent img {
   width: 100%;
   margin: 20px 0;
@@ -242,6 +245,9 @@
   margin-bottom: 1.5em;
   line-height: 1.8;
 }
+#p-knowhow .c-relatedArticle{  
+  margin: 5.0rem 0;
+}
 #p-knowhow .c-relatedArticle h2{
   font-weight: normal;
 }
@@ -270,9 +276,6 @@
 #p-knowhow .ui.cards .card{
   margin: 1em auto;
 }
-
-
-
 
 #p-knowhow .c-category__item{
   border-top: 1px solid #EAEAEA;

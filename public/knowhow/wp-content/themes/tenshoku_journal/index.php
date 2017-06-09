@@ -5,7 +5,10 @@
   </div>
   <div class="l-inner l-row l-col c-articles">
     <div class="l-col-lg-8">
-      <h1 class="c-articles__lead"><?php bloginfo('name'); ?><span class="c-articles__leadmeta"><?php bloginfo('description'); ?></span></h1>
+      <h1 class="c-articles__lead">
+        <?php bloginfo('name'); ?>
+        <span class="c-articles__leadmeta"><?php bloginfo('description'); ?></span>
+      </h1>
       <div class="ui items">
         <?php
           if( have_posts() ):

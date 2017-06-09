@@ -17,7 +17,7 @@
         </div>
         <div class="c-footer__item">
           <p class="c-footer__itemHeader"><a href="{{ action('SearchController@index') }}">求人をさがす</a></p>
-          <ul style="display: flex;">
+          <ul class="c-footer__list">
             <li data-id="footer-searchby-job">
               <p>領域・職種からさがす</p>
               <ul>

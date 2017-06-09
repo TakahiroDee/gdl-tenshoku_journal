@@ -3,14 +3,14 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+// use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Recruitment extends Model
 {
-    use SoftDeletes;
+    // use SoftDeletes;
 
-    protected $guraded = [];
-    protected $dates = ['deleted_at'];
+    protected $guarded = [];
+    // protected $dates = ['deleted_at'];
 
     public function jobcode()
     {
@@ -34,5 +34,5 @@ class Recruitment extends Model
         }
 
         return $query;
-    }
+    }    
 }

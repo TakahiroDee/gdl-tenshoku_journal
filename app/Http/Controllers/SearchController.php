@@ -19,7 +19,7 @@ class SearchController extends Controller
         $data = $this->makeData();
         $cassettes = DB::table('recruitments')
                     ->join('jobcodes','recruitments.job_code_full','=','jobcodes.job_code_full')
-                    ->orderBy('recruitments.id')
+                    ->orderBy('recruitments.last_confirmed_at','desc')
                     ->paginate(50);
 
         return view('search.index',compact('cassettes','data'));
@@ -33,7 +33,7 @@ class SearchController extends Controller
         $data = $this->makeData('jobcode',$opt);
 
         $cassettes = Recruitment::whereIn('job_code_full',$data['selected_job_code_list'])
-                  ->orderBy('id')
+                  ->orderBy('last_confirmed_at','desc')
                   ->paginate(50);
 
 
@@ -51,7 +51,7 @@ class SearchController extends Controller
         $data = $this->makeData('jobcode',$opt);
 
         $cassettes = Recruitment::where('job_code_full',$job_code_full)
-                    ->orderBy('id')
+                    ->orderBy('last_confirmed_at','desc')
                     ->paginate(50);
 
 
@@ -70,7 +70,7 @@ class SearchController extends Controller
         $cassettes = DB::table('recruitments')
                     ->join('areacodes','recruitments.area_code','=','areacodes.area_code')
                     ->where('block_pathname',$block_pathname)
-                    ->orderBy('recruitments.id')
+                    ->orderBy('recruitments.last_confirmed_at','desc')
                     ->paginate(50);
 
 
@@ -89,7 +89,7 @@ class SearchController extends Controller
         $cassettes = DB::table('recruitments')
                     ->join('areacodes','recruitments.area_code','=','areacodes.area_code')
                     ->where('area_pathname',$area_pathname)
-                    ->orderBy('recruitments.id')
+                    ->orderBy('recruitments.last_confirmed_at','desc')
                     ->paginate(50);
 
 
@@ -108,7 +108,7 @@ class SearchController extends Controller
         $cassettes = DB::table('recruitments')
                     ->join('jobcodes','recruitments.job_code_full','=','jobcodes.job_code_full')
                     ->where('sitename',$service_id)
-                    ->orderBy('recruitments.id')
+                    ->orderBy('recruitments.last_confirmed_at','desc')
                     ->paginate(50);
 
         return view('search.getIndexByServiceId',compact('cassettes','data'));
@@ -128,7 +128,7 @@ class SearchController extends Controller
             'job_code_big_value' => Jobcode::wherePathname($pathname)->first()->job_code_big_value,
             'job_code_mid_value' => Jobcode::where('job_code_full',$job_code_full)->first()->job_code_mid_value,
             'job_code_full'      => $job_code_full,
-            'relatedJob'         => Recruitment::where('job_code_full',$job_code_full)->orderBy('id')->take(4)->get(),
+            'relatedJob'         => Recruitment::where('job_code_full',$job_code_full)->where('sitename',$description->sitename)->orderBy('recruitments.last_confirmed_at','desc')->take(4)->get(),
             'rankingContent'     => Ranking::where('service_id',$description->sitename)->first(),
         );
 
@@ -146,7 +146,7 @@ class SearchController extends Controller
             'area_pathname'    => $area_pathname,
             'block_code_value' => Areacode::where('block_pathname',$block_pathname)->first()->block_code_value,
             'area_code_value'  => Areacode::where('area_pathname',$area_pathname)->first()->area_code_value,
-            'relatedJob'       => Recruitment::where('area_code',$description->area_code)->orderBy('id')->take(4)->get(),
+            'relatedJob'       => Recruitment::where('area_code',$description->area_code)->where('sitename',$description->sitename)->orderBy('recruitments.last_confirmed_at','desc')->take(4)->get(),
             'rankingContent'   => Ranking::where('service_id',$description->sitename)->first(),
         );
 
@@ -166,7 +166,10 @@ class SearchController extends Controller
         $_job_code_list  = array();
         $_area_code_list = array();
         $_redirect       = false;
+        $_keywordlist    = preg_split('/,/', preg_replace('/(\s|　)/', ',', $_inputList['keyword']));
 
+
+        
         foreach($_inputList as $k => $v){
             if(strpos($k,'ch_c_') !== false)
             {
@@ -175,10 +178,10 @@ class SearchController extends Controller
             if(strpos($k,'ch_a_') !== false)
             {
                 array_push($_area_code_list, strval(preg_replace('/ch_a_/','',$k)));
-            }
+            }            
         }
 
-        if(count($_job_code_list) === 0 && count($_area_code_list) === 0){
+        if(count($_job_code_list) === 0 && count($_area_code_list) === 0 && count($_keywordlist) === 0){
             return redirect()->action('SearchController@index');
         }
 
@@ -206,6 +209,27 @@ class SearchController extends Controller
         {
             $_baseQuery->whereIn('recruitments.area_code',$_area_code_list);
         }
+        if(!empty($_keywordlist))
+        {
+            // SELECT *, MATCH(subtitle, content, workplace, skill, payment) AGAINST("+?" IN BOOLEAN MODE) AS score
+            // FROM tj_recruitments
+            // WHERE MATCH(subtitle, content, workplace, skill, payment) AGAINST("+?" IN BOOLEAN MODE) <> 0
+            // ORDER BY score DESC            
+
+            $matchsql = 'MATCH (tj_recruitments.subtitle, tj_recruitments.content, tj_recruitments.workplace, tj_recruitments.skill, tj_recruitments.payment) AGAINST("';
+
+            for($i = 0; $i < count($_keywordlist); $i++)
+            {
+                $matchsql .= '+' . strval($_keywordlist[$i]);
+                if($i !== count($_keywordlist) - 1)
+                {
+                    $matchsql .= ' ';
+                }
+            }            
+            $matchsql .= '" IN BOOLEAN MODE)';
+            $_baseQuery->whereRaw($matchsql)->orderBy(DB::raw($matchsql),'desc');
+        }
+        
 
         $cassettes  = $_baseQuery->orderBy('recruitments.id')->paginate(50);
 
@@ -322,6 +346,10 @@ class SearchController extends Controller
                     'selected_area_code_list' => $opt['selected_area_code_list'],
                   )
                 );
+            }
+            if(count($opt['selected_job_code_list']) == 0 && count($opt['selected_area_code_list']) == 0)
+            {
+                $data = $basedata;
             }
         }
 

@@ -15,6 +15,8 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'wlwmanifest_link');
 
+
+
 // custom function
 function get_category_tags(){
     $tags = get_the_tags();
@@ -32,6 +34,11 @@ function get_category_tags(){
     return $output;
 }
 
+
+function relative_url($url)
+{
+    return preg_replace('/http(s)?:\/\/([\w-]+\.)+[\w-]+/','',$url);
+}
 
 function get_pagination($pager_max = 5){
     global $wp_query;
@@ -215,15 +222,6 @@ function get_fixed_page_sidebar($posttype = 'fixed')
                 $html .= $page->post_title;
                 $html .= '</p></div></a></li>';
 
-            }else{
-
-                $html .= '<li class="c-knowhow__item">';
-                $html .= '<a class="c-knowhow__link" href="#">';
-                $html .= '<img class="c-knowhow__thumb" src="https://dummyimage.com/55x55/dedede/bbb.png&amp;text=Dummy">';
-                $html .= '<div class="c-knowhow__lead">';
-                $html .= '<p>ここにテキストが入ります。ここにテキストが入ります。</p>';
-                $html .= '</div></a></li>';
-
             }
         }
 
@@ -252,15 +250,6 @@ function get_fixed_page_sidebar($posttype = 'fixed')
                 $html .= $post->post_title;
                 $html .= '</p></div></a></li>';
 
-            }else{
-
-                $html .= '<li class="c-knowhow__item">';
-                $html .= '<a class="c-knowhow__link" href="#">';
-                $html .= '<img class="c-knowhow__thumb" src="https://dummyimage.com/55x55/dedede/bbb.png&amp;text=Dummy">';
-                $html .= '<div class="c-knowhow__lead">';
-                $html .= '<p>ここにテキストが入ります。ここにテキストが入ります。</p>';
-                $html .= '</div></a></li>';
-
             }
         }
 
@@ -273,62 +262,62 @@ function get_fixed_page_sidebar($posttype = 'fixed')
 
 
 function get_site_rankings(){
-    try{
-        $con = new PDO('mysql:dbname=tenshoku_journal;host=192.168.70.12;port=3306;charset=utf8',DB_USER,DB_PASSWORD);
-    }catch(PDOexception $e){
-        return "";
-    }
+    // try{
+    //     $con = new PDO('mysql:dbname=tenshoku_journal;host=192.168.70.12;port=3306;charset=utf8',DB_USER,DB_PASSWORD);
+    // }catch(PDOexception $e){
+    //     return "";
+    // }
 
-    $sql    = "SELECT service_id, service_jp_name, thumbnail_path, rank FROM tj_rankings WHERE service_type = 'site' ORDER BY rank LIMIT 4";
+    // $sql    = "SELECT service_id, service_jp_name, thumbnail_path, rank FROM tj_rankings WHERE service_type = 'site' ORDER BY rank LIMIT 4";
 
-    $stmt   = $con->query($sql);
-    $result = $stmt->fetchAll();
+    // $stmt   = $con->query($sql);
+    // $result = $stmt->fetchAll();
 
-    $html = '<aside class="l-aside_rg_2"><div class="c-knowhow"><h2>口コミから選ぶ、転職サイトランキング</h2><ul class="c-knowhow__list">';
+    // $html = '<aside class="l-aside_rg_2"><div class="c-knowhow"><h2>口コミから選ぶ、転職サイトランキング</h2><ul class="c-knowhow__list">';
 
-    foreach($result as $rank)
-    {
-        $html .= '<li class="c-knowhow__item">';
-        $html .= '<a class="c-knowhow__link" href="/ranking/site/'. $rank['service_id'] . '">';
-        $html .= '<img class="c-knowhow__thumb" src="/dist/image/' . $rank['thumbnail_path'] .'">';
-        $html .= '<div class="c-knowhow__lead"><p>';
-        $html .= '<span style="font-size:110%;margin-bottom:5px;display:inline-block;">第' . $rank['rank'] . '位</span><br/>' . $rank['service_jp_name'];
-        $html .= '</p></div></a></li>';
-    }
+    // foreach($result as $rank)
+    // {
+    //     $html .= '<li class="c-knowhow__item">';
+    //     $html .= '<a class="c-knowhow__link" href="/ranking/site/'. $rank['service_id'] . '">';
+    //     $html .= '<img class="c-knowhow__thumb" src="/dist/image/' . $rank['thumbnail_path'] .'">';
+    //     $html .= '<div class="c-knowhow__lead"><p>';
+    //     $html .= '<span style="font-size:110%;margin-bottom:5px;display:inline-block;">第' . $rank['rank'] . '位</span><br/>' . $rank['service_jp_name'];
+    //     $html .= '</p></div></a></li>';
+    // }
 
-    $html .= '</ul></div></aside>';
+    // $html .= '</ul></div></aside>';
 
 
-    echo $html;
-    unset($con);
+    // echo $html;
+    // unset($con);
 }
 
 function get_agent_rankings(){
-    try{
-        $con = new PDO('mysql:dbname=tenshoku_journal;host=192.168.70.12;port=3306;charset=utf8',DB_USER,DB_PASSWORD);
-    }catch(PDOexception $e){
-        return "";
-    }
+    // try{
+    //     $con = new PDO('mysql:dbname=tenshoku_journal;host=192.168.70.12;port=3306;charset=utf8',DB_USER,DB_PASSWORD);
+    // }catch(PDOexception $e){
+    //     return "";
+    // }
 
-    $sql    = "SELECT service_id, service_jp_name, thumbnail_path,rank FROM tj_rankings WHERE service_type = 'agent' ORDER BY rank LIMIT 6";
+    // $sql    = "SELECT service_id, service_jp_name, thumbnail_path,rank FROM tj_rankings WHERE service_type = 'agent' ORDER BY rank LIMIT 6";
 
-    $stmt   = $con->query($sql);
-    $result = $stmt->fetchAll();
+    // $stmt   = $con->query($sql);
+    // $result = $stmt->fetchAll();
 
-    $html = '<aside class="l-aside_rg_2"><div class="c-knowhow"><h2>転職エージェント徹底比較ランキング</h2><ul class="c-knowhow__list">';
+    // $html = '<aside class="l-aside_rg_2"><div class="c-knowhow"><h2>転職エージェント徹底比較ランキング</h2><ul class="c-knowhow__list">';
 
-    foreach($result as $rank)
-    {
-        $html .= '<li class="c-knowhow__item">';
-        $html .= '<a class="c-knowhow__link" href="/ranking/agent/'. $rank['service_id'] . '">';
-        $html .= '<img class="c-knowhow__thumb" src="/dist/image/' . $rank['thumbnail_path'] .'">';
-        $html .= '<div class="c-knowhow__lead"><p>';
-        $html .= '<span style="font-size:110%;margin-bottom:5px;display:inline-block;">第' . $rank['rank'] . '位</span><br/>' . $rank['service_jp_name'];
-        $html .= '</p></div></a></li>';
-    }
+    // foreach($result as $rank)
+    // {
+    //     $html .= '<li class="c-knowhow__item">';
+    //     $html .= '<a class="c-knowhow__link" href="/ranking/agent/'. $rank['service_id'] . '">';
+    //     $html .= '<img class="c-knowhow__thumb" src="/dist/image/' . $rank['thumbnail_path'] .'">';
+    //     $html .= '<div class="c-knowhow__lead"><p>';
+    //     $html .= '<span style="font-size:110%;margin-bottom:5px;display:inline-block;">第' . $rank['rank'] . '位</span><br/>' . $rank['service_jp_name'];
+    //     $html .= '</p></div></a></li>';
+    // }
 
-    $html .= '</ul></div></aside>';
+    // $html .= '</ul></div></aside>';
 
-    echo $html;
-    unset($con);
+    // echo $html;
+    // unset($con);
 }

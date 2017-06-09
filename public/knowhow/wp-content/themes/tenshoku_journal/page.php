@@ -25,7 +25,7 @@
     <div class="ui divider"></div>
   </div>
   <div class="l-inner l-row c-articleMain">
-    <div class="l-col-lg-8" style="color:#666;">
+    <div class="l-col-lg-8">
       <div class="c-articleContent">
         <?php
           if( have_posts() ):
@@ -37,7 +37,7 @@
           endif;
         ?>
       </div>
-      <div class="c-relatedArticle" style="margin: 5.0rem 0;">
+      <div class="c-relatedArticle">
         <h2>関連する記事</h2>
         <div class="ui divider"></div>
         <div class="ui items">

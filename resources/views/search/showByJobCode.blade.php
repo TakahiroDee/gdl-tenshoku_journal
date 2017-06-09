@@ -50,20 +50,14 @@
           <div class="c-header__servicelogo is-{{ $data['rankingContent']->service_id }}"></div>
         </div>
       </div>
-      <div style="font-size: 12px; color:#666;">
-        <div>掲載終了予定日：2017/06/08</div>
-        <div>最終掲載確認日：2017/05/08</div>
+      <div class="c-header__dates">
+        @if(!preg_match('/^000/',$description->expired_at))
+        <div>掲載終了予定日：{{ substr($description->expired_at,0,10) }}</div>
+        @endif
+        <div>最終掲載確認日：{{ substr($description->last_confirmed_at,0,10) }}</div>
       </div>
       <div class="l-main_lf_1">
         <article class="c-detail">
-          <div class="ui top attached tabular menu">
-            <div class="active item">
-              <a>求人情報</a>
-            </div>
-            <div class="item">
-              <a>企業情報</a>
-            </div>
-          </div>
           <div class="c-detail__box ui bottom attached segment">
             <div class="c-detail__content">
               <h2>この求人について</h2>

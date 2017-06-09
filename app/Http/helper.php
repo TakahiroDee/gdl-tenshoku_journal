@@ -11,8 +11,12 @@ function dynamicSubstring($string)
     return $string;
 }
 
-
 function make_relative_path($path)
 {
     return preg_replace('/http(s)?:\/\/([\w-]+\.)+[\w-]+/','',$path);
+}
+
+function today()
+{
+	return strftime('%m月%d日',time());
 }

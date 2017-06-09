@@ -38,6 +38,7 @@ class CreateRankingsTable extends Migration
             $table->text('embeded_4')->nullable();
             $table->text('embeded_5')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

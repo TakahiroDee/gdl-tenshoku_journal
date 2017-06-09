@@ -33,7 +33,7 @@
 
           @foreach($pages as $page)
           <article class="ui items c-feature__item">
-            <a class="item c-feature__link content" href="{{ $page->guid }}">
+            <a class="item c-feature__link content" href="{{ make_relative_path($page->guid) }}">
               <div class="image c-feature__thumb">
                 <span data-thumbnail-ID="{{ $page->ID }}"></span>
               </div>
@@ -147,35 +147,30 @@
       <div class="l-aside">
         <aside class="ui card c-newarrival l-aside_rg_1">
           <div class="content">
-            <div class="header c-newarrival__title">今週の新着・更新求人特集</div>
+            <div class="header c-newarrival__title">{{ today() }}現在の新着・更新求人</div>
           </div>
-          <div class="content"><span class="ui sub header c-newarrival__logo">リクナビNEXT</span>
+          <div class="content"><span class="ui sub header c-newarrival__logo is-{{ $datas['results'][0]->sitename }}"></span>
             <div class="ui small feed">
               <div class="event">
                 <div class="content">
-                  <div class="summary"><a class="c-newarrival__link" href="#">
-                      <ul class="c-newarrival__list">
-                        <li class="c-newarrival__item">三井住友信託銀行</li>
-                        <li class="c-newarrival__item">アミューズ</li>
-                        <li class="c-newarrival__item">本田技研工業</li>
-                        <li class="c-newarrival__item">アマゾン ウェブ サービス ジャパン</li>
-                        <li class="c-newarrival__item">博報堂</li>
-                        <li class="c-newarrival__item">アメリカン・エキスプレス・ジャパン</li>
-                        <li class="c-newarrival__item">順天堂大学</li>
-                        <li class="c-newarrival__item">日本アイビーエム・ソリューション・サービス</li>
-                        <li class="c-newarrival__item">積水化学工業</li>
-                        <li class="c-newarrival__item">日本オラクル</li>
-                        <li class="c-newarrival__item">丸紅新電力</li>
-                        <li class="c-newarrival__item">サイバー・コミュニケーションズ</li>
-                        <li class="c-newarrival__item">他</li>
-                      </ul></a></div>
+                  <div class="summary">
+                    <ul class="c-newarrival__list">
+                      @foreach($datas['results'] as $result)
+                      <li class="c-newarrival__item">
+                        <a class="c-newarrival__link" href="{{ action('SearchController@showByJobCode',[$result->pathname, $result->job_code_full, $result->rqmt_id]) }}">
+                        {{ $result->cmpny_name }}
+                        </a>
+                      </li>
+                      @endforeach                      
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="extra content">
-            <p>現在サイトに掲載中の求人数<span class="c-newarrival__count">90,889</span>件<br><span class="c-newarrival__updatedat">最終更新日
-                <time datetime="2017-02-27">2017.02.27</time></span></p>
+            <p>現在サイトに掲載中の求人数<span class="c-newarrival__count">{{ number_format($datas['counts']) }}</span>件<br><span class="c-newarrival__updatedat">最終更新日
+                <time datetime="{{ $datas['last_update'] }}">{{ $datas['last_update'] }}</time></span></p>
           </div>
         </aside>
         <aside class="l-aside_rg_2">

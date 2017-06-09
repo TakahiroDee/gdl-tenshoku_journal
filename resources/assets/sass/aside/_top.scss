@@ -47,14 +47,57 @@
 // newarrival
 //****************************
 #p-top{
+  .c-newarrival__logo{
+    height: 45px;
+    width: auto;
+  }
+  .c-newarrival .content:nth-of-type(2){
+    padding-top: 7px;
+  }
+  .c-newarrival__logo.is-rikunabi_next{
+    background: url('/dist/image/logo_rikunabi_next.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-newarrival__logo.is-baitoru_next{
+    background: url('/dist/image/logo_baitoru_next.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-newarrival__logo.is-at_type{
+    background: url('/dist/image/logo_at_type.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-newarrival__logo.is-hatalike{
+    background: url('/dist/image/logo_hatalike.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-newarrival__logo.is-recruit_agent{
+    background: url('/dist/image/logo_recruit_agent.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-newarrival__logo.is-workport{
+    background: url('/dist/image/logo_workport.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-newarrival__logo.is-mynabi_agent{
+    background: url('/dist/image/logo_mynabi_agent.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-newarrival__logo.is-torabayu{
+    background: url('/dist/image/logo_torabayu.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-newarrival__logo.is-rikunabi_haken{
+    background: url('/dist/image/logo_rikunabi_haken.jpg') no-repeat;
+    background-size: contain;
+  }
+  .c-newarrival .ui.small.feed{
+    margin-top: 0;
+  }
   .c-newarrival__title{
     font-size: 1.6rem;
     font-weight: normal;
     color: $base_text_color;
-  }
-  .c-newarrival__list:hover{
-    opacity: 0.8;
-  }
+  }  
   .c-newarrival__item{
     color: $base_text_color;
     display: inline;
@@ -62,6 +105,15 @@
     font-size: 1.2rem;
     line-height: 2;
   }
+  .c-newarrival__item:hover{
+    opacity: 0.8;
+  }
+  .c-newarrival__item a{
+    color: #00ACC1;
+  }
+  .c-newarrival__item a:hover{
+    text-decoration: underline;
+  } 
   .extra.content{
     font-size: 1.2rem;
   }
