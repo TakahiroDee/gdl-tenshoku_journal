@@ -6,6 +6,8 @@ $base_url = explode('?',$base_url)[0];
 $dom = "";
 $dom .= '<p class="c-searchResult__count"><strong>' . number_format($paginator->total()) . '件</strong>がヒットしました。';
 
+
+
 if ($paginator->hasPages()){
 
   $maxPage = intval(ceil($paginator->total() / $paginator->perPage()));
@@ -81,7 +83,7 @@ if ($paginator->hasPages()){
   $dom .= '</div>';
 }else{
   $total_count = $paginator->total();
-  $dom .= '（1 〜' . number_format($paginator->total()) . '件を表示中）</p>';
+  $dom .= '</p>';
 }
 @endphp
 

@@ -11,20 +11,20 @@
 
 @media screen and (min-width: 960px){
   .l-main{
-    margin-bottom: 5.0rem;
+    margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 959px){
   .l-main{
-    margin:0 1.0rem;
+    margin:0 10px;
   }
 }
 @media screen and (min-width: 960px){
   .l-col-lg-8{
-    margin-right: 1.0rem;
+    margin-right: 10px;
   }
   .l-col-lg-4{
-    margin-left: 1.0rem;
+    margin-left: 10px;
   }
 }
 #p-knowhow .l-aside_rg_1{
@@ -32,7 +32,7 @@
 }
 @media screen and (max-width: 959px){
   #p-knowhow .l-aside_rg_2{
-    margin: 1.5rem 0;
+    margin: 15px 0;
   }
 }
 
@@ -41,21 +41,21 @@
  * 3 Module
  ************************************************/
 #p-knowhow .c-articles {
-  margin: 2.0rem auto;
+  margin: 20px auto;
 }
 #p-knowhow .c-articles__lead {
   color: #666;
   font-weight: normal;
-  margin-bottom: 3.5rem;
+  margin-bottom: 35px;
 }
 @media screen and (max-width: 679px){
   #p-knowhow .c-articles__lead {
-    font-size: 1.8rem;
+    font-size: 18px;
   }
 }
 #p-knowhow .c-articles__leadmeta {
   font-size: 0.6em;
-  padding: 0 1.5rem;
+  padding: 0 15px;
 }
 @media screen and (max-width: 679px) {
   #p-knowhow .c-articles__leadmeta {
@@ -64,10 +64,10 @@
   }
 }
 #p-knowhow .c-article__item {
-  margin-bottom: 5.0rem;
+  margin-bottom: 50px;
 }
 #p-knowhow .c-article__contentTitle {
-  font-size: 1.4rem;
+  font-size: 14px;
   font-weight: normal;
   color: #666;
 }
@@ -78,43 +78,43 @@
   color: #666;
 }
 #p-knowhow .c-article__contentDesc {
-  font-size: 1.2rem;
+  font-size: 12px;
   color: #999;
 }
 #p-knowhow .c-article__contentTag {
-  margin: 0.5rem 1.0rem;
-  font-size: 1.0rem;
+  margin: 5px 10px;
+  font-size: 10px;
 }
 #p-knowhow .c-article__pagination {
-  margin: 5.0rem auto 2.0rem;
+  margin: 50px auto 20px;
   text-align: center;
 }
 #p-knowhow .c-article__pagination a{
-  font-size: 1.2rem;
+  font-size: 12px;
 }
 #p-knowhow .c-category h2,#p-knowhowDetail .c-category h2{
   border: none;
 }
 #p-knowhow .c-knowhow,#p-knowhowDetail .c-knowhow {
   color: #666;
-  margin: 0 auto 5.0rem;
+  margin: 0 auto 50px;
 }
 #p-knowhow .c-knowhow,#p-knowhowDetail .c-knowhow{
   width: 100%;
 }
 #p-knowhow .c-knowhow h2,#p-knowhowDetail .c-knowhow h2 {
   color: #666;
-  font-size: 1.4rem;
+  font-size: 14px;
   font-weight: normal;
   border-bottom: 1px solid #DDD;
-  margin-bottom: 2.8rem;
+  margin-bottom: 28px;
 }
 #p-knowhow .c-knowhow__item,#p-knowhowDetail .c-knowhow__item {
-  margin-bottom: 1.5rem;
+  margin-bottom: 15px;
 }
 #p-knowhow .c-knowhow__thumb,#p-knowhowDetail .c-knowhow__thumb{
-  width: 5.5rem;
-  height: 5.5rem;
+  width: 70px;
+  height: 55px;
   flex: 0 0 auto;
 }
 #p-knowhow .c-knowhow__link, #p-knowhow .c-knowhow__link:hover,
@@ -127,10 +127,11 @@
   opacity: 0.8;
 }
 #p-knowhow .c-knowhow__lead,#p-knowhowDetail .c-knowhow__lead {
-  padding-left: 1.0rem;
+  width: calc(100% - 70px);
+  padding-left: 10px;
 }
 #p-knowhow .c-knowhow__lead p,#p-knowhowDetail .c-knowhow__lead p {
-  font-size: 1.2rem;
+  font-size: 12px;
   margin-bottom: 0.2em;
 }
 
@@ -148,8 +149,8 @@
     clear: both;
     vertical-align: bottom;
     max-width: 16vw;
-    min-width: 7.0rem;
-    min-height: 7.0rem;
+    min-width: 70px;
+    min-height: 70px;
     background-size: cover;
   }
 }
@@ -170,19 +171,16 @@
 }
 #p-knowhow .c-articleHeader__title {
   color: #666;
-  font-size: 1.6rem;
+  font-size: 18px;
   font-weight: normal;
+  line-height: 1.8;
   margin-bottom: 1em;
-}
-@media screen and (max-width: 767px) {
-  #p-knowhow .c-articleHeader__title {
-    font-size: 1.4rem;
-  }
 }
 #p-knowhow .c-articleHeader__lead {
   color: #999;
-  font-size: 1.2rem;
+  font-size: 12px;
   padding-left: calc(16vw + 1em);
+  line-height: 1.8;
 }
 @media screen and (max-width: 767px) {
   #p-knowhow .c-articleHeader__lead {
@@ -191,25 +189,25 @@
   }
 }
 #p-knowhow .c-articleMain {
-  margin-top: 3.0rem;
+  margin-top: 30px;
 }
 #p-knowhow .c-articleContent img {
   width: 100%;
-  margin: 2.0rem 0;
+  margin: 20px 0;
 }
 #p-knowhow .c-articleContentH2{
   border-left:5px solid;
   padding-left: 0.7em;
   font-weight: normal;
-  font-size: 1.4rem;
+  font-size: 14px;
 }
 #p-knowhow .c-articleContent a{
   color:#4183c4;
 }
 #p-knowhow blockquote {
-  padding: 1.0rem 2.0rem;
-  margin: 4.0rem 0;
-  text-indent: 1.5rem;
+  padding: 10px 20px;
+  margin: 40px 0;
+  text-indent: 15px;
 }
 #p-knowhow blockquote:before{
   content:"“";
@@ -235,23 +233,29 @@
 #p-knowhow .c-articleContent .list .item p{
   margin: 0;
 }
-#p-knowhow .c-articleContentH2, #p-knowhow .c-articleContent p {
+#p-knowhow .c-articleContentH2{
+  font-size: 18px;
+  margin: 2em 0;
+  line-height: 1.8;
+}
+#p-knowhow .c-articleContent p {
   margin-bottom: 1.5em;
+  line-height: 1.8;
 }
 #p-knowhow .c-relatedArticle h2{
   font-weight: normal;
 }
 #p-knowhow .c-relatedArticle .item{
-  margin-bottom: 4.0rem;
+  margin-bottom: 40px;
 }
 #p-knowhow .c-relatedArticle .content .header{
   color: #666;
-  font-size: 1.4rem;
+  font-size: 14px;
   font-weight: normal;
 }
 #p-knowhow .c-relatedArticle .content .description{
   color: #666;
-  font-size: 1.2rem;
+  font-size: 12px;
 }
 @media screen and (max-width: 679px){
   #p-knowhow .l-aside{
@@ -280,10 +284,10 @@
   display: inline-block;
   width: 100%;
   height: 100%;
-  font-size: 1.2rem;
+  font-size: 14px;
   line-height: 3;
-  padding-left: 1.0rem;
-  padding-right: 1.0rem;
+  padding-left: 10px;
+  padding-right: 10px;
   box-sizing: border-box;
   color: #888;
   position: relative;

@@ -1722,6 +1722,24 @@ footer {
   font-size: 1.2rem;
 }
 
+#p-search .c-changeCondition {
+  display: inline-block;
+  background: #FFF;
+  position: fixed;
+  top: 44px;
+  left: calc(50% - (132px / 2));
+}
+
+#p-search .c-changeCondition.is-hidden {
+  display: none;
+}
+
+#p-search .c-changeCondition .ui.basic.button {
+  width: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
 @media screen and (min-width: 960px) {
   #p-jobinfo .l-main {
     margin-bottom: 5.0rem;
@@ -1855,13 +1873,13 @@ footer {
 }
 
 #p-jobinfo .ui.card .ui.button {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: normal;
   width: 100%;
   box-sizing: border-box;
-  height: 4.0rem;
+  height: 5.0rem;
   padding: 0;
-  line-height: 4.0rem;
+  line-height: 5.0rem;
 }
 
 #p-jobinfo .ui.card .summary {

@@ -356,7 +356,34 @@ document.addEventListener('DOMContentLoaded',() => {
             document.forms['search'].action = formuri;
             document.forms['search'].submit();
         });
+
+
     }
+
+
+    if(wrapperElement.id === "p-search"){
+        const $el         = $('<div class="c-changeCondition is-hidden"><button class="ui basic button"><i class="icon configure"></i>条件を変更</button></div>');
+        const $target     = $('.l-main_lf_2');
+        const breakPoint  = window.scrollY + document.querySelector('.l-main_lf_2').getBoundingClientRect().top;
+
+        $target.append($el);
+
+        $(window).on('scroll',function(){
+            if($(this).scrollTop() > breakPoint && window.innerWidth < 678){
+                $el.removeClass('is-hidden');
+              }else{
+                $el.addClass('is-hidden');
+            }
+        });
+
+        $el.on('click',function(e){
+            e.stopPropagation();
+            $('html,body').animate({ scrollTop : 0});
+        });
+    }
+
+
+
 
     /*
      * Jobdetail

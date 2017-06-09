@@ -302,3 +302,25 @@
     font-size: 1.2rem;
   }
 }
+
+
+//****************************
+// changeConditionButton
+//****************************
+#p-search{
+  .c-changeCondition{
+    display: inline-block;
+    background: #FFF;
+    position: fixed;
+    top: 44px;
+    left: calc(50% - (132px / 2));
+  }
+  .c-changeCondition.is-hidden{
+    display: none;
+  }
+  .c-changeCondition .ui.basic.button{
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
