@@ -63,7 +63,9 @@ class TopController extends Controller
                                 ->orderBy('last_confirmed_at','DESC')
                                 ->take(10)
                                 ->get();
-        $datas['counts']      = Recruitment::all()->count();
+        $datas['counts']      = DB::table('recruitments')
+                                ->join('jobcodes','recruitments.job_code_full','=','jobcodes.job_code_full')
+                                ->count();
         $datas['last_update'] = substr(Recruitment::select('last_confirmed_at')->orderBy('last_confirmed_at','desc')->first()->last_confirmed_at,0,10);
 
 

@@ -47,7 +47,11 @@ class CreateRecruitmentsTable extends Migration
         /*
          * http://www.84kure.com/blog/2016/04/14/laravel-fulltext%E3%82%A4%E3%83%B3%E3%83%87%E3%83%83%E3%82%AF%E3%82%B9%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E5%85%A8%E6%96%87%E6%A4%9C%E7%B4%A2/
          */
-        DB::statement('ALTER TABLE tj_recruitments ADD FULLTEXT INDEX `fulltext` (`subtitle`,`content`,`workplace`,`skill`,`payment`)');
+        DB::statement('ALTER TABLE tj_recruitments ADD FULLTEXT INDEX (subtitle)');
+        DB::statement('ALTER TABLE tj_recruitments ADD FULLTEXT INDEX (content)');
+        DB::statement('ALTER TABLE tj_recruitments ADD FULLTEXT INDEX (workplace)');
+        DB::statement('ALTER TABLE tj_recruitments ADD FULLTEXT INDEX (skill)');
+        DB::statement('ALTER TABLE tj_recruitments ADD FULLTEXT INDEX (payment)');
     }
 
     /**

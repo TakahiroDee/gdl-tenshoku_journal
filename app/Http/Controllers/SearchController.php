@@ -32,9 +32,11 @@ class SearchController extends Controller
         );
         $data = $this->makeData('jobcode',$opt);
 
-        $cassettes = Recruitment::whereIn('job_code_full',$data['selected_job_code_list'])
-                  ->orderBy('last_confirmed_at','desc')
-                  ->paginate(50);
+        $cassettes = DB::table('recruitments')
+                    ->join('jobcodes','recruitments.job_code_full','=','jobcodes.job_code_full')
+                    ->whereIn('recruitments.job_code_full',$data['selected_job_code_list'])
+                    ->orderBy('recruitments.last_confirmed_at','desc')
+                    ->paginate(50);         
 
 
         return view('search.getIndexByJobBigCode',compact('cassettes','data'));
@@ -50,9 +52,11 @@ class SearchController extends Controller
 
         $data = $this->makeData('jobcode',$opt);
 
-        $cassettes = Recruitment::where('job_code_full',$job_code_full)
+        $cassettes = DB::table('recruitments')
+                    ->join('jobcodes','recruitments.job_code_full','=','jobcodes.job_code_full')
+                    ->where('recruitments.job_code_full',$job_code_full)
                     ->orderBy('last_confirmed_at','desc')
-                    ->paginate(50);
+                    ->paginate(50);        
 
 
         return view('search.getIndexByJobFullCode',compact('cassettes','data'));
@@ -88,7 +92,7 @@ class SearchController extends Controller
 
         $cassettes = DB::table('recruitments')
                     ->join('areacodes','recruitments.area_code','=','areacodes.area_code')
-                    ->where('area_pathname',$area_pathname)
+                    ->where('area_pathname','like',"%${area_pathname}%")
                     ->orderBy('recruitments.last_confirmed_at','desc')
                     ->paginate(50);
 
@@ -167,6 +171,7 @@ class SearchController extends Controller
         $_area_code_list = array();
         $_redirect       = false;
         $_keywordlist    = preg_split('/,/', preg_replace('/(\s|　)/', ',', $_inputList['keyword']));
+        $keyword         = "";
 
 
         
@@ -205,34 +210,30 @@ class SearchController extends Controller
         {
             $_baseQuery->whereIn('recruitments.job_code_full',$_job_code_list);
         }
-        if(count($_area_code_list) > 0)
-        {
-            $_baseQuery->whereIn('recruitments.area_code',$_area_code_list);
-        }
         if(!empty($_keywordlist))
         {
-            // SELECT *, MATCH(subtitle, content, workplace, skill, payment) AGAINST("+?" IN BOOLEAN MODE) AS score
-            // FROM tj_recruitments
-            // WHERE MATCH(subtitle, content, workplace, skill, payment) AGAINST("+?" IN BOOLEAN MODE) <> 0
-            // ORDER BY score DESC            
+            $len = min(count($_keywordlist),5);
 
-            $matchsql = 'MATCH (tj_recruitments.subtitle, tj_recruitments.content, tj_recruitments.workplace, tj_recruitments.skill, tj_recruitments.payment) AGAINST("';
-
-            for($i = 0; $i < count($_keywordlist); $i++)
+            for($i = 0; $i < $len; $i++)
             {
-                $matchsql .= '+' . strval($_keywordlist[$i]);
-                if($i !== count($_keywordlist) - 1)
-                {
-                    $matchsql .= ' ';
-                }
-            }            
-            $matchsql .= '" IN BOOLEAN MODE)';
-            $_baseQuery->whereRaw($matchsql)->orderBy(DB::raw($matchsql),'desc');
+                $_baseQuery->where('content','like', "%$_keywordlist[$i]%");                
+            }
         }
+        if(count($_area_code_list) > 0)
+        {            
+            // $_baseQuery->whereIn('recruitments.area_code',$_area_code_list);
+            for($i = 0; $i < count($_area_code_list); $i++)
+            {
+                if($i = 0){
+                    $_baseQuery->where('recruitments.area_code','like','%${_area_code_list[$i]}%');
+                }else{
+                    $_baseQuery->orWhere('recruitments.area_code','like','%${_area_code_list[$i]}%');
+                }                
+            }
+        }
+            
         
-
         $cassettes  = $_baseQuery->orderBy('recruitments.id')->paginate(50);
-
 
         return view('search.index',compact('cassettes','data'));
     }
