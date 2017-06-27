@@ -36,7 +36,7 @@ class SearchController extends Controller
                     ->join('jobcodes','recruitments.job_code_full','=','jobcodes.job_code_full')
                     ->whereIn('recruitments.job_code_full',$data['selected_job_code_list'])
                     ->orderBy('recruitments.last_confirmed_at','desc')
-                    ->paginate(50);         
+                    ->paginate(50);
 
 
         return view('search.getIndexByJobBigCode',compact('cassettes','data'));
@@ -95,7 +95,6 @@ class SearchController extends Controller
                     ->where('area_pathname','like',"%${area_pathname}%")
                     ->orderBy('recruitments.last_confirmed_at','desc')
                     ->paginate(50);
-
 
         return view('search.getIndexByAreaCode',compact('cassettes','data'));
     }
@@ -169,6 +168,7 @@ class SearchController extends Controller
         $_inputList      = $request->input();
         $_job_code_list  = array();
         $_area_code_list = array();
+        $_serviceList    = array();
         $_redirect       = false;
         $_keywordlist    = preg_split('/,/', preg_replace('/(\s|　)/', ',', $_inputList['keyword']));
         $keyword         = "";
@@ -183,10 +183,14 @@ class SearchController extends Controller
             if(strpos($k,'ch_a_') !== false)
             {
                 array_push($_area_code_list, strval(preg_replace('/ch_a_/','',$k)));
-            }            
+            }
+            if(strpos($k,'s_') !== false)
+            {
+                array_push($_serviceList, strval(preg_replace('/s_/','',$k)));
+            }
         }
 
-        if(count($_job_code_list) === 0 && count($_area_code_list) === 0 && count($_keywordlist) === 0){
+        if(count($_job_code_list) === 0 && count($_area_code_list) === 0 && count($_serviceList) === 0 && count($_keywordlist) === 0){
             return redirect()->action('SearchController@index');
         }
 
@@ -196,6 +200,7 @@ class SearchController extends Controller
         $data      = $this->makeData('custom', array(
                         'selected_job_code_list'  => $_job_code_list,
                         'selected_area_code_list' => $_area_code_list,
+                        'selected_service_list'   => $_serviceList,
                       )
                     );
 
@@ -203,7 +208,7 @@ class SearchController extends Controller
         /*
          * make cassettes
          */
-        $_baseQuery = DB::table('recruitments')
+        $_baseQuery = DB::table('recruitments')                    
                     ->join('jobcodes','recruitments.job_code_full','=','jobcodes.job_code_full');
 
         if(count($_job_code_list) > 0)
@@ -216,26 +221,23 @@ class SearchController extends Controller
 
             for($i = 0; $i < $len; $i++)
             {
-                $_baseQuery->where('content','like', "%$_keywordlist[$i]%");                
+                $_baseQuery->where('content','like', "%$_keywordlist[$i]%");
             }
         }
         if(count($_area_code_list) > 0)
         {            
-            // $_baseQuery->whereIn('recruitments.area_code',$_area_code_list);
-            for($i = 0; $i < count($_area_code_list); $i++)
-            {
-                if($i = 0){
-                    $_baseQuery->where('recruitments.area_code','like','%${_area_code_list[$i]}%');
-                }else{
-                    $_baseQuery->orWhere('recruitments.area_code','like','%${_area_code_list[$i]}%');
-                }                
-            }
+            $json = json_encode($_area_code_list);
+            $_baseQuery->whereRaw("JSON_CONTAINS(tj_recruitments.area_code,'${json}',\"$.code\")");
+            
+        }        
+        if(count($_serviceList) > 0)
+        {            
+            $_baseQuery->whereIn('recruitments.sitename',$_serviceList);
         }
             
-        
         $cassettes  = $_baseQuery->orderBy('recruitments.id')->paginate(50);
 
-        return view('search.index',compact('cassettes','data'));
+        return view('search.index',compact('cassettes','data'));        
     }
 
 
@@ -258,6 +260,7 @@ class SearchController extends Controller
             'area_code_value'        => '',
             'selected_job_code_list' => array(),
             'selected_area_code_list'=> array(),
+            'selected_service_list'  => array(),
             'job_modal'              => Jobcode::fulllist(),
             'area_modal'             => Areacode::fulllist(),
         );
@@ -328,6 +331,7 @@ class SearchController extends Controller
                 $data = array_merge($basedata, array(
                     'service_id'             => $opt['service_id'],
                     'service_jp_name'        => DB::table('services')->where('service_id',$opt['service_id'])->first()->service_jp_name,
+                    'selected_service_list'  => $opt['service_id'],
                   )
                 );
             }else{
@@ -348,7 +352,13 @@ class SearchController extends Controller
                   )
                 );
             }
-            if(count($opt['selected_job_code_list']) == 0 && count($opt['selected_area_code_list']) == 0)
+            if(isset($opt['selected_service_list']) && count($opt['selected_service_list']) > 0){
+                $data = array_merge($basedata,array(
+                    'selected_service_list' => $opt['selected_service_list'],
+                  )
+                );
+            }
+            if(count($opt['selected_job_code_list']) == 0 && count($opt['selected_area_code_list']) == 0 && count($opt['selected_service_list']) == 0)
             {
                 $data = $basedata;
             }

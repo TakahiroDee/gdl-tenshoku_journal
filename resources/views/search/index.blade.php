@@ -48,7 +48,7 @@
       @endif
 
       <div class="l-main_lf_1">
-        <div class="c-searchResult">
+        <div class="c-searchResult">          
           {!! $cassettes->links('vendor.pagination.semantic-ui') !!}
         </div>
       </div>
@@ -79,7 +79,7 @@
               </tr>
               <tr>
                 <th class="four wide">提供元</th>
-                <td class="tweleve wide">{{ $cassette->sitename }}</td>
+                <td class="tweleve wide"><span class="is-{{ $cassette->sitename }}"></span></td>
               </tr>
             </tbody>
           </table>
@@ -96,7 +96,7 @@
 
       </div>
       <div class="l-main_lf_3">
-        <div class="c-searchResult">
+        <div class="c-searchResult">          
           {!! $cassettes->links('vendor.pagination.semantic-ui') !!}
         </div>
       </div>

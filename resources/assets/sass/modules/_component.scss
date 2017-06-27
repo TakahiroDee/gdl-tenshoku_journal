@@ -187,8 +187,9 @@
 //****************************
 // breadcrumb
 //****************************
-.c-hero{
+#p-ranking{
   .c-breadcrumb{
+    color: #FFF;
     padding: 10px 0;
     font-size: 12px;
   }
@@ -196,10 +197,13 @@
     line-height: 1.6;
   }
   .c-breadcrumb a{
+    color: #FFF;    
+  }
+  .c-breadcrumb a:hover{
     color: #FFF;
     text-decoration: underline;
   }
-  .c-breadcrumb i{
+  .ui.breadcrumb .c-breadcrumb i.icon.divider{
     color: #FFF;
   }
 }
@@ -213,17 +217,19 @@
     line-height: 1.6;
   }
   .c-breadcrumb a{
+    color: #{$base_theme_color};    
+  }
+  .c-breadcrumb a:hover{
     color: #{$base_theme_color};
     text-decoration: underline;
   }
-  .c-breadcrumb i{
+  .c-breadcrumb.ui.breadcrumb i.icon.divider{
     color: #{$base_theme_color};
   }
   .c-breadcrumb span{
     color: #666;
   }
 }
-
 
 //****************************
 // searchCassette
@@ -271,6 +277,62 @@
   .c-searchCassette table tr:nth-of-type(3) th,
   .c-searchCassette table tr:nth-of-type(4) th{
     border-top: 1px solid rgba(34, 36, 38, 0.1);
+  }
+  .c-searchCassette table td span.is-baitoru_next{
+    display: block;
+    width: 70px;
+    height: 35px;
+    background: url('/dist/image/logo_baitoru_next.jpg') no-repeat;
+    background-size: cover;
+  }
+  .c-searchCassette table td span.is-hatalike{
+    display: block;
+    width: 70px;
+    height: 35px;
+    background: url('/dist/image/logo_hatalike.jpg') no-repeat;
+    background-size: cover;
+  }
+  .c-searchCassette table td span.is-mynabi_agent{
+    display: block;
+    width: 100px;
+    height: 50px;
+    background: url('/dist/image/logo_mynabi_agent.jpg') no-repeat;
+    background-size: cover;
+  }
+  .c-searchCassette table td span.is-rikunabi_next{
+    display: block;
+    width: 70px;
+    height: 35px;
+    background: url('/dist/image/logo_rikunabi_next.jpg') no-repeat;
+    background-size: cover;
+  }
+  .c-searchCassette table td span.is-recruit_agent{
+    display: block;
+    width: 70px;
+    height: 35px;
+    background: url('/dist/image/logo_recruit_agent.jpg') no-repeat;
+    background-size: cover;
+  }
+  .c-searchCassette table td span.is-at_type{
+    display: block;
+    width: 70px;
+    height: 35px;
+    background: url('/dist/image/logo_at_type.jpg') no-repeat;
+    background-size: cover;
+  }
+  .c-searchCassette table td span.is-torabayu{
+    display: block;
+    width: 70px;
+    height: 35px;
+    background: url('/dist/image/logo_torabayu.jpg') no-repeat;
+    background-size: cover;
+  }
+  .c-searchCassette table td span.is-workport{
+    display: block;
+    width: 70px;
+    height: 35px;
+    background: url('/dist/image/logo_workport.jpg') no-repeat;
+    background-size: cover;
   }
   .c-searchCassette__buttons{
     display: flex;

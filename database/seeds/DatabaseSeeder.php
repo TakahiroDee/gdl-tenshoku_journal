@@ -22,15 +22,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Model::unguard();
-        // $this->call('SiteRankingsTableSeeder');
-        // $this->call('AgentRankingsTableSeeder');
-        // $this->call('ItwebRankingsTableSeeder');
-        // $this->call('HakenRankingsTableSeeder');
-        // $this->call('WomanRankingsTableSeeder');
-        // $this->call('ReputationsTableSeeder');
+        $this->call('SiteRankingsTableSeeder');
+        $this->call('AgentRankingsTableSeeder');
+        $this->call('ItwebRankingsTableSeeder');
+        $this->call('HakenRankingsTableSeeder');
+        $this->call('WomanRankingsTableSeeder');
+        $this->call('ReputationsTableSeeder');
         $this->call('JobcodesTableSeeder');
-        // $this->call('AreacodesTableSeeder');
-        // $this->call('ServicesTableSeeder');
+        $this->call('AreacodesTableSeeder');
+        $this->call('ServicesTableSeeder');
         Model::reguard();
     }
 }

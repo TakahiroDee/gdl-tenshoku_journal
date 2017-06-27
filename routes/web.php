@@ -13,6 +13,7 @@
 
 /* Top page */
 Route::get('/', 'TopController@index');
+Route::get('/about', 'TopController@about');
 
 /* Ranking page */
 Route::get('/ranking', 'RankingController@topIndex');

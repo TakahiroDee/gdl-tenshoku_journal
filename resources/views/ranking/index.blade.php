@@ -35,9 +35,7 @@
     <main class="l-col-lg-8">
       <div class="l-main_lf_1">
         <div class="c-headline">
-          自分自身で求人を探したい、エージェントから提案されたものだけだと見逃している求人がある気がする、など
-          転職活動に時間がしっかりと割け、なおかつ可能性を狭めたくないなら、提案型の転職エージェントよりも転職サイトの利用がオススメです。
-          複数の転職サイトの中から、利用者数・求人数・機能など総合的に見て、オススメの転職サイトを集めました。
+          {!! nl2br($data['headline']) !!}
         </div>
       </div>
       <div class="l-main_lf_2">
@@ -152,14 +150,16 @@
             <h2>タイプ別転職成功ノウハウ</h2>
             <ul class="c-knowhow__list">
 
-              @foreach($pages as $page)
+              @forelse($pages as $page)
               <li class="c-knowhow__item">
                 <a class="c-knowhow__link" href="{{ make_relative_path($page->guid) }}">
                   <img class="c-knowhow__thumb" src="/dist/image/feature-{{ $page->ID }}.jpg" width="70" height="55" alt="{{ $page->post_title }}">
                   <p class="c-knowhow__lead">{{ $page->post_title }}</p>
                 </a>
               </li>
-              @endforeach
+              @empty
+              <li></li>
+              @endforelse
 
             </ul>
           </div>
@@ -167,14 +167,16 @@
             <h2>転職を考えたら</h2>
             <ul class="c-knowhow__list">
 
-              @foreach($posts as $post)
+              @forelse($posts as $post)
               <li class="c-knowhow__item">
                 <a class="c-knowhow__link" href="{{ make_relative_path($post->link) }}">
                   <img class="c-knowhow__thumb" src="{{ make_relative_path($post->thumb) }}" width="70" height="55" alt="{{ $post->title }}">
                   <p class="c-knowhow__lead">{{ $post->title }}</p>
                 </a>
               </li>
-              @endforeach
+              @empty
+              <li></li>
+              @endforelse
 
             </ul>
           </div>

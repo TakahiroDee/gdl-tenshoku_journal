@@ -86,7 +86,7 @@
                       <th class="four wide">勤務地</th>
                       <td class="tweleve wide">
                         @if( strlen( $description->workplace_wiz_tag ) > 0)
-                        {!! $description->workplace_wiz_tag !!}
+                        {!! nl2br($description->workplace_wiz_tag) !!}
                         @else
                         <p>{{ $description->workplace }}</p>
                         @endif

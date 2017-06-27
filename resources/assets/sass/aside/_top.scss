@@ -28,7 +28,7 @@
 }
 @media #{$more_than_large}{
   #p-top .l-aside_rg_1{
-    height: 30.0rem;
+    min-height: 30.0rem;
   }
 }
 .l-aside_rg_2{
@@ -100,7 +100,7 @@
   }  
   .c-newarrival__item{
     color: $base_text_color;
-    display: inline;
+    display: inline-block;
     font-weight: normal;
     font-size: 1.2rem;
     line-height: 2;
@@ -109,7 +109,18 @@
     opacity: 0.8;
   }
   .c-newarrival__item a{
-    color: #00ACC1;
+    color: #555;
+    display: inline-block;
+  }
+  @media #{$more_than_large}{
+    .c-newarrival__item a{
+      padding: 0 0.2em;
+    }
+  }
+  @media #{$less_than_large}{
+    .c-newarrival__item a{
+      padding: 0.4em;
+    }
   }
   .c-newarrival__item a:hover{
     text-decoration: underline;

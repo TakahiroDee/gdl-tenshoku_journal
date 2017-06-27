@@ -11,7 +11,7 @@
         <div class="content">
           <div class="description">
             <p>
-              {{ $contents->summary }}
+              {{ nl2br($contents->summary) }}
             </p>
           </div>
         </div>
@@ -22,7 +22,7 @@
         <a class="item" href="#bs-1">{{ $contents->service_jp_name }}のメリットと口コミ</a>
         <a class="item" href="#bs-2">{{ $contents->service_jp_name }}のデメリットと口コミ</a>
         <a class="item" href="#bs-3">掲載している求人について</a>
-        <a class="item" href="#bs-4">総論・どういう人におすすめか</a>
+        <a class="item" href="#bs-4">こんな人は{{ $contents->service_jp_name }}を利用すべき</a>
       </div>
     </div>
     <section>
@@ -30,12 +30,12 @@
         <h2 class="c-block__subheader" id="bs-1">1.{{ $contents->service_jp_name }}のメリットと口コミ</h2>
         <div class="c-block__section">
           <h3 class="c-block__thirdheader">{{ $contents->service_jp_name }}のメリット<i class="thumbs up icon"></i></h3>
-          {!! $contents->description_1 !!}
+          {!! nl2br($contents->description_1) !!}
         </div>
         <div class="c-block__section">
           <h3 class="c-block__thirdheader">{{ $contents->service_jp_name }}利用者の声<i class="talk outline icon"></i></h3>
 
-          @foreach($good_reps as $good_rep)
+          @forelse($good_reps as $good_rep)
           <div class="ui comments c-voices">
             <div class="ui raised segment">
               <div class="comment c-voice">
@@ -58,7 +58,9 @@
               </div>
             </div>
           </div>
-          @endforeach
+          @empty
+          <div></div>
+          @endforelse
 
         </div>
         <div class="c-block__section">
@@ -101,12 +103,12 @@
         <h2 class="c-block__subheader" id="bs-2">2.{{ $contents->service_jp_name }}のデメリットと口コミ</h2>
         <div class="c-block__section">
           <h3 class="c-block__thirdheader">{{ $contents->service_jp_name }}のデメリット<i class="thumbs down icon"></i></h3>
-          {!! $contents->description_2 !!}
+          {!! nl2br($contents->description_2) !!}
         </div>
         <div class="c-block__section">
           <h3 class="c-block__thirdheader">{{ $contents->service_jp_name }}利用者の声<i class="talk outline icon"></i></h3>
 
-          @foreach($bad_reps as $bad_rep)
+          @forelse($bad_reps as $bad_rep)
           <div class="ui comments c-voices">
             <div class="ui raised segment">
               <div class="comment c-voice">
@@ -129,7 +131,9 @@
               </div>
             </div>
           </div>
-          @endforeach
+          @empty
+          <div></div>
+          @endforelse
 
         </div>
         <div class="c-block__section">
@@ -227,7 +231,7 @@
         </div>
         <h2 class="c-block__subheader" id="bs-4">4.総論・どう言う人におすすめか</h2>
         <div class="c-block__section">
-          {!! $contents->description_4 !!}
+          {!! nl2br($contents->description_4) !!}
 
 
           @if($contents->crawling_flag === 1)
@@ -252,7 +256,7 @@
         <div class="c-block__section" id="bs-5">
           <p>その他の口コミ一覧</p>
 
-          @foreach($recent_reps as $recent_rep)
+          @forelse($recent_reps as $recent_rep)
           <div class="ui comments c-voices">
             <div class="ui raised segment">
               <div class="comment c-voice">
@@ -275,7 +279,9 @@
               </div>
             </div>
           </div>
-          @endforeach
+          @empty
+          <div></div>
+          @endforelse
 
         </div>
       </div>

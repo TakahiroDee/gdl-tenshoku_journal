@@ -332,8 +332,10 @@ document.addEventListener('DOMContentLoaded',() => {
             let formuri     = document.forms['search'].action + '?';
             let job_code_f  = false;
             let area_code_f = false;
+            let service_id_f = false;
             let selectJobList = document.querySelectorAll('.ui.button.c-jobmodal + .c-searchPanel__selectedlist input:checked');
             let selectAreaList = document.querySelectorAll('.ui.button.c-areamodal + .c-searchPanel__selectedlist input:checked');
+            let selectServiceList = document.querySelectorAll('.c-service__list input:checked');
             let keyword     = document.querySelector('input[name="keyword"]').value;
 
 
@@ -351,8 +353,7 @@ document.addEventListener('DOMContentLoaded',() => {
             if(selectAreaList.length > 0){
                 if(job_code_f){
                     formuri += '&';
-                }
-                let selectAreaList = document.querySelectorAll('.ui.button.c-areamodal + .c-searchPanel__selectedlist input:checked');
+                }                
                 for(var i = 0; i < selectAreaList.length; i++){
                     formuri += 'ac=' + selectAreaList[i].name.replace(/ch_a_/,'');
                     if(i !== selectAreaList.length - 1){
@@ -362,8 +363,22 @@ document.addEventListener('DOMContentLoaded',() => {
                 area_code_f = true;
             }
 
+            if(selectServiceList.length > 0){
+                if(job_code_f || area_code_f){
+                    formuri += '&';
+                }
+                for(var i = 0; i < selectServiceList.length; i++){
+                    formuri += 'sc=' + selectServiceList[i].name.replace(/s_/,'');
+                    if(i !== selectServiceList.length - 1){
+                        formuri += '&';
+                    }
+                }
+                service_id_f = true;
+            }
+
+
             if(keyword.length > 0){
-                if(job_code_f === false && area_code_f === false){
+                if(job_code_f === false && area_code_f === false && service_id_f === false){
                     formuri += 'keyword=' + keyword;
                 }else if(job_code_f === true || area_code_f === true){
                     formuri += '&keyword=' + keyword;

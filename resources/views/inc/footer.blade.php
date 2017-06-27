@@ -6,7 +6,7 @@
     <div class="l-col-lg-9">
       <div class="c-footer">
         <div class="c-footer__item">
-          <p class="c-footer__itemHeader"><a href="{{ action('RankingController@agentIndex') }}">転職サイト・Agent</a></p>
+          <p class="c-footer__itemHeader"><a href="/ranking">転職サイト・Agent</a></p>
           <ul>
             <li><a href="{{ action('RankingController@siteIndex') }}">転職サイト総合ランキング</a></li>
             <li><a href="{{ action('RankingController@agentIndex') }}">転職エージェント総合ランキング</a></li>
@@ -56,7 +56,7 @@
         </div>
         <div class="c-footer__item">
           <p class="c-footer__itemHeader" data-id="footer-knowhow"><a href="/knowhow">転職を考えたら</a></p>
-          <p class="c-footer__itemHeader"><a href="#">運営者情報</a></p>
+          <p class="c-footer__itemHeader"><a href="/about">運営者情報</a></p>
         </div>
       </div>
     </div>

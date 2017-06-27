@@ -9,7 +9,7 @@
       <nav class="b-gnav">
         <ul class="b-gnav__list">
           <li class="b-gnav__item u-dn"><a class="b-gnav__link" href="/">HOME</a></li>
-          <li class="b-gnav__item"><a class="b-gnav__link" href="/ranking/agent/">転職サイト・Agent</a>
+          <li class="b-gnav__item"><a class="b-gnav__link" href="/ranking">転職サイト・Agent</a>
           </li>
           <li class="b-gnav__item"><a class="b-gnav__link" href="/search/">求人をさがす</a></li>
           <li class="b-gnav__item"><a class="b-gnav__link" href="/knowhow">転職を考えたら</a></li>

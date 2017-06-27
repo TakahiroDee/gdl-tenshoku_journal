@@ -86,7 +86,9 @@
                       <th class="four wide">勤務地</th>
                       <td class="tweleve wide">
                         @if( strlen( $description->workplace_wiz_tag ) > 0)
-                        {!! $description->workplace_wiz_tag !!}
+                        @php
+                        echo preg_replace('/\n+/', '<br>',$description->workplace_wiz_tag)
+                        @endphp
                         @else
                         <p>{{ $description->workplace }}</p>
                         @endif
@@ -96,9 +98,9 @@
                       <th class="four wide">給与</th>
                       <td class="tweleve wide">
                         @if( strlen( $description->payment_wiz_tag ) > 0)
-                        {!! $description->payment_wiz_tag !!}
+                        {!! nl2br($description->payment_wiz_tag) !!}
                         @else
-                        <p>{{ $description->payment }}</p>
+                        <p>{{ nl2br($description->payment) }}</p>
                         @endif
                       </td>
                     </tr>

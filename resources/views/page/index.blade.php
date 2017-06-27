@@ -23,7 +23,7 @@
             <p class="c-pickup__title">結局どのサイトがいいの？みんなのクチコミから選ぶ、転職サイト総合ランキング</p>
           </a>
           <a class="c-pickup__item c-pickup__agent l-col-lg-6 l-col-md-6" href="{{ action('RankingController@agentIndex') }}">
-            <p class="c-pickup__title">結局どのサイトがいいの？みんなのクチコミから選ぶ、転職サイト総合ランキング</p>
+            <p class="c-pickup__title">評判・口コミで選ぶ！転職エージェント徹底比較ランキング</p>
           </a>
         </div>
       </div>
@@ -31,7 +31,7 @@
         <div class="c-feature">
           <h2 class="l-section_title">タイプ・目的別に転職サービスをさがす</h2>
 
-          @foreach($pages as $page)
+          @forelse($pages as $page)
           <article class="ui items c-feature__item">
             <a class="item c-feature__link content" href="{{ make_relative_path($page->guid) }}">
               <div class="image c-feature__thumb">
@@ -47,7 +47,8 @@
               </section>
             </a>
           </article>
-          @endforeach
+          @empty
+          @endforelse
 
         </div>
       </div>
@@ -81,14 +82,24 @@
           </a>
         </div>
         <div class="ui items c-ranking__item">
-          <a class="item c-ranking__link content" href="{{ action('RankingController@hakenIndex') }}">
+          <a class="item c-ranking__link content" href="{{ action('RankingController@womanIndex') }}">
+            <div class="c-ranking__thumb c-ranking__woman"></div>
+            <div class="c-ranking__contentBox">
+              <h3 class="c-ranking__lead">女性向け転職サービスランキング</h3>
+              <p class="c-ranking__excerpt">働き方の多様性や女性の社会進出が叫ばれる中、どうやって仕事を続けていけばいいのか不安になることもありますよね。バリバリ仕事を続けていきたいキャリアタイプの方、
+              家庭と仕事を両立したいタイプの方にも合う女性向け転職サービスランキングです。</p>
+            </div>
+          </a>
+        </div>
+        <!-- <div class="ui items c-ranking__item">
+          <a class="item c-ranking__link content" href="#">
             <div class="c-ranking__thumb c-ranking__haken"></div>
             <div class="c-ranking__contentBox">
               <h3 class="c-ranking__lead">派遣サイトランキング</h3>
               <p class="c-ranking__excerpt">仕事もほどほどにやりながら、プライベートを両方充実させたいという方なら派遣で働くというのも一つの手です。 ここでは複数ある派遣サイトを目的に合わせてどのように使い分けるべきか、お伝えします。</p>
             </div>
           </a>
-        </div>
+        </div> -->
 
       </div>
       <div class="l-main_lf_4">
@@ -140,6 +151,23 @@
               </div>
             </div>
           </div>
+          <div class="l-search_by l-search_by_service">
+            <h3>サービス名からさがす</h3>
+            <div class="c-search__list">
+              <div class="l-row l-md-row is-sp">
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__baitoru" href="/search/service/baitoru_next"><span class="c-search__meta u-p2em"></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__hatalike" href="/search/service/hatalike"><span class="c-search__meta u-p2em"></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__mynabi" href="/search/service/mynabi_agent"><span class="c-search__meta u-p2em"></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__next" href="/search/service/rikunabi_next"><span class="c-search__meta u-p2em"></span></a></div>
+              </div>
+              <div class="l-row l-md-row is-sp">
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__rag" href="/search/service/recruit_agent"><span class="c-search__meta u-p2em"></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__tora" href="/search/service/torabayu"><span class="c-search__meta u-p2em"></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__type" href="/search/service/at_type"><span class="c-search__meta u-p2em"></span></a></div>
+                <div class="c-search__item l-col-lg-3 l-col-md-3 u-ml13"><a class="c-search__link c-search__wkpt" href="/search/service/workport"><span class="c-search__meta u-p2em"></span></a></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -154,14 +182,14 @@
               <div class="event">
                 <div class="content">
                   <div class="summary">
-                    <ul class="c-newarrival__list">
-                      @foreach($datas['results'] as $result)
+                    <ul class="c-newarrival__list">                      
+                      @forelse($datas['results'] as $result)
                       <li class="c-newarrival__item">
-                        <a class="c-newarrival__link" href="{{ action('SearchController@showByJobCode',[$result->pathname, $result->job_code_full, $result->rqmt_id]) }}">
-                        {{ $result->cmpny_name }}
-                        </a>
+                        <a class="c-newarrival__link" href="{{ action('SearchController@showByJobCode',[$result->pathname, $result->job_code_full, $result->rqmt_id]) }}">{{ trim(preg_replace('/株式会社/','',$result->cmpny_name)) }}</a>
                       </li>
-                      @endforeach                      
+                      @empty
+                      <li></li>
+                      @endforelse
                     </ul>
                   </div>
                 </div>
@@ -178,14 +206,16 @@
             <h2>転職を考えたら</h2>
             <ul class="c-knowhow__list">
 
-              @foreach($posts as $post)
+              @forelse($posts as $post)
               <li class="c-knowhow__item">
                 <a class="c-knowhow__link" href="{{ make_relative_path($post->link) }}">
                   <img class="c-knowhow__thumb" src="{{ make_relative_path($post->thumb) }}" width="70" height="55" alt="{{ $post->title }}">
                   <p class="c-knowhow__lead">{{ $post->title }}</p>
                 </a>
               </li>
-              @endforeach
+              @empty
+              <li></li>
+              @endforelse
 
             </ul>
           </div>

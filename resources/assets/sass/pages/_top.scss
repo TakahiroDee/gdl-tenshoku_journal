@@ -266,16 +266,21 @@
     }
   }
   .c-ranking__agent{
-    background: url('/dist/image/99302690.jpg');
+    background: url('/dist/image/99302690.jpg') no-repeat;
     background-size: cover;
   }
   .c-ranking__itweb{
-    background: url('/dist/image/100716472.jpg');
+    background: url('/dist/image/100716472.jpg') no-repeat;
     background-size: cover;
   }
   .c-ranking__haken{
-    background: url('/dist/image/102617459.jpg');
+    background: url('/dist/image/102617459.jpg') no-repeat;
     background-size: cover;
+  }
+  .c-ranking__woman{
+    background: url('/dist/image/109575510.jpg') no-repeat;
+    background-size: cover;
+    background-position: 0 5%;
   }
   @media #{$less_than_large}{
     .c-ranking__haken{
@@ -470,6 +475,50 @@
     background-size: contain;
     background-position: center;
     color: #666;
+  }
+  .l-search_by_service .c-search__item a{
+    border: 1px solid #EEE;
+    box-sizing: border-box;
+  }
+  .c-search__baitoru{
+    background: url('/dist/image/logo_baitoru_next.jpg') no-repeat;
+    background-size: contain;
+    background-position: center;
+  }  
+  .c-search__hatalike{
+    background: url('/dist/image/logo_hatalike.jpg') no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .c-search__mynabi{
+    background: url('/dist/image/logo_mynabi_agent.jpg') no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .c-search__next{
+    background: url('/dist/image/logo_rikunabi_next.jpg') no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .c-search__rag{
+    background: url('/dist/image/logo_recruit_agent.jpg') no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .c-search__tora{
+    background: url('/dist/image/logo_torabayu.jpg') no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .c-search__type{
+    background: url('/dist/image/logo_at_type.jpg') #ffe700 no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .c-search__wkpt{
+    background: url('/dist/image/logo_workport.jpg') no-repeat;
+    background-size: contain;
+    background-position: center;
   }
   @media #{$less_than_small}{
     .c-search__list .c-search__item:nth-of-type(2n) .c-search__link{

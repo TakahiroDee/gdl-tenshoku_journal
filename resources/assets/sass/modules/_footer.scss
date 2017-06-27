@@ -23,7 +23,6 @@ footer{
     padding-right: 10px;
   }
 }
-
 @media #{$more_than_small}{
   .l-footer-logo{
     margin-bottom: 35px;
@@ -32,6 +31,9 @@ footer{
 @media #{$less_than_small}{
   .l-footer-logo{
     margin-bottom: 15px;
+  }
+  .l-footer-logo .c-logo__link{
+    margin-left: -8px;
   }
 }
 
@@ -63,6 +65,9 @@ footer{
 }
 .c-footer__list{
   display: flex;
+}
+.c-footer__list li > p{
+  color: #949697;
 }
 @media #{$more_than_large}{
   .c-footer li[data-id="footer-searchby-job"]{

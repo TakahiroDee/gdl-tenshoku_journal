@@ -16,7 +16,7 @@ class TopController extends Controller
                             ->select('ID','post_title','post_name','guid','meta_value as headline')
                             ->distinct()
                             ->where('t1.post_type','=','page')
-                            ->where('t2.meta_key','=','headline')
+                            ->where('t2.meta_key','=','headline')                            
                             ->get();
 
         /*
@@ -33,7 +33,7 @@ class TopController extends Controller
                             ->leftJoin('posts as t4','t3.ID','=','t4.post_parent')
                             ->select('t3.post_title as title', 't3.guid as link', 't4.guid as thumb')
                             ->where('t3.post_type', '=', 'post')
-                            ->where('t4.guid', 'REGEXP', 'wp-content/uploads/[0-9]{4}/[0-9]{2}/e_')
+                            ->where('t4.guid', 'REGEXP', 'wp-content/uploads/[0-9]{4}/[0-9]{2}/e_')                            
                             ->orderBy('t3.post_modified','DESC')
                             ->take(10)
                             ->get();
@@ -56,13 +56,13 @@ class TopController extends Controller
                     'last_update' => "",
                 );
 
+    
         $datas['results']     = DB::table('recruitments')
                                 ->join('jobcodes','recruitments.job_code_full','=','jobcodes.job_code_full')
-                                ->where('new_flag',1)
-                                ->where('sitename','rikunabi_next')
+                                ->where('recruitments.sitename','rikunabi_next')
                                 ->orderBy('last_confirmed_at','DESC')
                                 ->take(10)
-                                ->get();
+                                ->get();        
         $datas['counts']      = DB::table('recruitments')
                                 ->join('jobcodes','recruitments.job_code_full','=','jobcodes.job_code_full')
                                 ->count();
@@ -70,5 +70,10 @@ class TopController extends Controller
 
 
         return view('page.index', compact('pages','posts','datas'));
+    }
+
+    public function about()
+    {
+        return view('page.about');
     }
 }

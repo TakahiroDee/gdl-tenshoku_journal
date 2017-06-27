@@ -259,6 +259,9 @@ footer {
   .l-footer-logo {
     margin-bottom: 15px;
   }
+  .l-footer-logo .c-logo__link {
+    margin-left: -8px;
+  }
 }
 
 .c-footer {
@@ -293,6 +296,10 @@ footer {
 .c-footer__list {
   display: -webkit-box;
   display: flex;
+}
+
+.c-footer__list li > p {
+  color: #949697;
 }
 
 @media screen and (min-width: 960px) {
@@ -523,21 +530,26 @@ footer {
   }
 }
 
-.c-hero .c-breadcrumb {
+#p-ranking .c-breadcrumb {
+  color: #FFF;
   padding: 10px 0;
   font-size: 12px;
 }
 
-.c-hero .c-breadcrumb a, .c-hero .c-breadcrumb span {
+#p-ranking .c-breadcrumb a, #p-ranking .c-breadcrumb span {
   line-height: 1.6;
 }
 
-.c-hero .c-breadcrumb a {
+#p-ranking .c-breadcrumb a {
+  color: #FFF;
+}
+
+#p-ranking .c-breadcrumb a:hover {
   color: #FFF;
   text-decoration: underline;
 }
 
-.c-hero .c-breadcrumb i {
+#p-ranking .ui.breadcrumb .c-breadcrumb i.icon.divider {
   color: #FFF;
 }
 
@@ -552,10 +564,14 @@ footer {
 
 #p-search .c-breadcrumb a, #p-detail .c-breadcrumb a, #p-jobinfo .c-breadcrumb a, #p-knowhow .c-breadcrumb a, #p-knowhowDetail .c-breadcrumb a {
   color: #00ACC1;
+}
+
+#p-search .c-breadcrumb a:hover, #p-detail .c-breadcrumb a:hover, #p-jobinfo .c-breadcrumb a:hover, #p-knowhow .c-breadcrumb a:hover, #p-knowhowDetail .c-breadcrumb a:hover {
+  color: #00ACC1;
   text-decoration: underline;
 }
 
-#p-search .c-breadcrumb i, #p-detail .c-breadcrumb i, #p-jobinfo .c-breadcrumb i, #p-knowhow .c-breadcrumb i, #p-knowhowDetail .c-breadcrumb i {
+#p-search .c-breadcrumb.ui.breadcrumb i.icon.divider, #p-detail .c-breadcrumb.ui.breadcrumb i.icon.divider, #p-jobinfo .c-breadcrumb.ui.breadcrumb i.icon.divider, #p-knowhow .c-breadcrumb.ui.breadcrumb i.icon.divider, #p-knowhowDetail .c-breadcrumb.ui.breadcrumb i.icon.divider {
   color: #00ACC1;
 }
 
@@ -618,6 +634,70 @@ footer {
 #p-jobinfo .c-searchCassette table tr:nth-of-type(3) th,
 #p-jobinfo .c-searchCassette table tr:nth-of-type(4) th {
   border-top: 1px solid rgba(34, 36, 38, 0.1);
+}
+
+#p-ranking .c-searchCassette table td span.is-baitoru_next, #p-search .c-searchCassette table td span.is-baitoru_next, #p-jobinfo .c-searchCassette table td span.is-baitoru_next {
+  display: block;
+  width: 70px;
+  height: 35px;
+  background: url("/dist/image/logo_baitoru_next.jpg") no-repeat;
+  background-size: cover;
+}
+
+#p-ranking .c-searchCassette table td span.is-hatalike, #p-search .c-searchCassette table td span.is-hatalike, #p-jobinfo .c-searchCassette table td span.is-hatalike {
+  display: block;
+  width: 70px;
+  height: 35px;
+  background: url("/dist/image/logo_hatalike.jpg") no-repeat;
+  background-size: cover;
+}
+
+#p-ranking .c-searchCassette table td span.is-mynabi_agent, #p-search .c-searchCassette table td span.is-mynabi_agent, #p-jobinfo .c-searchCassette table td span.is-mynabi_agent {
+  display: block;
+  width: 100px;
+  height: 50px;
+  background: url("/dist/image/logo_mynabi_agent.jpg") no-repeat;
+  background-size: cover;
+}
+
+#p-ranking .c-searchCassette table td span.is-rikunabi_next, #p-search .c-searchCassette table td span.is-rikunabi_next, #p-jobinfo .c-searchCassette table td span.is-rikunabi_next {
+  display: block;
+  width: 70px;
+  height: 35px;
+  background: url("/dist/image/logo_rikunabi_next.jpg") no-repeat;
+  background-size: cover;
+}
+
+#p-ranking .c-searchCassette table td span.is-recruit_agent, #p-search .c-searchCassette table td span.is-recruit_agent, #p-jobinfo .c-searchCassette table td span.is-recruit_agent {
+  display: block;
+  width: 70px;
+  height: 35px;
+  background: url("/dist/image/logo_recruit_agent.jpg") no-repeat;
+  background-size: cover;
+}
+
+#p-ranking .c-searchCassette table td span.is-at_type, #p-search .c-searchCassette table td span.is-at_type, #p-jobinfo .c-searchCassette table td span.is-at_type {
+  display: block;
+  width: 70px;
+  height: 35px;
+  background: url("/dist/image/logo_at_type.jpg") no-repeat;
+  background-size: cover;
+}
+
+#p-ranking .c-searchCassette table td span.is-torabayu, #p-search .c-searchCassette table td span.is-torabayu, #p-jobinfo .c-searchCassette table td span.is-torabayu {
+  display: block;
+  width: 70px;
+  height: 35px;
+  background: url("/dist/image/logo_torabayu.jpg") no-repeat;
+  background-size: cover;
+}
+
+#p-ranking .c-searchCassette table td span.is-workport, #p-search .c-searchCassette table td span.is-workport, #p-jobinfo .c-searchCassette table td span.is-workport {
+  display: block;
+  width: 70px;
+  height: 35px;
+  background: url("/dist/image/logo_workport.jpg") no-repeat;
+  background-size: cover;
 }
 
 #p-ranking .c-searchCassette__buttons, #p-search .c-searchCassette__buttons, #p-jobinfo .c-searchCassette__buttons {
@@ -921,18 +1001,24 @@ footer {
 }
 
 #p-top .c-ranking__agent {
-  background: url("/dist/image/99302690.jpg");
+  background: url("/dist/image/99302690.jpg") no-repeat;
   background-size: cover;
 }
 
 #p-top .c-ranking__itweb {
-  background: url("/dist/image/100716472.jpg");
+  background: url("/dist/image/100716472.jpg") no-repeat;
   background-size: cover;
 }
 
 #p-top .c-ranking__haken {
-  background: url("/dist/image/102617459.jpg");
+  background: url("/dist/image/102617459.jpg") no-repeat;
   background-size: cover;
+}
+
+#p-top .c-ranking__woman {
+  background: url("/dist/image/109575510.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0 5%;
 }
 
 @media screen and (max-width: 959px) {
@@ -1162,6 +1248,59 @@ footer {
   color: #666;
 }
 
+#p-top .l-search_by_service .c-search__item a {
+  border: 1px solid #EEE;
+  box-sizing: border-box;
+}
+
+#p-top .c-search__baitoru {
+  background: url("/dist/image/logo_baitoru_next.jpg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#p-top .c-search__hatalike {
+  background: url("/dist/image/logo_hatalike.jpg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#p-top .c-search__mynabi {
+  background: url("/dist/image/logo_mynabi_agent.jpg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#p-top .c-search__next {
+  background: url("/dist/image/logo_rikunabi_next.jpg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#p-top .c-search__rag {
+  background: url("/dist/image/logo_recruit_agent.jpg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#p-top .c-search__tora {
+  background: url("/dist/image/logo_torabayu.jpg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#p-top .c-search__type {
+  background: url("/dist/image/logo_at_type.jpg") #ffe700 no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#p-top .c-search__wkpt {
+  background: url("/dist/image/logo_workport.jpg") no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
 @media screen and (max-width: 679px) {
   #p-top .c-search__list .c-search__item:nth-of-type(2n) .c-search__link {
     margin-left: 0.5rem;
@@ -1174,13 +1313,26 @@ footer {
 
 @media screen and (min-width: 960px) {
   #p-ranking .l-main {
-    margin-bottom: 5.0rem;
+    margin-bottom: 50px;
+  }
+  #p-ranking .l-main.l-ranktop {
+    margin-top: 400px;
   }
 }
 
 @media screen and (max-width: 959px) {
   #p-ranking .l-main {
-    margin: 0 1.0rem;
+    margin: 0 10px;
+  }
+}
+
+#p-ranking .l-hero {
+  position: relative;
+}
+
+@media screen and (max-width: 959px) {
+  #p-ranking .l-hero > .l-inner.l-ranktop {
+    position: absolute;
   }
 }
 
@@ -1197,6 +1349,224 @@ footer {
   }
 }
 
+#p-ranking .c-splithero {
+  width: 100%;
+}
+
+#p-ranking .c-splithero__thumb {
+  background: url("/dist/image/96781297.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#p-ranking .c-splithero__text {
+  box-sizing: border-box;
+  background: #888;
+  text-align: center;
+  color: #FFF;
+  padding: 2em 0;
+}
+
+#p-ranking .c-splithero__title {
+  font-weight: normal;
+}
+
+#p-ranking .c-splithero__divider {
+  display: block;
+  margin: 2em auto;
+  width: 40px;
+  height: 3px;
+  background: #FFF;
+}
+
+#p-ranking .c-splithero__contentBox {
+  margin: 0 auto;
+}
+
+#p-ranking .c-splithero__text p {
+  margin: 0 auto 1em;
+}
+
+@media screen and (min-width: 960px) {
+  #p-ranking .c-splithero {
+    display: -webkit-box;
+    display: flex;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+  }
+  #p-ranking .c-splithero__thumb {
+    width: 50%;
+    height: 400px;
+  }
+  #p-ranking .c-splithero__text {
+    width: 50%;
+    height: 400px;
+  }
+  #p-ranking .c-splithero__title {
+    font-size: 16px;
+  }
+  #p-ranking .c-splithero__contentBox {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  #p-ranking .c-splithero__thumb {
+    height: 300px;
+  }
+  #p-ranking .c-splithero__title {
+    font-size: 14px;
+  }
+  #p-ranking .c-splithero__contentBox {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 679px) {
+  #p-ranking .c-splithero__text {
+    font-size: 12px;
+  }
+  #p-ranking .c-splithero__divider {
+    margin: 1em auto;
+    height: 2px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #p-ranking .c-ranking__item {
+    margin-bottom: 3.5em;
+  }
+  #p-ranking .c-ranking__billboard {
+    width: 50%;
+    height: 13.6rem;
+  }
+  #p-ranking .c-ranking__item .ui.list .item {
+    height: 2em;
+    line-height: 2em;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #p-ranking .c-ranking__item {
+    overflow: hidden;
+    position: relative;
+  }
+  #p-ranking .c-ranking__billboard {
+    width: 100% !important;
+    height: 14.0rem;
+  }
+  #p-ranking .c-ranking__item .ui.list .item {
+    height: 3em;
+    line-height: 3em;
+  }
+}
+
+#p-ranking .c-ranking__billboard {
+  line-height: 13.0rem;
+}
+
+#p-ranking .c-ranking__site {
+  background: url("/dist/image/93801880.jpg");
+  background-size: cover;
+}
+
+@media screen and (max-width: 959px) {
+  #p-ranking .c-ranking__site {
+    background-position-y: 30%;
+  }
+}
+
+#p-ranking .c-ranking__agent {
+  background: url("/dist/image/99302690.jpg") no-repeat;
+  background-size: cover;
+}
+
+#p-ranking .c-ranking__itweb {
+  background: url("/dist/image/100716472.jpg") no-repeat;
+  background-size: cover;
+}
+
+#p-ranking .c-ranking__haken {
+  background: url("/dist/image/102617459.jpg") no-repeat;
+  background-size: cover;
+}
+
+#p-ranking .c-ranking__woman {
+  background: url("/dist/image/109575510.jpg") no-repeat;
+  background-size: cover;
+  background-position: 0 5%;
+}
+
+@media screen and (max-width: 959px) {
+  #p-ranking .c-ranking__haken {
+    background-position-y: 20%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #p-ranking .c-ranking__contentBox {
+    width: 50%;
+    padding-top: 1em;
+    padding-left: 1.0rem;
+    display: -webkit-box;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #p-ranking .c-ranking__contentBox {
+    padding: 1.0rem 0;
+    box-sizing: border-box;
+  }
+}
+
+#p-ranking .c-ranking__link {
+  color: #555;
+}
+
+#p-ranking .c-ranking__link:hover {
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 768px) {
+  #p-ranking .c-ranking__link {
+    display: -webkit-box;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #p-ranking .c-ranking__link {
+    margin: 0;
+  }
+}
+
+#p-ranking .c-ranking__lead {
+  font-size: 1.6rem;
+  color: #666;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+#p-ranking .c-ranking__excerpt {
+  color: #999;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 767px) {
+  #p-ranking .c-ranking__excerpt {
+    line-height: 1.8;
+  }
+}
+
+#p-ranking .c-ranking__item .ui.list .item {
+  display: inline-block;
+  font-size: 12px;
+  padding: 0 1.5em 0 0;
+}
+
 #p-ranking .c-hero__site {
   background: url("/dist/image/hero_of_site.jpg") no-repeat;
   background-size: cover;
@@ -1206,7 +1576,7 @@ footer {
   position: absolute;
   font-size: 1.8rem;
   font-weight: normal;
-  top: 15.7rem;
+  top: calc(50% - 26px);
 }
 
 @media screen and (min-width: 680px) {
@@ -1340,6 +1710,14 @@ footer {
 #p-detail .c-detail h3 {
   font-weight: bold;
   font-size: 1.4rem;
+  color: #666;
+}
+
+#p-detail .c-detail h4 {
+  font-size: 1.4rem;
+  font-weight: normal;
+  border-left: 5px solid #DDD;
+  padding-left: 5px;
   color: #666;
 }
 
@@ -1523,6 +1901,11 @@ footer {
     margin: 1.0rem auto;
     padding: 0;
   }
+}
+
+#p-search .c-searchPanel .c-service__item {
+  padding-bottom: 1.5em;
+  padding-right: 1em;
 }
 
 .ui.dimmer.modals .c-searchModal__content {
@@ -1826,7 +2209,7 @@ footer {
   padding: 0;
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 960px) {
   #p-jobinfo .ui.cards {
     margin: 0 0 2.0rem;
   }
@@ -2158,7 +2541,7 @@ footer {
 
 @media screen and (min-width: 960px) {
   #p-top .l-aside_rg_1 {
-    height: 30.0rem;
+    min-height: 30.0rem;
   }
 }
 
@@ -2236,7 +2619,7 @@ footer {
 
 #p-top .c-newarrival__item {
   color: #555;
-  display: inline;
+  display: inline-block;
   font-weight: normal;
   font-size: 1.2rem;
   line-height: 2;
@@ -2247,7 +2630,20 @@ footer {
 }
 
 #p-top .c-newarrival__item a {
-  color: #00ACC1;
+  color: #555;
+  display: inline-block;
+}
+
+@media screen and (min-width: 960px) {
+  #p-top .c-newarrival__item a {
+    padding: 0 0.2em;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  #p-top .c-newarrival__item a {
+    padding: 0.4em;
+  }
 }
 
 #p-top .c-newarrival__item a:hover {

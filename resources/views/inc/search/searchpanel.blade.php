@@ -20,6 +20,77 @@
           </td>
         </tr>
         <tr>
+          <td>サービス名</td>
+          <td>
+            <ul class="c-service__list">
+              <li class="ui checkbox c-service__item">
+                @if($data['selected_service_list'] == 'baitoru_next')
+                <input type="checkbox" id="s_baitoru_next" name="s_baitoru_next" checked="checked"/ >
+                @else
+                <input type="checkbox" id="s_baitoru_next" name="s_baitoru_next"/ >
+                @endif
+                <label for="s_baitoru_next">バイトルNEXT</label>
+              </li>
+              <li class="ui checkbox c-service__item">
+                @if($data['selected_service_list'] == 'hatalike')
+                <input type="checkbox" id="s_hatalike" name="s_hatalike" checked="checked"/ >
+                @else
+                <input type="checkbox" id="s_hatalike" name="s_hatalike"/ >
+                @endif
+                <label for="s_hatalike">はたらいく</label>
+              </li>
+              <li class="ui checkbox c-service__item">
+                @if($data['selected_service_list'] == 'mynabi_agent')
+                <input type="checkbox" id="s_mynabi_agent" name="s_mynabi_agent" checked="checked" / >
+                @else
+                <input type="checkbox" id="s_mynabi_agent" name="s_mynabi_agent"/ >
+                @endif
+                <label for="s_mynabi_agent">マイナビエージェント</label>
+              </li>
+              <li class="ui checkbox c-service__item">
+                @if($data['selected_service_list'] == 'rikunabi_next')
+                <input type="checkbox" id="s_rikunabi_next" name="s_rikunabi_next" checked="checked"/ >
+                @else
+                <input type="checkbox" id="s_rikunabi_next" name="s_rikunabi_next"/ >
+                @endif
+                <label for="s_rikunabi_next">リクナビNEXT</label>
+              </li>
+              <li class="ui checkbox c-service__item">
+                @if($data['selected_service_list'] == 'recruit_agent')
+                <input type="checkbox" id="s_recruit_agent" name="s_recruit_agent" checked="checked"/ >
+                @else
+                <input type="checkbox" id="s_recruit_agent" name="s_recruit_agent"/ >
+                @endif
+                <label for="s_recruit_agent">リクルートエージェント</label>
+              </li>
+              <li class="ui checkbox c-service__item">
+                @if($data['selected_service_list'] == 'at_type')
+                <input type="checkbox" id="s_at_type" name="s_at_type"/ checked>
+                @else
+                <input type="checkbox" id="s_at_type" name="s_at_type"/ >
+                @endif
+                <label for="s_at_type">＠type</label>
+              </li>
+              <li class="ui checkbox c-service__item">
+                @if($data['selected_service_list'] == 'torabayu')
+                <input type="checkbox" id="s_torabayu" name="s_torabayu" checked="checked" / >
+                @else
+                <input type="checkbox" id="s_torabayu" name="s_torabayu"/ >
+                @endif
+                <label for="s_torabayu">とらばーゆ</label>
+              </li>
+              <li class="ui checkbox c-service__item">
+                @if($data['selected_service_list'] == 'workport')
+                <input type="checkbox" id="s_workport" name="s_workport" checked="checked" / >
+                @else
+                <input type="checkbox" id="s_workport" name="s_workport"/ >
+                @endif
+                <label for="s_workport">ワークポート</label>
+              </li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
           <td>キーワード</td>
           <td>
             <div class="ui icon input">
