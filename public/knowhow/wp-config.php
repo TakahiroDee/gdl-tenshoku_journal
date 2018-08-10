@@ -29,8 +29,8 @@ define('DB_USER', 'tj_user_0001');
 define('DB_PASSWORD', 'awE_M1Y@Xp>xUW(s');
 
 /** MySQL hostname */
-// define('DB_HOST', '10.0.3.10');
-define('DB_HOST', '192.168.60.12');
+define('DB_HOST', '10.0.2.10');
+// define('DB_HOST', '192.168.60.12');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -39,10 +39,10 @@ define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', '');
 
 /** enable use host.prefPane **/
-// define('WP_HOME','http://54.238.227.163/knowhow');
-// define('WP_SITEURL','http://54.238.227.163/knowhow');
-define('WP_HOME','http://192.168.60.11/knowhow');
-define('WP_SITEURL','http://192.168.60.11/knowhow');
+define('WP_HOME','http://13.230.40.197/knowhow');
+define('WP_SITEURL','http://13.230.40.197/knowhow');
+// define('WP_HOME','http://192.168.60.11/knowhow');
+// define('WP_SITEURL','http://192.168.60.11/knowhow');
 
 /**#@+
  * Authentication Unique Keys and Salts.
